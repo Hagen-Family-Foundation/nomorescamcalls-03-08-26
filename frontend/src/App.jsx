@@ -319,9 +319,14 @@ function App() {
           <Route path="/sign-in/*" element={<SignInPage />} />
           <Route path="/sign-up/*" element={<SignUpPage />} />
           <Route path="/account" element={
-            <SignedIn>
-              <AccountPage />
-            </SignedIn>
+            <>
+              <SignedIn>
+                <AccountPage />
+              </SignedIn>
+              <SignedOut>
+                <RedirectToSignIn />
+              </SignedOut>
+            </>
           } />
         </Routes>
       </BrowserRouter>
