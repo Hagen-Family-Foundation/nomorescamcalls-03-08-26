@@ -1,5 +1,5 @@
 import "@/App.css";
-import { BrowserRouter, Routes, Route, Link, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, useNavigate, Navigate } from "react-router-dom";
 import {
   SignedIn,
   SignedOut,
@@ -9,6 +9,7 @@ import {
   SignIn,
   SignUp,
   useUser,
+  RedirectToSignIn,
 } from "@clerk/clerk-react";
 import { Shield, Phone, AlertTriangle, CheckCircle, Menu, X } from "lucide-react";
 import { useState } from "react";
