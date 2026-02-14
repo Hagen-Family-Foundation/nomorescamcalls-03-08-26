@@ -22,14 +22,14 @@ export const FinalCTA = () => {
     : `Don't wait until you become a victim. Start your free trial today and experience the peace of mind that comes with ${brand.appName}'s AI-powered protection.`;
 
   const primaryCTA = isScaminater ? 'Start Your 7‑Day Free Trial' : 'Start Free Trial';
-  const primarySubtext = isScaminater ? 'No contracts. Cancel anytime.' : '7 days free, then $6.99/month';
+  const primarySubtext = isScaminater ? 'No contracts. Cancel anytime.' : '7 days free, then just $12.99/month';
 
   const secondaryCTA = isScaminater ? 'Schedule a 15‑Minute Demo' : 'Learn More';
   const secondarySubtext = isScaminater ? 'Walk through real attack scenarios with us.' : 'See how it works';
 
   const reassuranceText = isScaminater
     ? "No hardware to install. No carrier change required.\nJust smarter screening around the lines that matter most."
-    : "No credit card required. Cancel anytime.";
+    : "Cancel anytime. No contracts.";
 
   return (
     <section 
