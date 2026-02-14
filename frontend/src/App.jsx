@@ -96,7 +96,8 @@ const Home = () => {
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             Stop Scam Calls
-            <span className="text-emerald-500"> Before They Start</span>
+            <br />
+            <span className="text-emerald-500">Before They Start</span>
           </h1>
           
           <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
