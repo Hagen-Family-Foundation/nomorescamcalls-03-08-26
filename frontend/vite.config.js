@@ -12,24 +12,13 @@ export default defineConfig({
   server: {
     port: 3000,
     host: '0.0.0.0',
-    strictPort: true,
-    allowedHosts: [
-      'localhost',
-      '127.0.0.1',
-      '.emergentagent.com',
-      '.emergentcf.cloud',
-      '.preview.emergentagent.com',
-      'nomorescamcalls.com',
-      '.nomorescamcalls.com'
-    ],
   },
   build: {
-    outDir: 'build',
+    outDir: 'dist',
     sourcemap: false,
-    minify: 'esbuild',
-    target: 'esnext',
   },
-  esbuild: {
-    logOverride: { 'this-is-undefined-in-esm': 'silent' },
+  define: {
+    // Polyfill for process.env.NODE_ENV used in some libraries
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
   },
 });
