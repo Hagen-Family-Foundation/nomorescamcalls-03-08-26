@@ -50,7 +50,6 @@ const HomePage = () => {
     <ComparisonTable />
     <WhoItsFor />
     <Testimonials />
-    <ThreatsSection />
     <PressSection />
     <TrustSafety />
     <Pricing />
