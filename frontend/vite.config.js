@@ -12,6 +12,15 @@ export default defineConfig({
   server: {
     port: 3000,
     host: '0.0.0.0',
+    allowedHosts: [
+      'localhost',
+      '127.0.0.1',
+      '.emergentagent.com',
+      '.emergentcf.cloud',
+      '.preview.emergentagent.com',
+      'nomorescamcalls.com',
+      '.nomorescamcalls.com'
+    ],
   },
   build: {
     outDir: 'dist',
