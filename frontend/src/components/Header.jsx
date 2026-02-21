@@ -10,6 +10,7 @@ export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showPromoBar, setShowPromoBar] = useState(true);
   const brand = useBrand();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
