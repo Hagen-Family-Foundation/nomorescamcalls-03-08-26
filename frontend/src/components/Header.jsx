@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ShieldLogo } from './ShieldLogo';
 import { Button } from './ui/button';
 import { Menu, X, Sparkles } from 'lucide-react';
