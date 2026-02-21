@@ -117,6 +117,14 @@ export const Header = () => {
               >
                 FAQ
               </button>
+              <button 
+                onClick={() => navigate('/dashboard')} 
+                className="text-gray-600 transition-colors"
+                onMouseEnter={(e) => e.target.style.color = brand.colors.primary}
+                onMouseLeave={(e) => e.target.style.color = '#4b5563'}
+              >
+                My Dashboard
+              </button>
               <Button 
                 style={{ backgroundColor: brand.colors.primary }}
                 className="text-white transition-all duration-300 hover:opacity-90"
