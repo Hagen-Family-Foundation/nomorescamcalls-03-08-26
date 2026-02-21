@@ -181,6 +181,14 @@ export const Header = () => {
                 >
                   FAQ
                 </button>
+                <button 
+                  onClick={() => { setMobileMenuOpen(false); navigate('/dashboard'); }} 
+                  className="text-left text-gray-600 transition-colors"
+                  onMouseEnter={(e) => e.target.style.color = brand.colors.primary}
+                  onMouseLeave={(e) => e.target.style.color = '#4b5563'}
+                >
+                  My Dashboard
+                </button>
                 <Button 
                   style={{ backgroundColor: brand.colors.primary }}
                   className="text-white w-full hover:opacity-90"
