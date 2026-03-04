@@ -30,7 +30,7 @@ export const Pricing = ({ onScrollToBundle }) => {
             />
           </div>
           <p className="text-lg md:text-xl font-semibold text-gray-700">
-            Phone + Text + Email + Web – <span style={{ color: brand.colors.primary }}>All Protected</span>
+            Phone + Text + Email + Web – <span style={{ color: brand.colors.primary }}>All Lines & Devices Protected</span>
           </p>
         </div>
 

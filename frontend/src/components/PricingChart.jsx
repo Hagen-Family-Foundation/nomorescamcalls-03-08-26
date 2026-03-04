@@ -91,7 +91,7 @@ export const PricingChart = ({ highlightedBundle }) => {
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-4">
             Get complete protection with our 4-pillar bundles: <strong>Phone + Text + Email + Web</strong> — 
-            all included at one low monthly price.
+            all included at one low monthly price for all your lines and devices.
           </p>
           <p className="text-lg font-semibold max-w-3xl mx-auto" style={{ color: brand.colors.primary }}>
             Choosing a bundle means full Phone + Text + Email + Web protection<br />
@@ -524,7 +524,7 @@ export const PricingChart = ({ highlightedBundle }) => {
 
         {/* Bottom Note */}
         <p className="text-center text-gray-500 text-sm mt-12">
-          All bundles include complete Phone, Text, Email, and Web protection for all lines on your plan. 
+          All bundles include complete Phone, Text, Email, and Web protection for all lines and all devices on your plan. 
           Prices are billed monthly. Cancel anytime.
         </p>
       </div>
