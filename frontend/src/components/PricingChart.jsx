@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from './ui/button';
-import { Check, Star, ArrowRight, MessageSquare, Mail, Globe } from 'lucide-react';
+import { Check, Shield, Star, ArrowRight, MessageSquare, Mail, Globe } from 'lucide-react';
 import { useBrand } from '../context/BrandContext';
 import { PRICING_LINKS, PRICING_DATA } from '../config/pricingLinks';
 
@@ -78,10 +78,10 @@ export const PricingChart = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <div 
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-4"
+            className="inline-flex items-center gap-3 px-6 py-3 rounded-full text-2xl font-bold mb-6"
             style={{ backgroundColor: `${brand.colors.primary}15`, color: brand.colors.primary }}
           >
-            <Star className="h-4 w-4" />
+            <Shield className="h-8 w-8" />
             4 Pillars of Protection
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

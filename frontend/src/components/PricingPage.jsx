@@ -57,7 +57,7 @@ export const PricingPage = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
             4 Pillars of Protection
           </h1>
           
