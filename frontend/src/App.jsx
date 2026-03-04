@@ -69,12 +69,12 @@ const HomePage = () => {
     <Benefits />
     <ComparisonTable />
     <WhoItsFor />
-    <Testimonials />
-    <TrustSafety />
     <Pricing onScrollToBundle={handleScrollToBundle} />
     <PricingChart highlightedBundle={highlightedBundle} />
     <FAQ />
     <FinalCTA />
+    <Testimonials />
+    <TrustSafety />
     <AboutSection />
     <Footer />
     <ScrollToTop />
