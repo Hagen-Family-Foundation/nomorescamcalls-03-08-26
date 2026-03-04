@@ -269,7 +269,7 @@ export const PricingChart = () => {
                         }
                       >
                         <a href={plan.link} target="_blank" rel="noopener noreferrer">
-                          Get {plan.name.replace(' Bundle', '')}
+                          Get {plan.name}
                           <ArrowRight className="ml-2 h-4 w-4 inline" />
                         </a>
                       </Button>
