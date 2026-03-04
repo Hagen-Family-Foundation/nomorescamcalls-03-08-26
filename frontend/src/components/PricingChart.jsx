@@ -92,7 +92,8 @@ export const PricingChart = () => {
             all included at one low price. See how much you save vs. buying add-ons separately.
           </p>
           <p className="text-lg font-semibold max-w-3xl mx-auto" style={{ color: brand.colors.primary }}>
-            Choosing a bundle means full Phone + Text + Email + Web protection for less than à‑la‑carte add‑ons alone on every plan.
+            Choosing a bundle means full Phone + Text + Email + Web protection<br />
+            for less than à‑la‑carte add‑ons alone on every plan.
           </p>
         </div>
 
