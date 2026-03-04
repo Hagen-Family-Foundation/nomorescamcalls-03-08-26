@@ -21,11 +21,12 @@ export const Pricing = ({ onScrollToBundle }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* 4 Pillars Hero Image */}
         <div className="text-center mb-3">
-          <div className="relative max-w-3xl mx-auto mb-2">
+          <div className="relative max-w-3xl mx-auto mb-2 overflow-hidden rounded-2xl shadow-lg">
             <img 
               src="https://customer-assets.emergentagent.com/job_scam-stopper-app/artifacts/c6wvxyfr_image.png"
               alt="Four Pillars of Protection - Classical columns representing Phone, Text, Email, and Web protection"
-              className="w-full rounded-2xl shadow-lg"
+              className="w-full h-64 object-cover"
+              style={{ objectPosition: 'center 75%' }}
             />
           </div>
           <p className="text-lg md:text-xl font-semibold text-gray-700">
