@@ -32,20 +32,9 @@ export const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-5xl mx-auto text-center">
-          {/* Main Headline - 2 line stack */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-lg px-6 py-4 shadow-2xl inline-block mb-8">
-            <h1 
-              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
-              style={{ color: '#0a1428', textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}
-            >
-              Protect Today's Decisions,
-              <br />
-              Preserve Tomorrow's Legacy
-            </h1>
-          </div>
-
-          {/* 4 Pillars Image - Reduced size, centered */}
-          <div className="max-w-md mx-auto mb-6">
+          
+          {/* 4 Pillars Image - Reduced size, centered, sitting on top of header */}
+          <div className="max-w-md mx-auto mb-4">
             <img 
               src={pillarsImage}
               alt="Four Pillars of Protection"
@@ -54,16 +43,16 @@ export const HeroSection = () => {
             />
           </div>
 
-          {/* 4 Pillars Header - 2 line stack */}
-          <div className="mb-8">
-            <h2 
-              className="text-3xl md:text-4xl font-bold mb-2"
+          {/* Main Header - 4 Pillars of Protection (2 line stack) */}
+          <div className="bg-white/80 backdrop-blur-sm rounded-lg px-6 py-4 shadow-2xl inline-block mb-8">
+            <h1 
+              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
               style={{ color: '#0a1428' }}
             >
               4 Pillars of Protection
-            </h2>
+            </h1>
             <p 
-              className="text-xl md:text-2xl font-semibold"
+              className="text-2xl md:text-3xl font-bold mt-2"
               style={{ color: '#eab308' }}
             >
               Phone - Text - Email - Web
