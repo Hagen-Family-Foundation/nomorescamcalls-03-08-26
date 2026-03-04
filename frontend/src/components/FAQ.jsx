@@ -59,7 +59,7 @@ export const FAQ = () => {
     },
     {
       question: 'What are the pricing plans?',
-      answer: 'We offer flexible plans starting at $6.99/month for individual protection, with family plans available for multiple lines. All plans include a 7-day free trial with no commitment required.'
+      answer: 'We offer flexible plans starting at $15.99/month for individual protection, with family plans available for multiple lines. All plans include a 7-day free trial with no commitment required.'
     },
     {
       question: 'Is my data safe?',

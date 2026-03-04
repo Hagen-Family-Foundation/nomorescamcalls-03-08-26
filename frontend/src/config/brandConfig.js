@@ -88,8 +88,8 @@ export const brands = {
       tiers: [
         {
           name: 'Basic',
-          monthlyPrice: '12.99',
-          annualPrice: '129.99',
+          monthlyPrice: '15.99',
+          annualPrice: '159.99',
           stripeMonthlyId: getEnvVar('VITE_STRIPE_BASIC_MONTHLY', 'price_basic_monthly'),
           stripeAnnualId: getEnvVar('VITE_STRIPE_BASIC_ANNUAL', 'price_basic_annual'),
           features: [
@@ -102,8 +102,8 @@ export const brands = {
         },
         {
           name: 'Mid',
-          monthlyPrice: '21.99',
-          annualPrice: '219.99',
+          monthlyPrice: '28.99',
+          annualPrice: '289.99',
           stripeMonthlyId: getEnvVar('VITE_STRIPE_MID_MONTHLY', 'price_mid_monthly'),
           stripeAnnualId: getEnvVar('VITE_STRIPE_MID_ANNUAL', 'price_mid_annual'),
           features: [
@@ -117,8 +117,8 @@ export const brands = {
         },
         {
           name: 'Family',
-          monthlyPrice: '28.99',
-          annualPrice: '289.99',
+          monthlyPrice: '47.99',
+          annualPrice: '479.99',
           stripeMonthlyId: getEnvVar('VITE_STRIPE_FAMILY_MONTHLY', 'price_family_monthly'),
           stripeAnnualId: getEnvVar('VITE_STRIPE_FAMILY_ANNUAL', 'price_family_annual'),
           features: [
