@@ -17,11 +17,11 @@ export const Pricing = ({ onScrollToBundle }) => {
   const sectionNote = brand.pricing?.sectionNote || 'All plans include a 7-day free trial. Cancellations take effect at end of billing cycle.';
 
   return (
-    <section id="pricing" className="py-20 bg-white" data-testid="pricing-section">
+    <section id="pricing" className="pt-12 pb-20 bg-white" data-testid="pricing-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* 4 Pillars Hero Image */}
-        <div className="text-center mb-6">
-          <div className="relative max-w-3xl mx-auto mb-4">
+        <div className="text-center mb-3">
+          <div className="relative max-w-3xl mx-auto mb-2">
             <img 
               src="https://customer-assets.emergentagent.com/job_scam-stopper-app/artifacts/c6wvxyfr_image.png"
               alt="Four Pillars of Protection - Classical columns representing Phone, Text, Email, and Web protection"
@@ -33,8 +33,8 @@ export const Pricing = ({ onScrollToBundle }) => {
           </p>
         </div>
 
-        <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
             {sectionTitle}
           </h2>
           {sectionSubheading && (
