@@ -34,7 +34,8 @@ export const FinalCTA = () => {
   return (
     <section 
       id="final-cta" 
-      className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
+      className="py-20"
+      style={{ background: `linear-gradient(135deg, ${brand.colors.primary} 0%, #0f2744 50%, ${brand.colors.primary} 100%)` }}
       data-testid="final-cta-section"
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -44,52 +45,58 @@ export const FinalCTA = () => {
         </h2>
 
         {/* Subheading */}
-        <p className="text-xl md:text-2xl font-medium mb-6" style={{ color: brand.colors.primary }}>
+        <p className="text-xl md:text-2xl font-medium mb-6" style={{ color: brand.colors.secondary }}>
           {subheading}
         </p>
 
         {/* Body Copy */}
-        <p className="text-lg text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="text-lg text-slate-200 max-w-2xl mx-auto mb-10 leading-relaxed">
           {bodyCopy}
         </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
-          {/* Primary CTA */}
+          {/* Primary CTA - Yellow button with navy text */}
           <div className="flex flex-col items-center">
             <Button
               size="lg"
-              className="text-white px-8 py-6 text-lg font-semibold flex items-center gap-2 hover:scale-105 transition-transform"
-              style={{ backgroundColor: brand.colors.primary }}
+              className="px-8 py-6 text-lg font-bold flex items-center gap-2 hover:scale-105 transition-transform shadow-lg"
+              style={{ 
+                backgroundColor: brand.colors.secondary, 
+                color: brand.colors.primary,
+                border: `3px solid ${brand.colors.secondary}`
+              }}
               data-testid="final-cta-primary"
             >
               {primaryCTA}
               <ArrowRight className="h-5 w-5" />
             </Button>
-            <span className="text-sm text-slate-400 mt-2">{primarySubtext}</span>
+            <span className="text-sm text-slate-300 mt-2">{primarySubtext}</span>
           </div>
 
-          {/* Secondary CTA */}
+          {/* Secondary CTA - Navy button with yellow border and text */}
           <div className="flex flex-col items-center">
             <Button
               size="lg"
               variant="outline"
-              className="px-8 py-6 text-lg font-semibold flex items-center gap-2 hover:scale-105 transition-transform bg-transparent"
+              className="px-8 py-6 text-lg font-bold flex items-center gap-2 hover:scale-105 transition-transform"
               style={{ 
-                borderColor: brand.colors.primary, 
-                color: brand.colors.primary 
+                backgroundColor: 'transparent',
+                borderColor: brand.colors.secondary, 
+                borderWidth: '3px',
+                color: brand.colors.secondary 
               }}
               data-testid="final-cta-secondary"
             >
               {isScaminater && <Calendar className="h-5 w-5" />}
               {secondaryCTA}
             </Button>
-            <span className="text-sm text-slate-400 mt-2">{secondarySubtext}</span>
+            <span className="text-sm text-slate-300 mt-2">{secondarySubtext}</span>
           </div>
         </div>
 
         {/* Reassurance Text */}
-        <p className="text-slate-400 text-sm whitespace-pre-line max-w-lg mx-auto">
+        <p className="text-slate-300 text-sm whitespace-pre-line max-w-lg mx-auto">
           {reassuranceText}
         </p>
       </div>

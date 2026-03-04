@@ -138,15 +138,24 @@ export const Pricing = ({ onScrollToBundle }) => {
                 )}
 
                 <Button
-                  className={`w-full mb-6 ${
+                  className={`w-full mb-6 font-bold ${
                     isPopular
-                      ? 'text-white'
-                      : 'bg-white border-2'
+                      ? ''
+                      : 'bg-white'
                   }`}
                   style={
                     isPopular 
-                      ? { backgroundColor: brand.colors.primary } 
-                      : { borderColor: brand.colors.primary, color: brand.colors.primary }
+                      ? { 
+                          backgroundColor: brand.colors.secondary, 
+                          color: brand.colors.primary,
+                          border: `3px solid ${brand.colors.secondary}`
+                        } 
+                      : { 
+                          borderColor: brand.colors.primary, 
+                          borderWidth: '3px',
+                          color: brand.colors.primary,
+                          backgroundColor: 'white'
+                        }
                   }
                   onClick={shouldShowBundleButton ? () => onScrollToBundle(bundleType) : undefined}
                   data-testid={`pricing-cta-${plan.id || index}`}

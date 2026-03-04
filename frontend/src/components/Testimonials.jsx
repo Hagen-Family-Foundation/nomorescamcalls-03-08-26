@@ -28,7 +28,7 @@ export const Testimonials = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: brand.colors.primary }}>
             Real Reviews from Real People
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -41,11 +41,12 @@ export const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-gray-50 rounded-xl p-6 border border-gray-200 relative"
+              className="rounded-xl p-6 border-2 relative"
+              style={{ borderColor: brand.colors.primary, backgroundColor: `${brand.colors.primary}08` }}
             >
               {/* Quote Icon */}
-              <div className="absolute top-4 right-4 opacity-10">
-                <Quote className="h-10 w-10" style={{ color: brand.colors.primary }} />
+              <div className="absolute top-4 right-4 opacity-20">
+                <Quote className="h-10 w-10" style={{ color: brand.colors.secondary }} />
               </div>
 
               {/* Quote */}
@@ -55,8 +56,8 @@ export const Testimonials = () => {
 
               {/* Author */}
               <div>
-                <div className="font-bold text-gray-900">{testimonial.name}</div>
-                <div className="text-sm" style={{ color: brand.colors.primary }}>{testimonial.label}</div>
+                <div className="font-bold" style={{ color: brand.colors.primary }}>{testimonial.name}</div>
+                <div className="text-sm" style={{ color: brand.colors.secondary }}>{testimonial.label}</div>
               </div>
             </div>
           ))}

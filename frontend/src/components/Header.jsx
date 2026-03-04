@@ -46,7 +46,7 @@ export const Header = () => {
             </span>
             <Button
               size="sm"
-              style={{ backgroundColor: 'white', color: brand.colors.primary }}
+              style={{ backgroundColor: brand.colors.secondary, color: brand.colors.primary, fontWeight: 700 }}
               className="hover:opacity-90 h-7 px-3 text-xs font-semibold"
               onClick={() => scrollToSection('pricing')}
               data-testid="promo-bar-cta"
@@ -126,8 +126,13 @@ export const Header = () => {
                 My Dashboard
               </button>
               <Button 
-                style={{ backgroundColor: brand.colors.primary }}
-                className="text-white transition-all duration-300 hover:opacity-90"
+                style={{ 
+                  backgroundColor: brand.colors.secondary, 
+                  color: brand.colors.primary,
+                  border: `2px solid ${brand.colors.secondary}`,
+                  fontWeight: 700
+                }}
+                className="transition-all duration-300 hover:opacity-90 hover:scale-105"
                 onClick={() => scrollToSection('pricing')}
                 data-testid="header-cta"
               >
@@ -190,8 +195,13 @@ export const Header = () => {
                   My Dashboard
                 </button>
                 <Button 
-                  style={{ backgroundColor: brand.colors.primary }}
-                  className="text-white w-full hover:opacity-90"
+                  style={{ 
+                    backgroundColor: brand.colors.secondary, 
+                    color: brand.colors.primary,
+                    border: `2px solid ${brand.colors.secondary}`,
+                    fontWeight: 700
+                  }}
+                  className="w-full hover:opacity-90"
                   onClick={() => scrollToSection('pricing')}
                 >
                   Start Free Trial

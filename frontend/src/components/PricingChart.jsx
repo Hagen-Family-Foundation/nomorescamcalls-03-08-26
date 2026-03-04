@@ -289,15 +289,23 @@ export const PricingChart = ({ highlightedBundle }) => {
                         <Button
                           asChild
                           size="lg"
-                          className={`px-8 py-3 font-semibold transition-all ${
+                          className={`px-8 py-3 font-bold transition-all ${
                             plan.popular 
-                              ? 'text-white shadow-lg hover:shadow-xl transform hover:scale-105' 
-                              : 'bg-white border-2 hover:bg-gray-50'
+                              ? 'shadow-lg hover:shadow-xl transform hover:scale-105' 
+                              : 'bg-white hover:bg-gray-50'
                           } ${isHighlighted ? 'bundle-highlight' : ''}`}
                           style={
                             plan.popular 
-                              ? { backgroundColor: brand.colors.primary } 
-                              : { borderColor: brand.colors.primary, color: brand.colors.primary }
+                              ? { 
+                                  backgroundColor: brand.colors.secondary, 
+                                  color: brand.colors.primary,
+                                  border: `3px solid ${brand.colors.secondary}`
+                                } 
+                              : { 
+                                  borderColor: brand.colors.primary, 
+                                  borderWidth: '3px',
+                                  color: brand.colors.primary 
+                                }
                           }
                         >
                           <a href={plan.link} target="_blank" rel="noopener noreferrer">
@@ -393,13 +401,21 @@ export const PricingChart = ({ highlightedBundle }) => {
                 <Button
                   asChild
                   size="lg"
-                  className={`w-full mt-4 py-4 font-semibold ${
-                    plan.popular ? 'text-white' : 'bg-white border-2'
+                  className={`w-full mt-4 py-4 font-bold ${
+                    plan.popular ? '' : 'bg-white'
                   }`}
                   style={
                     plan.popular 
-                      ? { backgroundColor: brand.colors.primary } 
-                      : { borderColor: brand.colors.primary, color: brand.colors.primary }
+                      ? { 
+                          backgroundColor: brand.colors.secondary,
+                          color: brand.colors.primary,
+                          border: `3px solid ${brand.colors.secondary}`
+                        } 
+                      : { 
+                          borderColor: brand.colors.primary, 
+                          borderWidth: '3px',
+                          color: brand.colors.primary 
+                        }
                   }
                 >
                   <a href={plan.link} target="_blank" rel="noopener noreferrer">

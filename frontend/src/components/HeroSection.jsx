@@ -47,8 +47,13 @@ export const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <Button
               size="lg"
-              style={{ backgroundColor: brand.colors.primary }}
-              className="text-white px-8 py-6 text-lg font-semibold shadow-lg hover:opacity-90 hover:shadow-xl transition-all"
+              style={{ 
+                backgroundColor: brand.colors.secondary, 
+                color: brand.colors.primary,
+                border: `3px solid ${brand.colors.secondary}`,
+                fontWeight: 700
+              }}
+              className="px-8 py-6 text-lg font-bold shadow-lg hover:opacity-90 hover:shadow-xl hover:scale-105 transition-all"
               data-testid="hero-cta-primary"
             >
               Get Protected Now

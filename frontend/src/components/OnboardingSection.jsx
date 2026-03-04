@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button } from './ui/button';
 import { useBrand } from '../context/BrandContext';
+import { ShieldLogo } from './ShieldLogo';
 import { 
   UserPlus, 
-  Shield, 
   LayoutDashboard, 
   Phone, 
   MessageSquare, 
@@ -14,14 +14,14 @@ import {
   Check
 } from 'lucide-react';
 
-// Navy & Yellow color scheme for authoritative feel
+// Navy & Bright Daisy Yellow color scheme (Blue Angels style)
 const colors = {
-  navy: '#1e3a5f',
-  navyDark: '#0f2744',
-  navyLight: '#2d5a8a',
-  yellow: '#fbbf24',
-  yellowBright: '#fcd34d',
-  yellowDark: '#f59e0b',
+  navy: '#002B5C',
+  navyDark: '#001a3a',
+  navyLight: '#003d7a',
+  yellow: '#FFD700',
+  yellowBright: '#FFEB3B',
+  yellowDark: '#FFCC00',
   white: '#ffffff',
   grayLight: '#f1f5f9',
 };
@@ -36,16 +36,18 @@ const onboardingSteps = [
       'Enter phone/text/email accounts (1-click with providers like Telnyx).',
       'No hardware, no apps—just forward to our screening.',
     ],
+    useShieldLogo: false,
   },
   {
     step: 2,
-    icon: Shield,
+    icon: null,
     title: 'We Screen 24/7',
     bullets: [
       'Every call/text/email/web link gets checked (Hiya score + our blacklists).',
       'Local blacklist: Your personal "bad numbers" (add anytime).',
       'Global blacklist: Shared scam intel from all users (you contribute safely).',
     ],
+    useShieldLogo: true,
   },
   {
     step: 3,
@@ -56,6 +58,7 @@ const onboardingSteps = [
       'Report false positives ("good number? whitelist it") or missed scams ("bad? blacklist it").',
       '2-tier control: Local changes only affect YOU; global helps everyone.',
     ],
+    useShieldLogo: false,
   },
 ];
 
@@ -68,10 +71,10 @@ const dashboardData = [
 ];
 
 // Individual Step Card Component
-const StepCard = ({ step, icon: Icon, title, bullets }) => (
+const StepCard = ({ step, icon: Icon, title, bullets, useShieldLogo }) => (
   <div 
     className="relative bg-white rounded-2xl p-6 shadow-lg border-2 border-transparent hover:border-yellow-400 transition-all duration-300"
-    style={{ boxShadow: '0 10px 40px rgba(30, 58, 95, 0.15)' }}
+    style={{ boxShadow: '0 10px 40px rgba(0, 43, 92, 0.15)' }}
   >
     {/* Step Number Badge */}
     <div 
@@ -86,7 +89,11 @@ const StepCard = ({ step, icon: Icon, title, bullets }) => (
       className="w-16 h-16 rounded-xl flex items-center justify-center mb-4 mt-2"
       style={{ backgroundColor: colors.yellow }}
     >
-      <Icon className="h-8 w-8" style={{ color: colors.navyDark }} />
+      {useShieldLogo ? (
+        <ShieldLogo className="h-8 w-8" color={colors.navyDark} />
+      ) : (
+        <Icon className="h-8 w-8" style={{ color: colors.navyDark }} />
+      )}
     </div>
     
     {/* Title */}
@@ -205,7 +212,7 @@ export const OnboardingSection = () => {
               style={{ backgroundColor: colors.navy }}
             >
               <div className="flex items-center gap-3">
-                <Shield className="h-6 w-6 text-white" />
+                <ShieldLogo className="h-6 w-6" color="white" />
                 <span className="text-white font-bold text-sm md:text-base">Your Protection Dashboard</span>
               </div>
               <div 
