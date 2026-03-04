@@ -47,10 +47,10 @@ const HomePage = () => {
     // Set highlighted bundle
     setHighlightedBundle(bundleType);
     
-    // Clear highlight after 3 seconds
+    // Clear highlight after 6 seconds
     setTimeout(() => {
       setHighlightedBundle(null);
-    }, 3000);
+    }, 6000);
   }, []);
   
   return (
