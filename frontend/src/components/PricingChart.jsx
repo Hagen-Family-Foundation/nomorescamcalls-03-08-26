@@ -11,8 +11,10 @@ import { PRICING_LINKS, PRICING_DATA } from '../config/pricingLinks';
  * - Phone-only pricing vs full 4-pillar bundles
  * - À-la-carte add-on costs vs bundle savings
  * - Clear visual indication of savings (38%, 44%, 55%)
+ * 
+ * @param {string} highlightedBundle - Which bundle column to highlight ('basic' | 'mid' | 'family' | null)
  */
-export const PricingChart = () => {
+export const PricingChart = ({ highlightedBundle }) => {
   const brand = useBrand();
 
   const plans = [
@@ -73,7 +75,7 @@ export const PricingChart = () => {
   ];
 
   return (
-    <section id="pricing-chart" className="py-20 bg-gradient-to-b from-gray-50 to-white" data-testid="pricing-chart-section">
+    <section id="bundles-section" className="py-20 bg-gradient-to-b from-gray-50 to-white" data-testid="pricing-chart-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
@@ -106,29 +108,32 @@ export const PricingChart = () => {
                   <th className="py-5 px-6 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider bg-gray-50 w-1/4">
                     &nbsp;
                   </th>
-                  {plans.map((plan) => (
-                    <th 
-                      key={plan.id} 
-                      className={`py-5 px-6 text-center relative ${
-                        plan.popular ? 'bg-orange-50' : 'bg-gray-50'
-                      }`}
-                    >
-                      {plan.popular && (
-                        <div 
-                          className="absolute -top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white px-4 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-lg"
-                          style={{ backgroundColor: brand.colors.primary }}
-                        >
-                          <Star className="h-3 w-3" fill="currentColor" />
-                          Most Popular
-                        </div>
-                      )}
-                      <span className={`text-lg font-bold ${
-                        plan.popular ? 'text-orange-700' : 'text-gray-900'
-                      }`}>
-                        {plan.name}
-                      </span>
-                    </th>
-                  ))}
+                  {plans.map((plan) => {
+                    const isHighlighted = highlightedBundle === plan.id;
+                    return (
+                      <th 
+                        key={plan.id} 
+                        className={`py-5 px-6 text-center relative transition-all duration-300 ${
+                          plan.popular ? 'bg-orange-50' : 'bg-gray-50'
+                        } ${isHighlighted ? 'bundle-highlight-column' : ''}`}
+                      >
+                        {plan.popular && (
+                          <div 
+                            className="absolute -top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white px-4 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-lg"
+                            style={{ backgroundColor: brand.colors.primary }}
+                          >
+                            <Star className="h-3 w-3" fill="currentColor" />
+                            Most Popular
+                          </div>
+                        )}
+                        <span className={`text-lg font-bold ${
+                          plan.popular ? 'text-orange-700' : 'text-gray-900'
+                        }`}>
+                          {plan.name}
+                        </span>
+                      </th>
+                    );
+                  })}
                 </tr>
               </thead>
               <tbody>
@@ -137,18 +142,21 @@ export const PricingChart = () => {
                   <td className="py-4 px-6 text-left font-medium text-gray-900">
                     📱 Phone only
                   </td>
-                  {plans.map((plan) => (
-                    <td key={plan.id} className={`py-4 px-6 text-center ${
-                      plan.popular ? 'bg-orange-50/30' : ''
-                    }`}>
-                      <span className="text-gray-700">
-                        ${plan.phoneOnly.toFixed(2)}/mo
-                      </span>
-                      <span className="block text-xs text-gray-500 mt-1">
-                        ({plan.lines} {plan.lines === 1 ? 'line' : 'lines'})
-                      </span>
-                    </td>
-                  ))}
+                  {plans.map((plan) => {
+                    const isHighlighted = highlightedBundle === plan.id;
+                    return (
+                      <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
+                        plan.popular ? 'bg-orange-50/30' : ''
+                      } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
+                        <span className="text-gray-700">
+                          ${plan.phoneOnly.toFixed(2)}/mo
+                        </span>
+                        <span className="block text-xs text-gray-500 mt-1">
+                          ({plan.lines} {plan.lines === 1 ? 'line' : 'lines'})
+                        </span>
+                      </td>
+                    );
+                  })}
                 </tr>
 
                 {/* Textinaters Row */}
@@ -157,14 +165,17 @@ export const PricingChart = () => {
                     💬 + Textinaters
                     <span className="block text-xs text-red-600 font-semibold">($12.99/line)</span>
                   </td>
-                  {plans.map((plan) => (
-                    <td key={plan.id} className={`py-4 px-6 text-center ${
-                      plan.popular ? 'bg-orange-50/30' : ''
-                    }`}>
-                      <span className="text-red-600 font-semibold">$12.99/line</span>
-                      <Check className="h-4 w-4 text-green-500 inline ml-2" />
-                    </td>
-                  ))}
+                  {plans.map((plan) => {
+                    const isHighlighted = highlightedBundle === plan.id;
+                    return (
+                      <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
+                        plan.popular ? 'bg-orange-50/30' : ''
+                      } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
+                        <span className="text-red-600 font-semibold">$12.99/line</span>
+                        <Check className="h-4 w-4 text-green-500 inline ml-2" />
+                      </td>
+                    );
+                  })}
                 </tr>
 
                 {/* Emailinaters Row */}
@@ -173,14 +184,17 @@ export const PricingChart = () => {
                     📧 + Emailinaters
                     <span className="block text-xs text-red-600 font-semibold">($12.99/line)</span>
                   </td>
-                  {plans.map((plan) => (
-                    <td key={plan.id} className={`py-4 px-6 text-center ${
-                      plan.popular ? 'bg-orange-50/30' : ''
-                    }`}>
-                      <span className="text-red-600 font-semibold">$12.99/line</span>
-                      <Check className="h-4 w-4 text-green-500 inline ml-2" />
-                    </td>
-                  ))}
+                  {plans.map((plan) => {
+                    const isHighlighted = highlightedBundle === plan.id;
+                    return (
+                      <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
+                        plan.popular ? 'bg-orange-50/30' : ''
+                      } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
+                        <span className="text-red-600 font-semibold">$12.99/line</span>
+                        <Check className="h-4 w-4 text-green-500 inline ml-2" />
+                      </td>
+                    );
+                  })}
                 </tr>
 
                 {/* Webinaters Row */}
@@ -189,14 +203,17 @@ export const PricingChart = () => {
                     🌐 + Webinaters
                     <span className="block text-xs text-red-600 font-semibold">($12.99/line)</span>
                   </td>
-                  {plans.map((plan) => (
-                    <td key={plan.id} className={`py-4 px-6 text-center ${
-                      plan.popular ? 'bg-orange-50/30' : ''
-                    }`}>
-                      <span className="text-red-600 font-semibold">$12.99/line</span>
-                      <Check className="h-4 w-4 text-green-500 inline ml-2" />
-                    </td>
-                  ))}
+                  {plans.map((plan) => {
+                    const isHighlighted = highlightedBundle === plan.id;
+                    return (
+                      <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
+                        plan.popular ? 'bg-orange-50/30' : ''
+                      } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
+                        <span className="text-red-600 font-semibold">$12.99/line</span>
+                        <Check className="h-4 w-4 text-green-500 inline ml-2" />
+                      </td>
+                    );
+                  })}
                 </tr>
 
                 {/* À la carte total Row - Warning/Red tone */}
@@ -205,15 +222,18 @@ export const PricingChart = () => {
                     ❌ À la carte total
                     <span className="block text-xs font-normal text-red-600">(phone + all 3 add-ons)</span>
                   </td>
-                  {plans.map((plan) => (
-                    <td key={plan.id} className={`py-5 px-6 text-center ${
-                      plan.popular ? 'bg-red-100/50' : ''
-                    }`}>
-                      <span className="text-2xl font-bold text-red-700 line-through decoration-2">
-                        ${plan.aLaCarteTotal.toFixed(2)}/mo
-                      </span>
-                    </td>
-                  ))}
+                  {plans.map((plan) => {
+                    const isHighlighted = highlightedBundle === plan.id;
+                    return (
+                      <td key={plan.id} className={`py-5 px-6 text-center transition-all duration-300 ${
+                        plan.popular ? 'bg-red-100/50' : ''
+                      } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
+                        <span className="text-2xl font-bold text-red-700 line-through decoration-2">
+                          ${plan.aLaCarteTotal.toFixed(2)}/mo
+                        </span>
+                      </td>
+                    );
+                  })}
                 </tr>
 
                 {/* Bundle total Row - Green/Positive tone */}
@@ -222,15 +242,18 @@ export const PricingChart = () => {
                     ✅ Bundle total
                     <span className="block text-xs font-normal text-green-600">(all 4 protections included)</span>
                   </td>
-                  {plans.map((plan) => (
-                    <td key={plan.id} className={`py-5 px-6 text-center ${
-                      plan.popular ? 'bg-green-100/50' : ''
-                    }`}>
-                      <span className="text-2xl font-bold text-green-700">
-                        ${plan.bundlePrice.toFixed(2)}/mo
-                      </span>
-                    </td>
-                  ))}
+                  {plans.map((plan) => {
+                    const isHighlighted = highlightedBundle === plan.id;
+                    return (
+                      <td key={plan.id} className={`py-5 px-6 text-center transition-all duration-300 ${
+                        plan.popular ? 'bg-green-100/50' : ''
+                      } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
+                        <span className="text-2xl font-bold text-green-700">
+                          ${plan.bundlePrice.toFixed(2)}/mo
+                        </span>
+                      </td>
+                    );
+                  })}
                 </tr>
 
                 {/* Savings Row - Strong Green */}
@@ -238,15 +261,18 @@ export const PricingChart = () => {
                   <td className="py-5 px-6 text-left font-bold text-emerald-800">
                     💰 You save vs à la carte
                   </td>
-                  {plans.map((plan) => (
-                    <td key={plan.id} className={`py-5 px-6 text-center ${
-                      plan.popular ? 'bg-emerald-200/50' : ''
-                    }`}>
-                      <span className="text-2xl font-bold text-emerald-700">
-                        {plan.savings}% savings
-                      </span>
-                    </td>
-                  ))}
+                  {plans.map((plan) => {
+                    const isHighlighted = highlightedBundle === plan.id;
+                    return (
+                      <td key={plan.id} className={`py-5 px-6 text-center transition-all duration-300 ${
+                        plan.popular ? 'bg-emerald-200/50' : ''
+                      } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
+                        <span className="text-2xl font-bold text-emerald-700">
+                          {plan.savings}% savings
+                        </span>
+                      </td>
+                    );
+                  })}
                 </tr>
 
                 {/* CTA Row */}
@@ -254,31 +280,34 @@ export const PricingChart = () => {
                   <td className="py-6 px-6 text-left text-gray-600 font-medium">
                     Get Protected
                   </td>
-                  {plans.map((plan) => (
-                    <td key={plan.id} className={`py-6 px-6 text-center ${
-                      plan.popular ? 'bg-orange-50/30' : ''
-                    }`}>
-                      <Button
-                        asChild
-                        size="lg"
-                        className={`px-8 py-3 font-semibold transition-all ${
-                          plan.popular 
-                            ? 'text-white shadow-lg hover:shadow-xl transform hover:scale-105' 
-                            : 'bg-white border-2 hover:bg-gray-50'
-                        }`}
-                        style={
-                          plan.popular 
-                            ? { backgroundColor: brand.colors.primary } 
-                            : { borderColor: brand.colors.primary, color: brand.colors.primary }
-                        }
-                      >
-                        <a href={plan.link} target="_blank" rel="noopener noreferrer">
-                          Get {plan.name}
-                          <ArrowRight className="ml-2 h-4 w-4 inline" />
-                        </a>
-                      </Button>
-                    </td>
-                  ))}
+                  {plans.map((plan) => {
+                    const isHighlighted = highlightedBundle === plan.id;
+                    return (
+                      <td key={plan.id} className={`py-6 px-6 text-center transition-all duration-300 ${
+                        plan.popular ? 'bg-orange-50/30' : ''
+                      } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
+                        <Button
+                          asChild
+                          size="lg"
+                          className={`px-8 py-3 font-semibold transition-all ${
+                            plan.popular 
+                              ? 'text-white shadow-lg hover:shadow-xl transform hover:scale-105' 
+                              : 'bg-white border-2 hover:bg-gray-50'
+                          } ${isHighlighted ? 'bundle-highlight' : ''}`}
+                          style={
+                            plan.popular 
+                              ? { backgroundColor: brand.colors.primary } 
+                              : { borderColor: brand.colors.primary, color: brand.colors.primary }
+                          }
+                        >
+                          <a href={plan.link} target="_blank" rel="noopener noreferrer">
+                            Get {plan.name}
+                            <ArrowRight className="ml-2 h-4 w-4 inline" />
+                          </a>
+                        </Button>
+                      </td>
+                    );
+                  })}
                 </tr>
               </tbody>
             </table>
@@ -287,27 +316,29 @@ export const PricingChart = () => {
 
         {/* Mobile View - Stacked Cards */}
         <div className="lg:hidden space-y-6 mb-12">
-          {plans.map((plan) => (
-            <div 
-              key={plan.id}
-              className={`bg-white rounded-2xl shadow-lg border-2 overflow-hidden ${
-                plan.popular ? 'border-orange-400 ring-2 ring-orange-200' : 'border-gray-200'
-              }`}
-            >
-              {/* Card Header */}
-              <div className={`p-6 ${plan.popular ? 'bg-orange-50' : 'bg-gray-50'}`}>
-                {plan.popular && (
-                  <div 
-                    className="inline-flex items-center gap-1 text-white px-3 py-1 rounded-full text-xs font-bold mb-3"
-                    style={{ backgroundColor: brand.colors.primary }}
-                  >
-                    <Star className="h-3 w-3" fill="currentColor" />
-                    Most Popular
-                  </div>
-                )}
-                <h3 className="text-xl font-bold text-gray-900">{plan.name}</h3>
-                <p className="text-sm text-gray-600">{plan.lines} {plan.lines === 1 ? 'line' : 'lines'} included</p>
-              </div>
+          {plans.map((plan) => {
+            const isHighlighted = highlightedBundle === plan.id;
+            return (
+              <div 
+                key={plan.id}
+                className={`bg-white rounded-2xl shadow-lg border-2 overflow-hidden transition-all duration-300 ${
+                  plan.popular ? 'border-orange-400 ring-2 ring-orange-200' : 'border-gray-200'
+                } ${isHighlighted ? 'bundle-highlight' : ''}`}
+              >
+                {/* Card Header */}
+                <div className={`p-6 ${plan.popular ? 'bg-orange-50' : 'bg-gray-50'}`}>
+                  {plan.popular && (
+                    <div 
+                      className="inline-flex items-center gap-1 text-white px-3 py-1 rounded-full text-xs font-bold mb-3"
+                      style={{ backgroundColor: brand.colors.primary }}
+                    >
+                      <Star className="h-3 w-3" fill="currentColor" />
+                      Most Popular
+                    </div>
+                  )}
+                  <h3 className="text-xl font-bold text-gray-900">{plan.name}</h3>
+                  <p className="text-sm text-gray-600">{plan.lines} {plan.lines === 1 ? 'line' : 'lines'} included</p>
+                </div>
 
               {/* Card Body */}
               <div className="p-6 space-y-4">
@@ -375,7 +406,8 @@ export const PricingChart = () => {
                 </Button>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Prefer à la carte Section */}

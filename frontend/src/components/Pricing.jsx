@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button } from './ui/button';
-import { Check, Star } from 'lucide-react';
+import { Check, Star, ArrowDown } from 'lucide-react';
 import { mockData } from '../mock';
 import { useBrand } from '../context/BrandContext';
 
-export const Pricing = () => {
+export const Pricing = ({ onScrollToBundle }) => {
   const brand = useBrand();
 
   // Use brand pricing if available, fallback to mock data
@@ -50,6 +50,15 @@ export const Pricing = () => {
             const positioningLabel = plan.positioningLabel || null;
             const detailedDescription = plan.detailedDescription || null;
             const priceLabel = plan.priceLabel || '/month';
+
+            // Map plan names to bundle types for scroll behavior
+            const bundleTypeMap = {
+              'Basic': 'basic',
+              'Mid': 'mid',
+              'Family': 'family'
+            };
+            const bundleType = bundleTypeMap[planName];
+            const shouldShowBundleButton = bundleType && onScrollToBundle && !isAddon;
 
             return (
               <div
@@ -121,9 +130,17 @@ export const Pricing = () => {
                       ? { backgroundColor: brand.colors.primary } 
                       : { borderColor: brand.colors.primary, color: brand.colors.primary }
                   }
+                  onClick={shouldShowBundleButton ? () => onScrollToBundle(bundleType) : undefined}
                   data-testid={`pricing-cta-${plan.id || index}`}
                 >
-                  Get Started
+                  {shouldShowBundleButton ? (
+                    <>
+                      See Bundle Options
+                      <ArrowDown className="ml-2 h-4 w-4 inline" />
+                    </>
+                  ) : (
+                    'Get Started'
+                  )}
                 </Button>
 
                 <ul className="space-y-3">

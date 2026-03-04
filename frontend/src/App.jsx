@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -35,6 +35,23 @@ import { useBrand } from './context/BrandContext';
 
 const HomePage = () => {
   const brand = useBrand();
+  const [highlightedBundle, setHighlightedBundle] = useState(null);
+
+  const handleScrollToBundle = useCallback((bundleType) => {
+    // Scroll to bundles section
+    const bundlesSection = document.getElementById('bundles-section');
+    if (bundlesSection) {
+      bundlesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    
+    // Set highlighted bundle
+    setHighlightedBundle(bundleType);
+    
+    // Clear highlight after 3 seconds
+    setTimeout(() => {
+      setHighlightedBundle(null);
+    }, 3000);
+  }, []);
   
   return (
   <>
@@ -54,8 +71,8 @@ const HomePage = () => {
     <Testimonials />
     <PressSection />
     <TrustSafety />
-    <Pricing />
-    <PricingChart />
+    <Pricing onScrollToBundle={handleScrollToBundle} />
+    <PricingChart highlightedBundle={highlightedBundle} />
     <FAQ />
     <FinalCTA />
     <AboutSection />
