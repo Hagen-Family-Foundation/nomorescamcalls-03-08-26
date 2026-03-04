@@ -6,12 +6,12 @@ import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
 import { TrustBadges } from './components/TrustBadges';
 import { HowItWorks } from './components/HowItWorks';
+import { ServicesSection } from './components/ServicesSection';
 import { Benefits } from './components/Benefits';
 import { WhoItsFor } from './components/WhoItsFor';
 import { TrustSafety } from './components/TrustSafety';
 import { Testimonials } from './components/Testimonials';
 import { Pricing } from './components/Pricing';
-import { OnboardingSection } from './components/OnboardingSection';
 import { FAQ } from './components/FAQ';
 import { CTASection } from './components/CTASection';
 import { Footer } from './components/Footer';
@@ -65,11 +65,11 @@ const HomePage = () => {
     <HeroSection />
     <TrustBadges />
     <HowItWorks />
+    <ServicesSection />
     <Benefits />
     <ComparisonTable />
     <WhoItsFor />
     <Testimonials />
-    <OnboardingSection />
     <TrustSafety />
     <Pricing onScrollToBundle={handleScrollToBundle} />
     <PricingChart highlightedBundle={highlightedBundle} />
