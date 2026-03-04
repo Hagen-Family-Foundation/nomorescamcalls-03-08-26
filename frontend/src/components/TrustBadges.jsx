@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Lock, Award, CheckCircle, Star } from 'lucide-react';
+import { Shield, Lock, Award, CheckCircle } from 'lucide-react';
 import { useBrand } from '../context/BrandContext';
 
 export const TrustBadges = () => {
@@ -18,8 +18,8 @@ export const TrustBadges = () => {
           </p>
         </div>
 
-        {/* Badges Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+        {/* Badges Grid - 5 items now */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center max-w-4xl mx-auto">
           {/* BBB Accredited */}
           <div className="flex flex-col items-center text-center">
             <div className="w-24 h-24 bg-white rounded-lg shadow-sm flex items-center justify-center mb-3 border-2" style={{ borderColor: brand.colors.primary }}>
@@ -76,18 +76,6 @@ export const TrustBadges = () => {
             </div>
             <p className="text-xs font-semibold text-gray-700">CCPA Compliant</p>
             <p className="text-xs text-gray-500">California Privacy</p>
-          </div>
-
-          {/* Trustpilot */}
-          <div className="flex flex-col items-center text-center">
-            <div className="w-24 h-24 bg-white rounded-lg shadow-sm flex items-center justify-center mb-3 border-2" style={{ borderColor: brand.colors.secondary }}>
-              <div className="text-center">
-                <Star className="h-10 w-10 mx-auto mb-1" style={{ color: brand.colors.secondary, fill: brand.colors.secondary }} />
-                <div className="text-xs font-bold" style={{ color: brand.colors.primary }}>4.9/5</div>
-              </div>
-            </div>
-            <p className="text-xs font-semibold text-gray-700">Trustpilot</p>
-            <p className="text-xs text-gray-500">Excellent Rating</p>
           </div>
         </div>
 

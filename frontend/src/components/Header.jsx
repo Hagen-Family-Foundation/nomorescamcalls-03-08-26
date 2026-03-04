@@ -78,50 +78,59 @@ export const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollToSection('hero')}>
-              <ShieldLogo className="h-8 w-8" />
-              <span className="text-xl font-bold text-gray-900">{brand.appName}</span>
+              <div 
+                className="w-10 h-10 rounded-lg flex items-center justify-center"
+                style={{ backgroundColor: '#eab308' }}
+              >
+                <ShieldLogo className="h-6 w-6" color="#0a1428" />
+              </div>
+              <span className="text-xl font-bold" style={{ color: '#0a1428' }}>{brand.appName}</span>
             </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
               <button 
                 onClick={() => scrollToSection('how-it-works')} 
-                className="text-gray-600 transition-colors"
-                style={{ '--hover-color': brand.colors.primary }}
-                onMouseEnter={(e) => e.target.style.color = brand.colors.primary}
-                onMouseLeave={(e) => e.target.style.color = '#4b5563'}
+                className="font-medium transition-colors"
+                style={{ color: '#0a1428' }}
+                onMouseEnter={(e) => e.target.style.color = '#eab308'}
+                onMouseLeave={(e) => e.target.style.color = '#0a1428'}
               >
                 How It Works
               </button>
               <button 
                 onClick={() => scrollToSection('benefits')} 
-                className="text-gray-600 transition-colors"
-                onMouseEnter={(e) => e.target.style.color = brand.colors.primary}
-                onMouseLeave={(e) => e.target.style.color = '#4b5563'}
+                className="font-medium transition-colors"
+                style={{ color: '#0a1428' }}
+                onMouseEnter={(e) => e.target.style.color = '#eab308'}
+                onMouseLeave={(e) => e.target.style.color = '#0a1428'}
               >
                 Benefits
               </button>
               <button 
                 onClick={() => scrollToSection('pricing')} 
-                className="text-gray-600 transition-colors"
-                onMouseEnter={(e) => e.target.style.color = brand.colors.primary}
-                onMouseLeave={(e) => e.target.style.color = '#4b5563'}
+                className="font-medium transition-colors"
+                style={{ color: '#0a1428' }}
+                onMouseEnter={(e) => e.target.style.color = '#eab308'}
+                onMouseLeave={(e) => e.target.style.color = '#0a1428'}
               >
                 Pricing
               </button>
               <button 
                 onClick={() => scrollToSection('faq')} 
-                className="text-gray-600 transition-colors"
-                onMouseEnter={(e) => e.target.style.color = brand.colors.primary}
-                onMouseLeave={(e) => e.target.style.color = '#4b5563'}
+                className="font-medium transition-colors"
+                style={{ color: '#0a1428' }}
+                onMouseEnter={(e) => e.target.style.color = '#eab308'}
+                onMouseLeave={(e) => e.target.style.color = '#0a1428'}
               >
                 FAQ
               </button>
               <button 
                 onClick={() => navigate('/dashboard')} 
-                className="text-gray-600 transition-colors"
-                onMouseEnter={(e) => e.target.style.color = brand.colors.primary}
-                onMouseLeave={(e) => e.target.style.color = '#4b5563'}
+                className="font-medium transition-colors"
+                style={{ color: '#0a1428' }}
+                onMouseEnter={(e) => e.target.style.color = '#eab308'}
+                onMouseLeave={(e) => e.target.style.color = '#0a1428'}
               >
                 My Dashboard
               </button>
