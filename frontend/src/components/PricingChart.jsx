@@ -87,9 +87,12 @@ export const PricingChart = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Bundle & Save Up To 55%
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-4">
             Get complete protection with our 4-pillar bundles: <strong>Phone + Text + Email + Web</strong> — 
             all included at one low price. See how much you save vs. buying add-ons separately.
+          </p>
+          <p className="text-lg font-semibold max-w-3xl mx-auto" style={{ color: brand.colors.primary }}>
+            Choosing a bundle means full Phone + Text + Email + Web protection for less than à‑la‑carte add‑ons alone on every plan.
           </p>
         </div>
 
