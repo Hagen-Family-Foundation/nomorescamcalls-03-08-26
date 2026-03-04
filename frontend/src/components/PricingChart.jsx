@@ -417,31 +417,105 @@ export const PricingChart = ({ highlightedBundle }) => {
             <p className="text-gray-600">Purchase individual add‑ons if you only need specific protections.</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {addons.map((addon) => (
-              <a
-                key={addon.name}
-                href={addon.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-white rounded-xl border-2 border-gray-200 p-6 hover:border-orange-300 hover:shadow-lg transition-all duration-200"
-              >
-                <div className="flex items-center gap-4">
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {/* Textinaters Card */}
+            <div className="bg-white rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-4">
                   <div 
-                    className="p-3 rounded-lg group-hover:scale-110 transition-transform"
+                    className="p-3 rounded-lg"
                     style={{ backgroundColor: `${brand.colors.primary}15` }}
                   >
-                    <addon.icon className="h-6 w-6" style={{ color: brand.colors.primary }} />
+                    <MessageSquare className="h-6 w-6" style={{ color: brand.colors.primary }} />
                   </div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-gray-900">{addon.name}</h4>
-                    <p className="text-sm text-gray-600">{addon.description}</p>
-                    <p className="text-red-600 font-semibold text-sm mt-1">$12.99 per line per month</p>
+                  <div>
+                    <h4 className="text-lg font-bold text-gray-900">💬 Textinaters</h4>
+                    <p className="text-sm font-medium" style={{ color: brand.colors.primary }}>SMS Protection</p>
                   </div>
-                  <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-orange-500 group-hover:translate-x-1 transition-all" />
                 </div>
-              </a>
-            ))}
+                <div className="space-y-3 mb-6">
+                  <p className="text-gray-700 font-medium">Textinaters blocks scam texts before they harm you.</p>
+                  <p className="text-gray-600 text-sm">Android users forward SMS for instant AI screening.</p>
+                  <p className="text-gray-600 text-sm">Apple polls messages every 30 seconds, adding a red warning dot to fraud – 99.9% coverage.</p>
+                </div>
+                <Button
+                  asChild
+                  className="w-full text-white font-semibold"
+                  style={{ backgroundColor: brand.colors.primary }}
+                >
+                  <a href={PRICING_LINKS.TEXTINATORS} target="_blank" rel="noopener noreferrer">
+                    Get Textinaters $12.99/line/mo
+                    <ArrowRight className="ml-2 h-4 w-4 inline" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+
+            {/* Emailinaters Card */}
+            <div className="bg-white rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div 
+                    className="p-3 rounded-lg"
+                    style={{ backgroundColor: `${brand.colors.primary}15` }}
+                  >
+                    <Mail className="h-6 w-6" style={{ color: brand.colors.primary }} />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-gray-900">📧 Emailinaters</h4>
+                    <p className="text-sm font-medium" style={{ color: brand.colors.primary }}>Email Protection</p>
+                  </div>
+                </div>
+                <div className="space-y-3 mb-6">
+                  <p className="text-gray-700 font-medium">Emailinaters stops phishing emails in their tracks.</p>
+                  <p className="text-gray-600 text-sm">Android forwards emails for real-time AI checks.</p>
+                  <p className="text-gray-600 text-sm">Apple scans arrivals every 30 seconds, overlaying red fraud alerts – near-perfect protection.</p>
+                </div>
+                <Button
+                  asChild
+                  className="w-full text-white font-semibold"
+                  style={{ backgroundColor: brand.colors.primary }}
+                >
+                  <a href={PRICING_LINKS.EMAILINATORS} target="_blank" rel="noopener noreferrer">
+                    Get Emailinaters $12.99/line/mo
+                    <ArrowRight className="ml-2 h-4 w-4 inline" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+
+            {/* Webinaters Card */}
+            <div className="bg-white rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div 
+                    className="p-3 rounded-lg"
+                    style={{ backgroundColor: `${brand.colors.primary}15` }}
+                  >
+                    <Globe className="h-6 w-6" style={{ color: brand.colors.primary }} />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-gray-900">🌐 Webinaters</h4>
+                    <p className="text-sm font-medium" style={{ color: brand.colors.primary }}>Web/URL Protection</p>
+                  </div>
+                </div>
+                <div className="space-y-3 mb-6">
+                  <p className="text-gray-700 font-medium">Webinaters alerts on fake or hacked sites instantly.</p>
+                  <p className="text-gray-600 text-sm">Audio + visual warnings for spoofed URLs, phishing, or compromised legit pages.</p>
+                  <p className="text-gray-600 text-sm">Zero tolerance: any red flag in domain validity or reputation triggers protection.</p>
+                </div>
+                <Button
+                  asChild
+                  className="w-full text-white font-semibold"
+                  style={{ backgroundColor: brand.colors.primary }}
+                >
+                  <a href={PRICING_LINKS.WEBINATORS} target="_blank" rel="noopener noreferrer">
+                    Get Webinaters $12.99/line/mo
+                    <ArrowRight className="ml-2 h-4 w-4 inline" />
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
 
