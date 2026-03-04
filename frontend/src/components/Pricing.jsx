@@ -20,19 +20,12 @@ export const Pricing = ({ onScrollToBundle }) => {
     <section id="pricing" className="py-20 bg-white" data-testid="pricing-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* 4 Pillars Hero Image */}
-        <div className="text-center mb-12">
-          <div className="relative max-w-4xl mx-auto mb-6">
+        <div className="text-center mb-6">
+          <div className="relative max-w-3xl mx-auto mb-4">
             <img 
               src="https://customer-assets.emergentagent.com/job_scam-stopper-app/artifacts/c6wvxyfr_image.png"
               alt="Four Pillars of Protection - Classical columns representing Phone, Text, Email, and Web protection"
-              className="w-full h-48 md:h-56 object-cover rounded-2xl shadow-lg"
-              style={{ objectPosition: 'center 30%' }}
-            />
-            <div 
-              className="absolute inset-0 rounded-2xl"
-              style={{ 
-                background: 'linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.3) 100%)'
-              }}
+              className="w-full rounded-2xl shadow-lg"
             />
           </div>
           <p className="text-lg md:text-xl font-semibold text-gray-700">
@@ -40,7 +33,7 @@ export const Pricing = ({ onScrollToBundle }) => {
           </p>
         </div>
 
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {sectionTitle}
           </h2>
