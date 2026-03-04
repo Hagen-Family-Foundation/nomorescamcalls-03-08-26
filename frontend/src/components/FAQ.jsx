@@ -63,11 +63,11 @@ export const FAQ = () => {
     },
     {
       question: 'Is my data safe?',
-      answer: 'Absolutely. We use bank-level encryption to protect your data. We never sell your information to third parties, and you can delete your data at any time from your account settings.'
+      answer: 'Absolutely. We use bank-level encryption to protect your data. We never sell your information to third parties. Only data relating to the scammer side of calls, texts, or emails is retained for investigative purposes – no subscriber data is stored in the screening process.'
     },
     {
       question: 'How quickly can I set it up?',
-      answer: 'Setup takes less than 2 minutes. Simply download our app, create an account, and our AI starts protecting your phone immediately. No technical knowledge required.'
+      answer: 'Setup is quick and easy with our onsite onboarding video that guides you step-by-step through the process. You can start, stop, or replay the video as many times as needed until you feel confident. No technical knowledge required.'
     }
   ];
 

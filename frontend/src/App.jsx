@@ -69,7 +69,6 @@ const HomePage = () => {
     <ComparisonTable />
     <WhoItsFor />
     <Testimonials />
-    <PressSection />
     <TrustSafety />
     <Pricing onScrollToBundle={handleScrollToBundle} />
     <PricingChart highlightedBundle={highlightedBundle} />

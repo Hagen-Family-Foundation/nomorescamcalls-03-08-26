@@ -15,14 +15,14 @@ export const FinalCTA = () => {
 
   const subheading = isScaminater
     ? "Treat your phone lines like the critical infrastructure they've become."
-    : "Join thousands who've already taken back control of their phones.";
+    : "Join the many friends and families across the US who've already taken back control.";
 
   const bodyCopy = isScaminater
     ? "One targeted call to the right person at the wrong moment can undo years of work. Scaminater gives you a quiet layer of protection between your leadership team and the people trying to exploit them."
-    : `Don't wait until you become a victim. Start your free trial today and experience the peace of mind that comes with ${brand.appName}'s AI-powered protection.`;
+    : "Phone calls, texts, emails, and secure website/shopping links – protecting families from theft, stress, and exposure to vulgar and inappropriate images and messages.";
 
   const primaryCTA = isScaminater ? 'Start Your 7‑Day Free Trial' : 'Start Free Trial';
-  const primarySubtext = isScaminater ? 'No contracts. Cancel anytime.' : '7 days free, then just $12.99/month';
+  const primarySubtext = isScaminater ? 'No contracts. Cancel anytime.' : '7 days free, then just $15.99/month';
 
   const secondaryCTA = isScaminater ? 'Schedule a 15‑Minute Demo' : 'Learn More';
   const secondarySubtext = isScaminater ? 'Walk through real attack scenarios with us.' : 'See how it works';

@@ -422,8 +422,8 @@ export const PricingChart = ({ highlightedBundle }) => {
 
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {/* Textinaters Card */}
-            <div className="bg-white rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div className="p-6">
+            <div className="bg-white rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col">
+              <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center gap-3 mb-4">
                   <div 
                     className="p-3 rounded-lg"
@@ -436,14 +436,14 @@ export const PricingChart = ({ highlightedBundle }) => {
                     <p className="text-sm font-medium" style={{ color: brand.colors.primary }}>SMS Protection</p>
                   </div>
                 </div>
-                <div className="space-y-3 mb-6">
+                <div className="space-y-3 mb-6 flex-grow">
                   <p className="text-gray-700 font-medium">Blocks scam texts before they harm you.</p>
                   <p className="text-gray-600 text-sm">Forwards/polls SMS for instant AI screening on Android & Apple.</p>
                   <p className="text-gray-600 text-sm">Red warning dot on fraud – 99%+ coverage across all devices.</p>
                 </div>
                 <Button
                   asChild
-                  className="w-full text-white font-semibold"
+                  className="w-full text-white font-semibold mt-auto"
                   style={{ backgroundColor: brand.colors.primary }}
                 >
                   <a href={PRICING_LINKS.TEXTINATORS} target="_blank" rel="noopener noreferrer">
@@ -455,8 +455,8 @@ export const PricingChart = ({ highlightedBundle }) => {
             </div>
 
             {/* Emailinaters Card */}
-            <div className="bg-white rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div className="p-6">
+            <div className="bg-white rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col">
+              <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center gap-3 mb-4">
                   <div 
                     className="p-3 rounded-lg"
@@ -469,14 +469,14 @@ export const PricingChart = ({ highlightedBundle }) => {
                     <p className="text-sm font-medium" style={{ color: brand.colors.primary }}>Email Protection</p>
                   </div>
                 </div>
-                <div className="space-y-3 mb-6">
+                <div className="space-y-3 mb-6 flex-grow">
                   <p className="text-gray-700 font-medium">Stops phishing emails in their tracks.</p>
                   <p className="text-gray-600 text-sm">Forwards/polls emails for instant AI screening on Android & Apple.</p>
                   <p className="text-gray-600 text-sm">Red warning dot on fraud – 99%+ coverage across all devices.</p>
                 </div>
                 <Button
                   asChild
-                  className="w-full text-white font-semibold"
+                  className="w-full text-white font-semibold mt-auto"
                   style={{ backgroundColor: brand.colors.primary }}
                 >
                   <a href={PRICING_LINKS.EMAILINATORS} target="_blank" rel="noopener noreferrer">
@@ -488,8 +488,8 @@ export const PricingChart = ({ highlightedBundle }) => {
             </div>
 
             {/* Webinaters Card */}
-            <div className="bg-white rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <div className="p-6">
+            <div className="bg-white rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col">
+              <div className="p-6 flex flex-col flex-grow">
                 <div className="flex items-center gap-3 mb-4">
                   <div 
                     className="p-3 rounded-lg"
@@ -502,14 +502,14 @@ export const PricingChart = ({ highlightedBundle }) => {
                     <p className="text-sm font-medium" style={{ color: brand.colors.primary }}>Web/URL Protection</p>
                   </div>
                 </div>
-                <div className="space-y-3 mb-6">
+                <div className="space-y-3 mb-6 flex-grow">
                   <p className="text-gray-700 font-medium">Alerts on fake or hacked sites instantly.</p>
                   <p className="text-gray-600 text-sm">Audio + visual warnings for spoofed URLs, phishing, or compromised pages.</p>
                   <p className="text-gray-600 text-sm">Red warning dot on fraud – 99%+ coverage across all devices.</p>
                 </div>
                 <Button
                   asChild
-                  className="w-full text-white font-semibold"
+                  className="w-full text-white font-semibold mt-auto"
                   style={{ backgroundColor: brand.colors.primary }}
                 >
                   <a href={PRICING_LINKS.WEBINATORS} target="_blank" rel="noopener noreferrer">
