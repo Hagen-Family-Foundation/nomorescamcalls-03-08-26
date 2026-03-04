@@ -439,7 +439,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                 <div className="space-y-3 mb-6">
                   <p className="text-gray-700 font-medium">Blocks scam texts before they harm you.</p>
                   <p className="text-gray-600 text-sm">Forwards/polls SMS for instant AI screening on Android & Apple.</p>
-                  <p className="text-gray-600 text-sm">Red warning dot on fraud – 99%+ coverage across devices.</p>
+                  <p className="text-gray-600 text-sm">Red warning dot on fraud – 99%+ coverage across all devices.</p>
                 </div>
                 <Button
                   asChild
@@ -472,7 +472,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                 <div className="space-y-3 mb-6">
                   <p className="text-gray-700 font-medium">Stops phishing emails in their tracks.</p>
                   <p className="text-gray-600 text-sm">Forwards/polls emails for instant AI screening on Android & Apple.</p>
-                  <p className="text-gray-600 text-sm">Red warning dot on fraud – 99%+ coverage across devices.</p>
+                  <p className="text-gray-600 text-sm">Red warning dot on fraud – 99%+ coverage across all devices.</p>
                 </div>
                 <Button
                   asChild
@@ -505,7 +505,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                 <div className="space-y-3 mb-6">
                   <p className="text-gray-700 font-medium">Alerts on fake or hacked sites instantly.</p>
                   <p className="text-gray-600 text-sm">Audio + visual warnings for spoofed URLs, phishing, or compromised pages.</p>
-                  <p className="text-gray-600 text-sm">Red warning dot on fraud – 99%+ coverage across devices.</p>
+                  <p className="text-gray-600 text-sm">Red warning dot on fraud – 99%+ coverage across all devices.</p>
                 </div>
                 <Button
                   asChild
