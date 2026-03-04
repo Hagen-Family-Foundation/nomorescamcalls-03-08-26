@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Heart, Building2, Briefcase } from 'lucide-react';
+import { Users, Heart, GraduationCap, Briefcase } from 'lucide-react';
 import { useBrand } from '../context/BrandContext';
 
 export const WhoItsFor = () => {
@@ -9,7 +9,7 @@ export const WhoItsFor = () => {
   const iconMap = {
     Users,
     Heart,
-    Building2,
+    GraduationCap,
     Briefcase
   };
 
@@ -28,10 +28,10 @@ export const WhoItsFor = () => {
       image: 'https://images.unsplash.com/photo-1758691030817-a6271a533c42'
     },
     {
-      icon: 'Building2',
-      title: 'Small Business Owners',
-      description: 'Keep your business line professional and free from spam that wastes your time.',
-      image: 'https://images.unsplash.com/photo-1550523303-e9e27624ed35'
+      icon: 'GraduationCap',
+      title: 'College Students',
+      description: 'Away from family and juggling classes? Stay protected from scams targeting young adults while you focus on school.',
+      image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644'
     },
     {
       icon: 'Briefcase',
