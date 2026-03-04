@@ -93,13 +93,6 @@ export const Pricing = ({ onScrollToBundle }) => {
                     {planName}
                   </h3>
                   
-                  {/* Lines included badge */}
-                  {plan.linesIncluded && (
-                    <p className="text-sm font-medium mb-3" style={{ color: brand.colors.primary }}>
-                      {plan.linesIncluded} {plan.linesIncluded === 1 ? 'Line' : 'Lines'}
-                    </p>
-                  )}
-                  
                   <div className="flex items-baseline justify-center gap-1">
                     <span className="text-5xl font-bold text-gray-900">
                       ${String(planPrice || '0').replace('.00', '')}
@@ -109,9 +102,9 @@ export const Pricing = ({ onScrollToBundle }) => {
                   
                   {/* Line count emphasis - shown for Basic/Mid/Family plans */}
                   {bundleType && plan.linesIncluded && (
-                    <p className="text-base mt-2 text-gray-700">
+                    <p className="text-xl mt-2 text-gray-700">
                       <span className="mx-1">—</span>
-                      <span className="text-lg font-bold text-emerald-600">
+                      <span className="text-xl font-bold" style={{ color: brand.colors.primary }}>
                         📱 {plan.linesIncluded} {plan.linesIncluded === 1 ? 'Line' : 'Lines'}
                       </span>
                     </p>

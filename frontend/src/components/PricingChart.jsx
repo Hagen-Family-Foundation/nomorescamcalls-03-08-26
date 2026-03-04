@@ -151,8 +151,8 @@ export const PricingChart = ({ highlightedBundle }) => {
                         <span className="text-gray-700">
                           ${plan.phoneOnly.toFixed(2)}/mo
                         </span>
-                        <span className="block text-sm mt-1">
-                          — <span className="font-bold text-emerald-600">📱 {plan.lines} {plan.lines === 1 ? 'Line' : 'Lines'}</span>
+                        <span className="block text-base mt-1">
+                          — <span className="font-bold text-lg" style={{ color: brand.colors.primary }}>📱 {plan.lines} {plan.lines === 1 ? 'Line' : 'Lines'}</span>
                         </span>
                       </td>
                     );
@@ -347,7 +347,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                   <span className="text-gray-700">📱 Phone only</span>
                   <div className="text-right">
                     <span className="font-medium">${plan.phoneOnly.toFixed(2)}/mo</span>
-                    <span className="block text-sm font-bold text-emerald-600">— {plan.lines} {plan.lines === 1 ? 'Line' : 'Lines'}</span>
+                    <span className="block text-base font-bold" style={{ color: brand.colors.primary }}>— {plan.lines} {plan.lines === 1 ? 'Line' : 'Lines'}</span>
                   </div>
                 </div>
 
