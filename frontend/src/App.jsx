@@ -29,6 +29,8 @@ import { ExitIntentPopup } from './components/ExitIntentPopup';
 import { ThreatsSection } from './components/ThreatsSection';
 import { FinalCTA } from './components/FinalCTA';
 import { AboutSection } from './components/AboutSection';
+import { PricingChart } from './components/PricingChart';
+import { PricingPage } from './components/PricingPage';
 import { useBrand } from './context/BrandContext';
 
 const HomePage = () => {
@@ -53,6 +55,7 @@ const HomePage = () => {
     <PressSection />
     <TrustSafety />
     <Pricing />
+    <PricingChart />
     <FAQ />
     <FinalCTA />
     <AboutSection />
@@ -77,6 +80,7 @@ function App() {
             <Route path="/cookies" element={<CookiePolicy />} />
             <Route path="/dashboard" element={<SubscriberDashboard />} />
             <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/pricing" element={<PricingPage />} />
           </Routes>
         </BrowserRouter>
       </div>
