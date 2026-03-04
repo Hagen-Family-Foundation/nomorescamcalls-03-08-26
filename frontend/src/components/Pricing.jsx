@@ -23,10 +23,10 @@ export const Pricing = ({ onScrollToBundle }) => {
         <div className="text-center mb-12">
           <div className="relative max-w-4xl mx-auto mb-6">
             <img 
-              src="https://images.unsplash.com/photo-1565284827124-cffe93c793d4?w=1200&h=400&fit=crop&crop=center"
+              src="https://customer-assets.emergentagent.com/job_scam-stopper-app/artifacts/c6wvxyfr_image.png"
               alt="Four Pillars of Protection - Classical columns representing Phone, Text, Email, and Web protection"
               className="w-full h-48 md:h-56 object-cover rounded-2xl shadow-lg"
-              style={{ objectPosition: 'center 40%' }}
+              style={{ objectPosition: 'center 30%' }}
             />
             <div 
               className="absolute inset-0 rounded-2xl"
