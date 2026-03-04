@@ -151,8 +151,8 @@ export const PricingChart = ({ highlightedBundle }) => {
                         <span className="text-gray-700">
                           ${plan.phoneOnly.toFixed(2)}/mo
                         </span>
-                        <span className="block text-xs text-gray-500 mt-1">
-                          ({plan.lines} {plan.lines === 1 ? 'line' : 'lines'})
+                        <span className="block text-sm mt-1">
+                          — <span className="font-bold text-emerald-600">📱 {plan.lines} {plan.lines === 1 ? 'Line' : 'Lines'}</span>
                         </span>
                       </td>
                     );
@@ -345,7 +345,10 @@ export const PricingChart = ({ highlightedBundle }) => {
                 {/* Phone Only */}
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-gray-700">📱 Phone only</span>
-                  <span className="font-medium">${plan.phoneOnly.toFixed(2)}/mo</span>
+                  <div className="text-right">
+                    <span className="font-medium">${plan.phoneOnly.toFixed(2)}/mo</span>
+                    <span className="block text-sm font-bold text-emerald-600">— {plan.lines} {plan.lines === 1 ? 'Line' : 'Lines'}</span>
+                  </div>
                 </div>
 
                 {/* Add-ons */}
