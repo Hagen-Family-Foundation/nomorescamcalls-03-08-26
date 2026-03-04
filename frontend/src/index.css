@@ -44,13 +44,18 @@ code {
         --chart-5: 37 91% 55%;
         --radius: 0.5rem;
         
-        /* Custom Navy & Bright Yellow Brand Colors (Blue Angels) */
-        --navy: #002B5C;
-        --navy-dark: #001a3a;
-        --navy-light: #003d7a;
-        --yellow: #FFD700;
-        --yellow-bright: #FFEB3B;
-        --yellow-dark: #FFCC00;
+        /* Navy/Yellow/Gray Color System - Blue Angels Style */
+        --navy-900: #0a1428;
+        --navy-800: #1a2338;
+        --navy-700: #2a3a58;
+        --navy-600: #3a4a68;
+        --yellow-400: #facc15;
+        --yellow-500: #eab308;
+        --yellow-600: #ca8a04;
+        --gray-brushed-100: #f8fafc;
+        --gray-brushed-300: #d1d5db;
+        --gray-brushed-500: #6b7280;
+        --white-pure: #ffffff;
     }
   .dark {
         --background: 0 0% 3.9%;
