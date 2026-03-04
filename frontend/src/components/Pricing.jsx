@@ -19,6 +19,27 @@ export const Pricing = ({ onScrollToBundle }) => {
   return (
     <section id="pricing" className="py-20 bg-white" data-testid="pricing-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* 4 Pillars Hero Image */}
+        <div className="text-center mb-12">
+          <div className="relative max-w-4xl mx-auto mb-6">
+            <img 
+              src="https://images.unsplash.com/photo-1565284827124-cffe93c793d4?w=1200&h=400&fit=crop&crop=center"
+              alt="Four Pillars of Protection - Classical columns representing Phone, Text, Email, and Web protection"
+              className="w-full h-48 md:h-56 object-cover rounded-2xl shadow-lg"
+              style={{ objectPosition: 'center 40%' }}
+            />
+            <div 
+              className="absolute inset-0 rounded-2xl"
+              style={{ 
+                background: 'linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.3) 100%)'
+              }}
+            />
+          </div>
+          <p className="text-lg md:text-xl font-semibold text-gray-700">
+            Phone + Text + Email + Web – <span style={{ color: brand.colors.primary }}>All Protected</span>
+          </p>
+        </div>
+
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {sectionTitle}
