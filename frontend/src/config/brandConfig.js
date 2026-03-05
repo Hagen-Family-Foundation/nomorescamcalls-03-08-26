@@ -60,19 +60,19 @@ export const brands = {
     phone: getEnvVar('VITE_PHONE', '1-913-585-8300'),
     address: getEnvVar('VITE_ADDRESS', '8712 Mackey Street, Overland Park, KS 66212'),
 
-    // ========== COLORS (Navy Blue & Bright Daisy Yellow - Blue Angels Style) ==========
+    // ========== COLORS (Bright Navy Blue #1974D2 & Vivid Yellow #FACC15) ==========
     colors: {
-      primary: getEnvVar('VITE_COLOR_PRIMARY', '#002B5C'),        // Deep Navy Blue (Blue Angels)
-      primaryDark: getEnvVar('VITE_COLOR_PRIMARY_DARK', '#001a3a'), // Darker Navy
-      primaryLight: getEnvVar('VITE_COLOR_PRIMARY_LIGHT', '#003d7a'), // Lighter Navy
-      secondary: getEnvVar('VITE_COLOR_SECONDARY', '#FFD700'),    // Bright Gold/Daisy Yellow
-      secondaryDark: getEnvVar('VITE_COLOR_SECONDARY_DARK', '#FFCC00'), // Slightly darker yellow
-      accent: getEnvVar('VITE_COLOR_ACCENT', '#FFEB3B'),          // Bright Lemon Yellow
+      primary: getEnvVar('VITE_COLOR_PRIMARY', '#1974D2'),        // Bright Navy Blue
+      primaryDark: getEnvVar('VITE_COLOR_PRIMARY_DARK', '#0F172A'), // Dark bg only
+      primaryLight: getEnvVar('VITE_COLOR_PRIMARY_LIGHT', '#3B8DE0'), // Lighter Navy
+      secondary: getEnvVar('VITE_COLOR_SECONDARY', '#FACC15'),    // Vivid Bright Yellow
+      secondaryDark: getEnvVar('VITE_COLOR_SECONDARY_DARK', '#EAB308'), // Slightly darker yellow
+      accent: getEnvVar('VITE_COLOR_ACCENT', '#FDE047'),          // Light Yellow
       success: getEnvVar('VITE_COLOR_SUCCESS', '#10B981'),
       warning: getEnvVar('VITE_COLOR_WARNING', '#F59E0B'),
       error: getEnvVar('VITE_COLOR_ERROR', '#EF4444'),
       background: getEnvVar('VITE_COLOR_BACKGROUND', '#FFFFFF'),
-      text: getEnvVar('VITE_COLOR_TEXT', '#002B5C'),              // Navy for text
+      text: getEnvVar('VITE_COLOR_TEXT', '#1974D2'),              // Navy for text
       textLight: getEnvVar('VITE_COLOR_TEXT_LIGHT', '#4b5563'),
     },
 
