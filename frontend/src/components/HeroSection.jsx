@@ -3,6 +3,14 @@ import { Button } from './ui/button';
 import { ArrowRight } from 'lucide-react';
 import { useBrand } from '../context/BrandContext';
 
+// Smooth scroll helper
+const scrollToSection = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
+
 export const HeroSection = () => {
   const brand = useBrand();
 
@@ -59,10 +67,11 @@ export const HeroSection = () => {
             </p>
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Button - Get Protected → scroll to #bundles */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button
               size="lg"
+              onClick={() => scrollToSection('bundles')}
               style={{ 
                 backgroundColor: brand.colors.secondary, 
                 color: brand.colors.primary,
@@ -72,7 +81,7 @@ export const HeroSection = () => {
               className="px-8 py-6 text-lg font-bold shadow-lg hover:opacity-90 hover:shadow-xl hover:scale-105 transition-all"
               data-testid="hero-cta-primary"
             >
-              Get Protected Now
+              Get Protected
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>

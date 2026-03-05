@@ -163,7 +163,6 @@ export const PricingChart = ({ highlightedBundle }) => {
                 <tr className="border-b border-gray-100">
                   <td className="py-4 px-6 text-left font-medium text-gray-900">
                     💬 + Textinaters
-                    <span className="block text-xs text-red-600 font-semibold">($12.99/line)</span>
                   </td>
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
@@ -171,7 +170,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                       <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
                         plan.popular ? 'bg-orange-50/30' : ''
                       } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
-                        <span className="text-red-600 font-semibold">$12.99/line</span>
+                        <span className="text-green-600 font-semibold">Bundled For Savings</span>
                         <Check className="h-4 w-4 text-green-500 inline ml-2" />
                       </td>
                     );
@@ -182,7 +181,6 @@ export const PricingChart = ({ highlightedBundle }) => {
                 <tr className="border-b border-gray-100">
                   <td className="py-4 px-6 text-left font-medium text-gray-900">
                     📧 + Emailinaters
-                    <span className="block text-xs text-red-600 font-semibold">($12.99/line)</span>
                   </td>
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
@@ -190,7 +188,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                       <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
                         plan.popular ? 'bg-orange-50/30' : ''
                       } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
-                        <span className="text-red-600 font-semibold">$12.99/line</span>
+                        <span className="text-green-600 font-semibold">Bundled For Savings</span>
                         <Check className="h-4 w-4 text-green-500 inline ml-2" />
                       </td>
                     );
@@ -201,7 +199,6 @@ export const PricingChart = ({ highlightedBundle }) => {
                 <tr className="border-b border-gray-100">
                   <td className="py-4 px-6 text-left font-medium text-gray-900">
                     🌐 + Webinaters
-                    <span className="block text-xs text-red-600 font-semibold">($12.99/line)</span>
                   </td>
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
@@ -209,7 +206,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                       <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
                         plan.popular ? 'bg-orange-50/30' : ''
                       } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
-                        <span className="text-red-600 font-semibold">$12.99/line</span>
+                        <span className="text-green-600 font-semibold">Bundled For Savings</span>
                         <Check className="h-4 w-4 text-green-500 inline ml-2" />
                       </td>
                     );
@@ -272,6 +269,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                         <span className="text-2xl font-bold" style={{ color: '#eab308' }}>
                           ${plan.bundlePrice.toFixed(2)}/mo
                         </span>
+                        <span className="block text-xs font-normal text-gray-300 mt-1">(all 4 protections included)</span>
                       </td>
                     );
                   })}
@@ -383,15 +381,15 @@ export const PricingChart = ({ highlightedBundle }) => {
                 {/* Add-ons */}
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-gray-700">💬 + Textinaters</span>
-                  <span className="text-red-600 font-semibold">$12.99/line <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
+                  <span className="text-green-600 font-semibold">Bundled For Savings <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-gray-700">📧 + Emailinaters</span>
-                  <span className="text-red-600 font-semibold">$12.99/line <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
+                  <span className="text-green-600 font-semibold">Bundled For Savings <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-gray-700">🌐 + Webinaters</span>
-                  <span className="text-red-600 font-semibold">$12.99/line <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
+                  <span className="text-green-600 font-semibold">Bundled For Savings <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
                 </div>
 
                 {/* Per Line / Per Protection - NEW Affordability Row */}
@@ -419,7 +417,10 @@ export const PricingChart = ({ highlightedBundle }) => {
                 <div className="rounded-lg p-4" style={{ backgroundColor: '#0a1428' }}>
                   <div className="flex justify-between items-center">
                     <span className="font-medium text-white">✅ Bundle total</span>
-                    <span className="text-xl font-bold" style={{ color: '#eab308' }}>${plan.bundlePrice.toFixed(2)}/mo</span>
+                    <div className="text-right">
+                      <span className="text-xl font-bold" style={{ color: '#eab308' }}>${plan.bundlePrice.toFixed(2)}/mo</span>
+                      <span className="block text-xs text-gray-300">(all 4 protections included)</span>
+                    </div>
                   </div>
                 </div>
 
