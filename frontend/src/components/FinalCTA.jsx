@@ -1,7 +1,15 @@
 import React from 'react';
 import { Button } from './ui/button';
 import { useBrand, activeBrandKey } from '../context/BrandContext';
-import { ArrowRight, Calendar } from 'lucide-react';
+import { ArrowRight, Calendar, ArrowDown } from 'lucide-react';
+
+// Smooth scroll helper
+const scrollToSection = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
 
 export const FinalCTA = () => {
   const brand = useBrand();
@@ -20,12 +28,6 @@ export const FinalCTA = () => {
   const bodyCopy = isScaminater
     ? "One targeted call to the right person at the wrong moment can undo years of work. Scaminater gives you a quiet layer of protection between your leadership team and the people trying to exploit them."
     : "Phone calls, texts, emails, and secure website/shopping links – protecting families from theft, stress, and exposure to vulgar and inappropriate images and messages.";
-
-  const primaryCTA = isScaminater ? 'Start Your 7‑Day Free Trial' : 'Start Free Trial';
-  const primarySubtext = isScaminater ? 'No contracts. Cancel anytime.' : '7 days free, then just $15.99/month';
-
-  const secondaryCTA = isScaminater ? 'Schedule a 15‑Minute Demo' : 'Learn More';
-  const secondarySubtext = isScaminater ? 'Walk through real attack scenarios with us.' : 'See how it works';
 
   const reassuranceText = isScaminater
     ? "No hardware to install. No carrier change required.\nJust smarter screening around the lines that matter most."
@@ -55,44 +57,61 @@ export const FinalCTA = () => {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
-          {/* Primary CTA - Yellow button with navy text */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-6">
+          {/* Primary CTA - Start Free Trial → #bundles */}
           <div className="flex flex-col items-center">
-            <Button
-              size="lg"
-              className="px-8 py-6 text-lg font-bold flex items-center gap-2 hover:scale-105 transition-transform shadow-lg"
-              style={{ 
-                backgroundColor: brand.colors.secondary, 
-                color: brand.colors.primary,
-                border: `3px solid ${brand.colors.secondary}`
-              }}
-              data-testid="final-cta-primary"
-            >
-              {primaryCTA}
-              <ArrowRight className="h-5 w-5" />
-            </Button>
-            <span className="text-sm text-slate-300 mt-2">{primarySubtext}</span>
+            <a href="#bundles" onClick={(e) => { e.preventDefault(); scrollToSection('bundles'); }}>
+              <Button
+                size="lg"
+                className="px-8 py-6 text-lg font-bold flex items-center gap-2 hover:scale-105 transition-transform shadow-lg"
+                style={{ 
+                  backgroundColor: brand.colors.secondary, 
+                  color: brand.colors.primary,
+                  border: `3px solid ${brand.colors.secondary}`
+                }}
+                data-testid="final-cta-primary"
+              >
+                Start Free Trial
+                <ArrowRight className="h-5 w-5" />
+              </Button>
+            </a>
+            <span className="text-sm text-slate-300 mt-2">7 days free, then $15.99/mo</span>
           </div>
 
-          {/* Secondary CTA - Navy button with yellow border and text */}
+          {/* Secondary CTA - Learn More → #why-nmsc (Benefits/Pillars) */}
           <div className="flex flex-col items-center">
-            <Button
-              size="lg"
-              variant="outline"
-              className="px-8 py-6 text-lg font-bold flex items-center gap-2 hover:scale-105 transition-transform"
-              style={{ 
-                backgroundColor: 'transparent',
-                borderColor: brand.colors.secondary, 
-                borderWidth: '3px',
-                color: brand.colors.secondary 
-              }}
-              data-testid="final-cta-secondary"
-            >
-              {isScaminater && <Calendar className="h-5 w-5" />}
-              {secondaryCTA}
-            </Button>
-            <span className="text-sm text-slate-300 mt-2">{secondarySubtext}</span>
+            <a href="#why-nmsc" onClick={(e) => { e.preventDefault(); scrollToSection('why-nmsc'); }}>
+              <Button
+                size="lg"
+                variant="outline"
+                className="px-8 py-6 text-lg font-bold flex items-center gap-2 hover:scale-105 transition-transform"
+                style={{ 
+                  backgroundColor: 'transparent',
+                  borderColor: brand.colors.secondary, 
+                  borderWidth: '3px',
+                  color: brand.colors.secondary 
+                }}
+                data-testid="final-cta-secondary"
+              >
+                {isScaminater && <Calendar className="h-5 w-5" />}
+                Learn More
+                <ArrowDown className="h-5 w-5" />
+              </Button>
+            </a>
+            <span className="text-sm text-slate-300 mt-2">See why families trust us</span>
           </div>
+        </div>
+
+        {/* Tertiary Link - See how it works → #how-it-works */}
+        <div className="mb-8">
+          <a 
+            href="#how-it-works" 
+            onClick={(e) => { e.preventDefault(); scrollToSection('how-it-works'); }}
+            className="text-sm font-medium underline underline-offset-4 hover:opacity-80 transition-opacity"
+            style={{ color: brand.colors.secondary }}
+          >
+            See how it works →
+          </a>
         </div>
 
         {/* Reassurance Text */}
