@@ -24,7 +24,6 @@ const services = [
       'Red warning dot on fraud – 99%+ coverage across all devices.',
     ],
     price: '$12.99/line/mo',
-    cta: 'Save With Bundling',
   },
   {
     icon: Mail,
@@ -37,7 +36,6 @@ const services = [
       'Red warning dot on fraud – 99%+ coverage across all devices.',
     ],
     price: '$12.99/line/mo',
-    cta: 'Save With Bundling',
   },
   {
     icon: Globe,
@@ -50,11 +48,24 @@ const services = [
       'Red warning dot on fraud – 99%+ coverage across all devices.',
     ],
     price: '$12.99/line/mo',
-    cta: 'Save With Bundling',
   },
 ];
 
-const ServiceCard = ({ emoji, name, subtitle, description, features, price, cta }) => (
+// Smooth scroll function
+const scrollToBundles = () => {
+  const bundleSection = document.getElementById('bundle-comparison');
+  if (bundleSection) {
+    bundleSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    // Fallback to pricing section
+    const pricingSection = document.getElementById('pricing');
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+};
+
+const ServiceCard = ({ emoji, name, subtitle, description, features, price }) => (
   <div 
     className="rounded-2xl p-6 transition-all hover:shadow-xl hover:-translate-y-1"
     style={{ 
@@ -92,10 +103,11 @@ const ServiceCard = ({ emoji, name, subtitle, description, features, price, cta 
 
     {/* CTA Button */}
     <Button
-      className="w-full btn-secondary-3d py-3 text-base font-bold text-center justify-center"
+      onClick={scrollToBundles}
+      className="w-full btn-secondary-3d py-3 text-base font-bold text-center justify-center hover:scale-105 transition-transform"
       data-testid={`service-cta-${name.toLowerCase()}`}
     >
-      {cta}
+      See Bundle Savings ↓
     </Button>
   </div>
 );
