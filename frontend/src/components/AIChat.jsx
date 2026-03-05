@@ -18,7 +18,7 @@ const API = `${BACKEND_URL}/api`;
 
 const TOPICS = [
   { value: 'signup', label: 'Sign Up Process' },
-  { value: 'billing', label: 'Billing & Subscriptions' },
+  { value: 'refunds', label: 'Refunds & Money-Back Guarantee' },
   { value: 'upgrades', label: 'Upgrading Plans' },
   { value: 'downgrades', label: 'Downgrading Plans' },
   { value: 'cancellations', label: 'Cancellations' },

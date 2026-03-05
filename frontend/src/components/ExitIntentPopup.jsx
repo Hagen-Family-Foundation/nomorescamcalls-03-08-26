@@ -113,7 +113,8 @@ export const ExitIntentPopup = () => {
             {[
               'AI-powered scam detection',
               'Protect your entire family',
-              'Cancel anytime, no contracts'
+              'Cancel anytime, no contracts',
+              '30-day money-back guarantee'
             ].map((benefit, index) => (
               <div key={index} className="flex items-center gap-3">
                 <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">

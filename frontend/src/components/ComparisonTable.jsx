@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, X, Shield, ShieldCheck, Smartphone, Clock, DollarSign, Brain, Users } from 'lucide-react';
+import { Check, X, Shield, Smartphone, Clock, DollarSign, Brain, Users } from 'lucide-react';
 import { Button } from './ui/button';
 import { useBrand } from '../context/BrandContext';
 
@@ -44,11 +44,12 @@ export const ComparisonTable = () => {
     { feature: 'Family Protection (Multiple Lines)', traditional: 'Limited', noMoreScamCalls: 'Unlimited' },
     { feature: 'Custom Whitelist/Blacklist', traditional: 'Basic', noMoreScamCalls: 'Advanced' },
     { feature: 'Scam Attempt Reports', traditional: false, noMoreScamCalls: true },
+    { feature: 'Money-Back Guarantee', traditional: false, noMoreScamCalls: '30 Days', highlight: true },
     { feature: 'Setup Time', traditional: '30+ mins', noMoreScamCalls: '2 minutes' },
   ];
 
   const stats = [
-    { icon: ShieldCheck, value: '99.8%', label: 'Scam Detection Rate' },
+    { icon: Shield, value: '99.8%', label: 'Scam Detection Rate' },
     { icon: Clock, value: '24/7', label: 'Always-On Protection' },
     { icon: DollarSign, value: 'Real-Time', label: 'AI Analysis' },
     { icon: Users, value: 'Multi-Line', label: 'Coverage' },
@@ -128,17 +129,13 @@ export const ComparisonTable = () => {
           >
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="text-white text-center md:text-left">
-                <h3 className="text-xl font-bold mb-1">Ready to stop scam calls?</h3>
+                <h3 className="text-xl font-bold mb-1">Ready to upgrade your protection?</h3>
                 <p className="opacity-90">Join {trustIndicator} who trust {brand.appName}</p>
               </div>
               <Button
                 size="lg"
                 className="px-8 py-6 text-lg font-semibold shadow-lg whitespace-nowrap hover:opacity-90"
                 style={{ backgroundColor: 'white', color: brand.colors.primary }}
-                onClick={() => {
-                  const el = document.getElementById('bundles');
-                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }}
                 data-testid="comparison-cta-btn"
               >
                 Start 7-Day Free Trial

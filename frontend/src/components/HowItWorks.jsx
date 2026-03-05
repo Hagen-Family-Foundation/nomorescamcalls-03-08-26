@@ -1,7 +1,6 @@
 import React from 'react';
-import { Phone, CheckCircle } from 'lucide-react';
+import { Phone, Shield, CheckCircle } from 'lucide-react';
 import { useBrand } from '../context/BrandContext';
-import { ShieldLogo } from './ShieldLogo';
 
 export const HowItWorks = () => {
   const brand = useBrand();
@@ -10,31 +9,28 @@ export const HowItWorks = () => {
     {
       icon: Phone,
       title: 'Connect Your Phone',
-      description: 'Simple 2-minute setup using call forwarding. Works with any phone - no app needed.',
-      useShieldLogo: false
+      description: 'Simple 2-minute setup using call forwarding. Works with any phone - no app needed.'
     },
     {
-      icon: null,
+      icon: Shield,
       title: 'We Screen Every Call',
-      description: 'Our AI analyzes calls in real-time, blocking scammers before they can reach you.',
-      useShieldLogo: true
+      description: 'Our AI analyzes calls in real-time, blocking scammers before they can reach you.'
     },
     {
       icon: CheckCircle,
       title: 'Only Clean Calls Get Through',
-      description: 'Receive only legitimate calls from people who matter. Scammers never bother you again.',
-      useShieldLogo: false
+      description: 'Receive only legitimate calls from people who matter. Scammers never bother you again.'
     }
   ];
 
   return (
-    <section id="how-it-works" className="py-20" style={{ backgroundColor: brand.colors.primary }} data-testid="how-it-works-section">
+    <section id="how-it-works" className="py-20 bg-white" data-testid="how-it-works-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             How It Works
           </h2>
-          <p className="text-xl max-w-2xl mx-auto" style={{ color: brand.colors.secondary }}>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Three simple steps to a scam-free phone
           </p>
         </div>
@@ -48,45 +44,27 @@ export const HowItWorks = () => {
                 {index < steps.length - 1 && (
                   <div 
                     className="hidden md:block absolute top-16 left-full w-full h-0.5 -translate-x-1/2 z-0"
-                    style={{ background: `linear-gradient(to right, ${brand.colors.secondary}60, ${brand.colors.secondary}20)` }}
+                    style={{ background: `linear-gradient(to right, ${brand.colors.primary}60, ${brand.colors.primary}20)` }}
                   ></div>
                 )}
 
-                {/* Step Card with hover glow effect */}
-                <div 
-                  className="relative z-10 text-center rounded-2xl p-6"
-                  style={{
-                    transition: 'all 0.25s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-3px)';
-                    e.currentTarget.style.boxShadow = '0 0 20px rgba(250, 204, 21, 0.35)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = 'none';
-                  }}
-                >
+                <div className="relative z-10 text-center">
                   <div 
                     className="inline-flex items-center justify-center w-24 h-24 rounded-full mb-6 transition-transform hover:scale-110"
-                    style={{ backgroundColor: brand.colors.secondary }}
+                    style={{ backgroundColor: `${brand.colors.primary}20` }}
                   >
-                    {step.useShieldLogo ? (
-                      <ShieldLogo className="h-12 w-12" color={brand.colors.primary} />
-                    ) : (
-                      <Icon className="h-12 w-12" style={{ color: brand.colors.primary }} />
-                    )}
+                    <Icon className="h-12 w-12" style={{ color: brand.colors.primary }} />
                   </div>
                   <div 
-                    className="absolute top-8 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm"
-                    style={{ backgroundColor: brand.colors.primaryDark, color: brand.colors.secondary }}
+                    className="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full text-white flex items-center justify-center font-bold text-sm"
+                    style={{ backgroundColor: brand.colors.primary }}
                   >
                     {index + 1}
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-slate-200 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed">
                     {step.description}
                   </p>
                 </div>

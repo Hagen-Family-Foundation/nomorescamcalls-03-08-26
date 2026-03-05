@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Shield, CheckCircle, AlertTriangle, Clock, DollarSign, Mail, MessageSquare, Send, Info, HelpCircle } from 'lucide-react';
+import { Phone, Shield, CheckCircle, AlertTriangle, Clock, DollarSign, Mail, MessageSquare, Search, Send, Info } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
@@ -7,225 +7,174 @@ import { Label } from './ui/label';
 import { RadioGroup, RadioGroupItem } from './ui/radio-group';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { useBrand } from '../context/BrandContext';
-import { postReportNumber } from '../api/client';
+import { postCheckCall, postReportNumber } from '../api/client';
 import { ShieldLogo } from './ShieldLogo';
 
-// Color constants for the Navy/Yellow/Gray system
-const colors = {
-  navy900: '#0a1428',
-  navy800: '#1a2338',
-  navy700: '#2a3a58',
-  navy600: '#3a4a68',
-  yellow400: '#facc15',
-  yellow500: '#eab308',
-  yellow600: '#ca8a04',
-  grayBrushed100: '#f8fafc',
-  grayBrushed300: '#d1d5db',
-  grayBrushed500: '#6b7280',
-  whitePure: '#ffffff',
-};
-
 // ============================================================================
-// SUBMIT NUMBER FOR REVIEW SECTION (Replaces Check Call)
+// CHECK A CALL SECTION
 // ============================================================================
-const SubmitForReviewSection = () => {
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [reason, setReason] = useState('');
+const CheckCallSection = () => {
+  const [subscriberId, setSubscriberId] = useState('');
+  const [number, setNumber] = useState('');
   const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [result, setResult] = useState(null);
   const [error, setError] = useState('');
 
-  // Validate E.164 phone number format
-  const validateE164 = (value) => {
-    const e164Regex = /^\+?\d{8,15}$/;
-    return e164Regex.test(value.replace(/[\s\-\(\)]/g, ''));
-  };
-
-  const handleSubmit = async () => {
+  const handleCheckCall = async () => {
     setError('');
-    
-    if (!phoneNumber.trim()) {
-      setError('Phone number is required.');
-      return;
-    }
-    
-    if (!validateE164(phoneNumber.trim())) {
-      setError('Please enter a valid phone number.');
-      return;
-    }
-
+    setResult(null);
     setLoading(true);
 
-    // Send to the existing report endpoint with a "review" type
-    const response = await postReportNumber({
-      subscriberId: 'review_queue',
-      moniker: 'RV-00000',
-      reportedNumber: phoneNumber.trim().startsWith('+') ? phoneNumber.trim() : `+1${phoneNumber.trim().replace(/[\s\-\(\)]/g, '')}`,
-      reportType: 'review',
-      comment: reason.trim() || 'Submitted for team review',
+    const response = await postCheckCall({
+      subscriberId: subscriberId.trim(),
+      number: number.trim(),
     });
 
     setLoading(false);
 
-    if (response.status === 'ok' || response.status === 'error') {
-      // Show success regardless - we want to queue it for review
-      setSubmitted(true);
-      setPhoneNumber('');
-      setReason('');
+    if (response.status === 'ok') {
+      setResult(response);
+    } else if (response.status === 'error') {
+      setError(response.message || 'An error occurred.');
     }
   };
 
-  if (submitted) {
-    return (
-      <div className="dashboard-card p-8">
-        <div className="text-center">
-          <div 
-            className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
-            style={{ backgroundColor: colors.yellow500 }}
-          >
-            <CheckCircle className="h-10 w-10" style={{ color: colors.navy900 }} />
-          </div>
-          <h3 className="text-2xl font-bold mb-3" style={{ color: colors.whitePure }}>
-            Submitted for Review!
-          </h3>
-          <p className="text-lg mb-6" style={{ color: colors.grayBrushed300 }}>
-            We'll review this number and get back to you within 24 hours via email.
-          </p>
-          <Button
-            onClick={() => setSubmitted(false)}
-            className="btn-secondary-3d px-8 py-3"
-          >
-            Submit Another Number
-          </Button>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="space-y-6">
-      {/* Info Banner */}
-      <div 
-        className="rounded-xl p-4 flex items-start gap-3"
-        style={{ backgroundColor: colors.navy700, border: `1px solid ${colors.yellow500}` }}
-      >
-        <HelpCircle className="h-6 w-6 flex-shrink-0 mt-0.5" style={{ color: colors.yellow500 }} />
-        <div>
-          <p className="font-semibold" style={{ color: colors.whitePure }}>
-            Unsure about a number?
-          </p>
-          <p style={{ color: colors.grayBrushed300 }}>
-            Submit it—our team checks & responds fast. No public lookups, just human review.
-          </p>
-        </div>
-      </div>
-
-      {/* Submit Form */}
-      <div className="dashboard-card p-6">
+      <div className="bg-white rounded-lg p-6 border border-gray-300" style={{ boxShadow: '-4px 0 0 0 #000000, 0 -2px 0 0 #000000, 0 2px 0 0 #000000' }}>
         <div className="flex items-center gap-3 mb-6">
-          <div 
-            className="w-12 h-12 rounded-xl flex items-center justify-center"
-            style={{ backgroundColor: colors.yellow500 }}
-          >
-            <Send className="h-6 w-6" style={{ color: colors.navy900 }} />
-          </div>
+          <Search className="h-6 w-6 text-black" />
           <div>
-            <h3 className="text-xl font-bold" style={{ color: colors.whitePure }}>
-              Submit Number for Review
-            </h3>
-            <p style={{ color: colors.grayBrushed500 }}>
-              Our team will investigate and respond within 24 hours
-            </p>
+            <h3 className="text-lg font-bold text-black">Check a Call</h3>
+            <p className="text-sm text-gray-600">Enter a phone number to see if you should block or allow it</p>
           </div>
         </div>
 
-        <div className="space-y-5">
-          {/* Phone Number Input */}
+        <div className="space-y-4">
           <div>
-            <Label 
-              htmlFor="review-number" 
-              className="font-semibold mb-2 block"
-              style={{ color: colors.grayBrushed100 }}
-            >
-              Phone Number *
-            </Label>
+            <Label htmlFor="check-subscriber-id" className="text-black font-medium">Subscriber ID</Label>
             <Input
-              id="review-number"
-              placeholder="+1 (555) 123-4567"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              className="h-12 text-lg rounded-xl"
-              style={{ 
-                backgroundColor: colors.navy700, 
-                borderColor: colors.navy600,
-                color: colors.whitePure
-              }}
-              data-testid="review-phone-input"
+              id="check-subscriber-id"
+              placeholder="e.g., sub_123"
+              value={subscriberId}
+              onChange={(e) => setSubscriberId(e.target.value)}
+              className="mt-1 border-gray-400 focus:border-black text-black"
+              data-testid="check-call-subscriber-id"
             />
           </div>
 
-          {/* Reason Textarea */}
           <div>
-            <Label 
-              htmlFor="review-reason" 
-              className="font-semibold mb-2 block"
-              style={{ color: colors.grayBrushed100 }}
-            >
-              Why submit? <span style={{ color: colors.grayBrushed500 }}>(optional)</span>
-            </Label>
-            <Textarea
-              id="review-reason"
-              placeholder="e.g., Got a suspicious call from this number but unsure if it's a scam..."
-              value={reason}
-              onChange={(e) => setReason(e.target.value)}
-              className="min-h-[100px] rounded-xl"
-              style={{ 
-                backgroundColor: colors.navy700, 
-                borderColor: colors.navy600,
-                color: colors.whitePure
-              }}
-              data-testid="review-reason-input"
+            <Label htmlFor="check-number" className="text-black font-medium">Phone Number</Label>
+            <Input
+              id="check-number"
+              placeholder="+19135551234"
+              value={number}
+              onChange={(e) => setNumber(e.target.value)}
+              className="mt-1 border-gray-400 focus:border-black text-black"
+              data-testid="check-call-number"
             />
           </div>
 
-          {/* Error Message */}
-          {error && (
-            <div 
-              className="rounded-xl p-4 flex items-center gap-3"
-              style={{ backgroundColor: 'rgba(239, 68, 68, 0.2)', border: '1px solid #ef4444' }}
-            >
-              <AlertTriangle className="h-5 w-5 text-red-400" />
-              <span className="text-red-300">{error}</span>
-            </div>
-          )}
-
-          {/* Submit Button */}
           <Button
-            onClick={handleSubmit}
-            disabled={loading || !phoneNumber.trim()}
-            className="btn-primary-3d w-full h-14 text-lg"
-            data-testid="submit-for-review-btn"
+            onClick={handleCheckCall}
+            disabled={loading || !subscriberId.trim() || !number.trim()}
+            className="w-full text-white"
+            style={{ backgroundColor: '#000000' }}
+            data-testid="check-call-btn"
           >
             {loading ? (
-              <span className="flex items-center gap-3">
-                <span className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full"></span>
-                Submitting...
+              <span className="flex items-center gap-2">
+                <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></span>
+                Checking...
               </span>
             ) : (
-              <span className="flex items-center gap-3">
-                <Send className="h-5 w-5" />
-                Submit for Review
+              <span className="flex items-center gap-2">
+                <Search className="h-4 w-4" />
+                Check Call
               </span>
             )}
           </Button>
+
+          {error && (
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4 mt-4">
+              <div className="flex items-center gap-2 text-red-700">
+                <AlertTriangle className="h-5 w-5" />
+                <span className="font-medium">Error</span>
+              </div>
+              <p className="text-red-600 mt-1">{error}</p>
+            </div>
+          )}
         </div>
       </div>
+
+      {/* Result Display */}
+      {result && (
+        <div className="bg-white rounded-lg p-6 border border-gray-300" style={{ boxShadow: '-4px 0 0 0 #000000, 0 -2px 0 0 #000000, 0 2px 0 0 #000000' }}>
+          <h4 className="text-lg font-bold text-black mb-4">Check Result</h4>
+          
+          {/* Normalized Number */}
+          <div className="mb-4 p-3 bg-gray-50 rounded-lg">
+            <p className="text-sm text-gray-600">Normalized Number</p>
+            <p className="text-lg font-semibold text-black">{result.normalizedNumber}</p>
+          </div>
+
+          {/* Decision - Main Visual */}
+          <div className={`p-6 rounded-lg text-center mb-4 ${
+            result.decision?.shouldBlock 
+              ? 'bg-red-100 border-2 border-red-500' 
+              : 'bg-green-100 border-2 border-green-500'
+          }`}>
+            <p className={`text-3xl font-bold ${
+              result.decision?.shouldBlock ? 'text-red-700' : 'text-green-700'
+            }`}>
+              {result.decision?.shouldBlock ? '🚫 BLOCK THIS CALL' : '✅ ALLOW'}
+            </p>
+            {result.decision?.reason && (
+              <p className={`mt-2 text-sm ${
+                result.decision?.shouldBlock ? 'text-red-600' : 'text-green-600'
+              }`}>
+                {result.decision.reason}
+              </p>
+            )}
+          </div>
+
+          {/* Local Status */}
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="p-4 bg-gray-50 rounded-lg">
+              <h5 className="font-semibold text-black mb-2">Local Status</h5>
+              <p className={`font-medium ${
+                result.local?.blocked ? 'text-red-600' : 'text-gray-600'
+              }`}>
+                {result.local?.blocked ? '🔒 Locally Blocked' : '🔓 No Local Block'}
+              </p>
+              {result.local?.reason && (
+                <p className="text-sm text-gray-500 mt-1">{result.local.reason}</p>
+              )}
+            </div>
+
+            {/* Global Status */}
+            <div className="p-4 bg-gray-50 rounded-lg">
+              <h5 className="font-semibold text-black mb-2">Global Status</h5>
+              <p className={`font-medium ${
+                result.global?.status === 'bad' ? 'text-red-600' : 
+                result.global?.status === 'good' ? 'text-green-600' : 'text-gray-600'
+              }`}>
+                {result.global?.status === 'bad' ? '⚠️ Bad' : 
+                 result.global?.status === 'good' ? '✓ Good' : '❓ Unknown'}
+              </p>
+              <p className="text-sm text-gray-500 mt-1">
+                Bad Reports: {result.global?.badCount || 0} | Good Reports: {result.global?.goodCount || 0}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 // ============================================================================
-// REPORT A NUMBER SECTION (Good/Bad)
+// REPORT A NUMBER SECTION
 // ============================================================================
 const ReportNumberSection = () => {
   const [subscriberId, setSubscriberId] = useState('');
@@ -238,31 +187,46 @@ const ReportNumberSection = () => {
   const [error, setError] = useState('');
   const [validationErrors, setValidationErrors] = useState({});
 
+  // Count words in comment
   const wordCount = comment.trim() ? comment.trim().split(/\s+/).length : 0;
   const maxWords = 50;
   const isOverWordLimit = wordCount > maxWords;
 
-  const validateMoniker = (value) => /^[A-Z]{2}-\d{5}$/.test(value);
-  const validateE164 = (value) => /^\+\d{8,15}$/.test(value);
+  // Validate moniker format: "ST-12345" (2 uppercase letters, dash, 5 digits)
+  const validateMoniker = (value) => {
+    const monikerRegex = /^[A-Z]{2}-\d{5}$/;
+    return monikerRegex.test(value);
+  };
+
+  // Validate E.164 phone number format
+  const validateE164 = (value) => {
+    const e164Regex = /^\+\d{8,15}$/;
+    return e164Regex.test(value);
+  };
 
   const handleSubmit = async () => {
     setError('');
     setResult(null);
     setValidationErrors({});
 
+    // Validation
     const errors = {};
-    if (!subscriberId.trim()) errors.subscriberId = 'Subscriber ID is required.';
+    if (!subscriberId.trim()) {
+      errors.subscriberId = 'Subscriber ID is required.';
+    }
     if (!moniker.trim()) {
       errors.moniker = 'Moniker is required.';
     } else if (!validateMoniker(moniker.trim())) {
-      errors.moniker = 'Format: ST-12345';
+      errors.moniker = 'Moniker must be in format ST-12345 (two uppercase letters, dash, five digits).';
     }
     if (!reportedNumber.trim()) {
       errors.reportedNumber = 'Phone number is required.';
     } else if (!validateE164(reportedNumber.trim())) {
-      errors.reportedNumber = 'E.164 format required (e.g., +19135551234)';
+      errors.reportedNumber = 'Phone number must be in E.164 format (e.g., +19135551234).';
     }
-    if (isOverWordLimit) errors.comment = `Max 50 words (currently ${wordCount})`;
+    if (isOverWordLimit) {
+      errors.comment = `Comment must be 50 words or fewer. Currently: ${wordCount} words.`;
+    }
 
     if (Object.keys(errors).length > 0) {
       setValidationErrors(errors);
@@ -277,13 +241,18 @@ const ReportNumberSection = () => {
       reportedNumber: reportedNumber.trim(),
       reportType: reportType,
     };
-    if (comment.trim()) body.comment = comment.trim();
+
+    if (comment.trim()) {
+      body.comment = comment.trim();
+    }
 
     const response = await postReportNumber(body);
+
     setLoading(false);
 
     if (response.status === 'ok') {
       setResult(response);
+      // Clear form on success
       setSubscriberId('');
       setMoniker('');
       setReportedNumber('');
@@ -296,124 +265,129 @@ const ReportNumberSection = () => {
 
   return (
     <div className="space-y-6">
-      <div className="dashboard-card p-6">
+      <div className="bg-white rounded-lg p-6 border border-gray-300" style={{ boxShadow: '-4px 0 0 0 #000000, 0 -2px 0 0 #000000, 0 2px 0 0 #000000' }}>
         <div className="flex items-center gap-3 mb-6">
-          <div 
-            className="w-12 h-12 rounded-xl flex items-center justify-center"
-            style={{ backgroundColor: colors.yellow500 }}
-          >
-            <Send className="h-6 w-6" style={{ color: colors.navy900 }} />
-          </div>
+          <Send className="h-6 w-6 text-black" />
           <div>
-            <h3 className="text-xl font-bold" style={{ color: colors.whitePure }}>
-              Report a Number
-            </h3>
-            <p style={{ color: colors.grayBrushed500 }}>
-              Mark as good or bad to improve protection for everyone
-            </p>
+            <h3 className="text-lg font-bold text-black">Report a Number</h3>
+            <p className="text-sm text-gray-600">Report a phone number as good or bad to help improve our protection</p>
           </div>
         </div>
 
         <div className="space-y-4">
-          {/* Subscriber ID */}
           <div>
-            <Label style={{ color: colors.grayBrushed100 }}>Subscriber ID *</Label>
+            <Label htmlFor="report-subscriber-id" className="text-black font-medium">Subscriber ID *</Label>
             <Input
+              id="report-subscriber-id"
               placeholder="e.g., sub_123"
               value={subscriberId}
               onChange={(e) => setSubscriberId(e.target.value)}
-              className={`mt-1 rounded-xl ${validationErrors.subscriberId ? 'border-red-500' : ''}`}
-              style={{ backgroundColor: colors.navy700, borderColor: colors.navy600, color: colors.whitePure }}
+              className={`mt-1 border-gray-400 focus:border-black text-black ${validationErrors.subscriberId ? 'border-red-500' : ''}`}
+              data-testid="report-subscriber-id"
             />
-            {validationErrors.subscriberId && <p className="text-red-400 text-sm mt-1">{validationErrors.subscriberId}</p>}
+            {validationErrors.subscriberId && (
+              <p className="text-red-500 text-sm mt-1">{validationErrors.subscriberId}</p>
+            )}
           </div>
 
-          {/* Moniker */}
           <div>
-            <Label style={{ color: colors.grayBrushed100 }}>Moniker *</Label>
+            <Label htmlFor="report-moniker" className="text-black font-medium">Moniker *</Label>
             <Input
+              id="report-moniker"
               placeholder="e.g., KS-12345"
               value={moniker}
               onChange={(e) => setMoniker(e.target.value.toUpperCase())}
-              className={`mt-1 rounded-xl ${validationErrors.moniker ? 'border-red-500' : ''}`}
-              style={{ backgroundColor: colors.navy700, borderColor: colors.navy600, color: colors.whitePure }}
+              className={`mt-1 border-gray-400 focus:border-black text-black ${validationErrors.moniker ? 'border-red-500' : ''}`}
+              data-testid="report-moniker"
             />
-            {validationErrors.moniker && <p className="text-red-400 text-sm mt-1">{validationErrors.moniker}</p>}
+            <p className="text-xs text-gray-500 mt-1">Format: ST-12345 (two-letter state code and five digits)</p>
+            {validationErrors.moniker && (
+              <p className="text-red-500 text-sm mt-1">{validationErrors.moniker}</p>
+            )}
           </div>
 
-          {/* Phone Number */}
           <div>
-            <Label style={{ color: colors.grayBrushed100 }}>Phone Number *</Label>
+            <Label htmlFor="report-number" className="text-black font-medium">Phone Number *</Label>
             <Input
+              id="report-number"
               placeholder="+19135551234"
               value={reportedNumber}
               onChange={(e) => setReportedNumber(e.target.value)}
-              className={`mt-1 rounded-xl ${validationErrors.reportedNumber ? 'border-red-500' : ''}`}
-              style={{ backgroundColor: colors.navy700, borderColor: colors.navy600, color: colors.whitePure }}
+              className={`mt-1 border-gray-400 focus:border-black text-black ${validationErrors.reportedNumber ? 'border-red-500' : ''}`}
+              data-testid="report-number"
             />
-            {validationErrors.reportedNumber && <p className="text-red-400 text-sm mt-1">{validationErrors.reportedNumber}</p>}
+            <p className="text-xs text-gray-500 mt-1">E.164 format (starts with +, then 8-15 digits)</p>
+            {validationErrors.reportedNumber && (
+              <p className="text-red-500 text-sm mt-1">{validationErrors.reportedNumber}</p>
+            )}
           </div>
 
-          {/* Report Type - Good/Bad Buttons */}
           <div>
-            <Label style={{ color: colors.grayBrushed100 }} className="mb-3 block">Report Type *</Label>
-            <div className="grid grid-cols-2 gap-4">
-              <button
-                type="button"
-                onClick={() => setReportType('bad')}
-                className={`p-4 rounded-xl border-2 transition-all ${
-                  reportType === 'bad' 
-                    ? 'border-red-500 bg-red-500/20' 
-                    : 'border-gray-600 hover:border-red-500/50'
-                }`}
-                style={{ backgroundColor: reportType === 'bad' ? 'rgba(239, 68, 68, 0.2)' : colors.navy700 }}
-              >
-                <AlertTriangle className={`h-6 w-6 mx-auto mb-2 ${reportType === 'bad' ? 'text-red-400' : 'text-gray-500'}`} />
-                <span className={`font-semibold ${reportType === 'bad' ? 'text-red-400' : 'text-gray-400'}`}>Bad Number</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => setReportType('good')}
-                className={`p-4 rounded-xl border-2 transition-all ${
-                  reportType === 'good' 
-                    ? 'border-green-500 bg-green-500/20' 
-                    : 'border-gray-600 hover:border-green-500/50'
-                }`}
-                style={{ backgroundColor: reportType === 'good' ? 'rgba(16, 185, 129, 0.2)' : colors.navy700 }}
-              >
-                <CheckCircle className={`h-6 w-6 mx-auto mb-2 ${reportType === 'good' ? 'text-green-400' : 'text-gray-500'}`} />
-                <span className={`font-semibold ${reportType === 'good' ? 'text-green-400' : 'text-gray-400'}`}>Good Number</span>
-              </button>
-            </div>
+            <Label className="text-black font-medium">Report Type *</Label>
+            <RadioGroup
+              value={reportType}
+              onValueChange={setReportType}
+              className="flex gap-6 mt-2"
+              data-testid="report-type-group"
+            >
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="bad" id="report-bad" className="border-black text-black" />
+                <Label htmlFor="report-bad" className="text-black cursor-pointer">Bad (Block this number)</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="good" id="report-good" className="border-black text-black" />
+                <Label htmlFor="report-good" className="text-black cursor-pointer">Good (Allow this number)</Label>
+              </div>
+            </RadioGroup>
           </div>
 
-          {/* Comment */}
           <div>
-            <div className="flex justify-between">
-              <Label style={{ color: colors.grayBrushed100 }}>Comment (optional)</Label>
-              <span className={`text-xs ${isOverWordLimit ? 'text-red-400' : 'text-gray-500'}`}>{wordCount}/{maxWords}</span>
+            <div className="flex justify-between items-center">
+              <Label htmlFor="report-comment" className="text-black font-medium">Comment (optional)</Label>
+              <span className={`text-xs ${isOverWordLimit ? 'text-red-500 font-medium' : 'text-gray-500'}`}>
+                {wordCount}/{maxWords} words
+              </span>
             </div>
             <Textarea
-              placeholder="Brief explanation..."
+              id="report-comment"
+              placeholder="Brief explanation (up to 50 words)..."
               value={comment}
               onChange={(e) => setComment(e.target.value)}
-              className="mt-1 rounded-xl min-h-[80px]"
-              style={{ backgroundColor: colors.navy700, borderColor: colors.navy600, color: colors.whitePure }}
+              className={`mt-1 border-gray-400 focus:border-black text-black min-h-[100px] ${validationErrors.comment || isOverWordLimit ? 'border-red-500' : ''}`}
+              data-testid="report-comment"
             />
+            {(validationErrors.comment || isOverWordLimit) && (
+              <p className="text-red-500 text-sm mt-1">{validationErrors.comment || `Comment exceeds 50 word limit (${wordCount} words).`}</p>
+            )}
           </div>
 
-          {/* Submit */}
           <Button
             onClick={handleSubmit}
             disabled={loading || isOverWordLimit}
-            className={`w-full h-12 ${reportType === 'bad' ? 'btn-bad-3d' : 'btn-good-3d'}`}
+            className="w-full text-white"
+            style={{ backgroundColor: '#000000' }}
+            data-testid="report-submit-btn"
           >
-            {loading ? 'Submitting...' : `Report as ${reportType === 'bad' ? 'Bad' : 'Good'}`}
+            {loading ? (
+              <span className="flex items-center gap-2">
+                <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></span>
+                Submitting...
+              </span>
+            ) : (
+              <span className="flex items-center gap-2">
+                <Send className="h-4 w-4" />
+                Submit Report
+              </span>
+            )}
           </Button>
 
           {error && (
-            <div className="rounded-xl p-4 bg-red-500/20 border border-red-500">
-              <p className="text-red-300">{error}</p>
+            <div className="bg-red-50 border border-red-200 rounded-lg p-4 mt-4">
+              <div className="flex items-center gap-2 text-red-700">
+                <AlertTriangle className="h-5 w-5" />
+                <span className="font-medium">Error</span>
+              </div>
+              <p className="text-red-600 mt-1">{error}</p>
             </div>
           )}
         </div>
@@ -421,15 +395,35 @@ const ReportNumberSection = () => {
 
       {/* Success Result */}
       {result && (
-        <div 
-          className="rounded-xl p-6"
-          style={{ backgroundColor: 'rgba(16, 185, 129, 0.15)', border: '1px solid #10b981' }}
-        >
-          <div className="flex items-center gap-3 mb-4">
-            <CheckCircle className="h-6 w-6 text-green-400" />
-            <span className="text-lg font-bold text-green-300">Report Submitted!</span>
+        <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+          <div className="flex items-center gap-2 text-green-700 mb-4">
+            <CheckCircle className="h-6 w-6" />
+            <span className="text-lg font-bold">Report Submitted Successfully!</span>
           </div>
-          <p style={{ color: colors.grayBrushed300 }}>Report ID: {result.reportId}</p>
+          
+          <div className="space-y-3">
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <p className="text-sm text-gray-600">Report ID</p>
+                <p className="font-semibold text-black">{result.reportId}</p>
+              </div>
+              <div>
+                <p className="text-sm text-gray-600">Normalized Number</p>
+                <p className="font-semibold text-black">{result.normalizedNumber}</p>
+              </div>
+            </div>
+
+            {result.aggregate && (
+              <div className="pt-3 border-t border-green-200">
+                <p className="text-sm text-gray-600 mb-2">Updated Aggregate Summary</p>
+                <p className="text-black">
+                  Bad reports: <span className="font-semibold text-red-600">{result.aggregate.badCount}</span>, 
+                  Good reports: <span className="font-semibold text-green-600">{result.aggregate.goodCount}</span>, 
+                  Last reported at: <span className="font-semibold">{new Date(result.aggregate.lastReportAt).toLocaleString()}</span>
+                </p>
+              </div>
+            )}
+          </div>
         </div>
       )}
     </div>
@@ -440,12 +434,18 @@ const ReportNumberSection = () => {
 // YOUR IMPACT SECTION
 // ============================================================================
 const YourImpactSection = () => {
+  // Mock data - structured to be easily wired to a real backend endpoint later
+  // In production, these values would come from an API call like:
+  // const { data: metrics } = useMetrics(subscriberId);
   const [metrics] = useState({
     blockedScamCalls: 47,
     blockedTexts: 23,
     blockedEmails: 15,
   });
 
+  // Residential impact calculations as specified:
+  // Phone calls: $1,200 potential loss avoided, 45 min (0.75 hrs) per call
+  // Texts/emails: $1,500 potential loss avoided, 1 hour per blocked
   const phoneMetrics = {
     count: metrics.blockedScamCalls,
     estimatedLossAvoided: metrics.blockedScamCalls * 1200,
@@ -460,114 +460,106 @@ const YourImpactSection = () => {
     estimatedHoursSaved: (metrics.blockedTexts + metrics.blockedEmails) * 1,
   };
 
+  // Combined totals
   const totalEstimatedLossAvoided = phoneMetrics.estimatedLossAvoided + textEmailMetrics.estimatedLossAvoided;
   const totalEstimatedHoursSaved = phoneMetrics.estimatedHoursSaved + textEmailMetrics.estimatedHoursSaved;
 
   return (
     <div className="space-y-6">
       {/* Disclaimer */}
-      <div 
-        className="rounded-xl p-4 flex items-start gap-3"
-        style={{ backgroundColor: colors.navy700, border: `1px solid ${colors.yellow500}` }}
-      >
-        <Info className="h-5 w-5 flex-shrink-0 mt-0.5" style={{ color: colors.yellow500 }} />
-        <p style={{ color: colors.grayBrushed300 }}>
-          <strong style={{ color: colors.whitePure }}>Note:</strong> Values shown are <strong style={{ color: colors.yellow500 }}>estimates of potential loss avoided</strong>, based on industry averages.
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 flex items-start gap-3">
+        <Info className="h-5 w-5 text-blue-600 flex-shrink-0 mt-0.5" />
+        <p className="text-sm text-blue-800">
+          <strong>Note:</strong> The values shown below are <strong>estimates of potential loss avoided</strong>, not guaranteed or actual recovered money. These calculations are based on industry averages for scam-related losses.
         </p>
       </div>
 
       {/* Screening Stats */}
-      <div className="dashboard-card p-6">
-        <h3 className="text-lg font-bold mb-4" style={{ color: colors.whitePure }}>Threats Screened</h3>
+      <div className="bg-white rounded-lg p-6 border border-gray-300" style={{ boxShadow: '-4px 0 0 0 #000000, 0 -2px 0 0 #000000, 0 2px 0 0 #000000' }}>
+        <h3 className="text-lg font-bold text-black mb-4">Threats Screened</h3>
         <div className="grid md:grid-cols-3 gap-4">
-          <div className="stat-card p-5 text-center">
-            <Phone className="h-8 w-8 mx-auto mb-2" style={{ color: colors.yellow500 }} />
-            <p className="text-3xl font-bold" style={{ color: colors.whitePure }}>{phoneMetrics.count}</p>
-            <p style={{ color: colors.grayBrushed500 }}>Scam Calls Blocked</p>
+          <div className="bg-gray-50 rounded-lg p-4 text-center">
+            <Phone className="h-8 w-8 text-black mx-auto mb-2" />
+            <p className="text-3xl font-bold text-black">{phoneMetrics.count}</p>
+            <p className="text-sm text-gray-600">Scam Calls Blocked</p>
           </div>
-          <div className="stat-card p-5 text-center">
-            <MessageSquare className="h-8 w-8 mx-auto mb-2" style={{ color: colors.yellow500 }} />
-            <p className="text-3xl font-bold" style={{ color: colors.whitePure }}>{textEmailMetrics.textsCount}</p>
-            <p style={{ color: colors.grayBrushed500 }}>Scam Texts Blocked</p>
+          <div className="bg-gray-50 rounded-lg p-4 text-center">
+            <MessageSquare className="h-8 w-8 text-black mx-auto mb-2" />
+            <p className="text-3xl font-bold text-black">{textEmailMetrics.textsCount}</p>
+            <p className="text-sm text-gray-600">Scam Texts Blocked</p>
           </div>
-          <div className="stat-card p-5 text-center">
-            <Mail className="h-8 w-8 mx-auto mb-2" style={{ color: colors.yellow500 }} />
-            <p className="text-3xl font-bold" style={{ color: colors.whitePure }}>{textEmailMetrics.emailsCount}</p>
-            <p style={{ color: colors.grayBrushed500 }}>Scam Emails Blocked</p>
+          <div className="bg-gray-50 rounded-lg p-4 text-center">
+            <Mail className="h-8 w-8 text-black mx-auto mb-2" />
+            <p className="text-3xl font-bold text-black">{textEmailMetrics.emailsCount}</p>
+            <p className="text-sm text-gray-600">Scam Emails Blocked</p>
           </div>
         </div>
       </div>
 
       {/* Phone Call Impact */}
-      <div className="dashboard-card p-6">
-        <h3 className="text-lg font-bold mb-4" style={{ color: colors.whitePure }}>Phone Call Protection</h3>
+      <div className="bg-white rounded-lg p-6 border border-gray-300" style={{ boxShadow: '-4px 0 0 0 #000000, 0 -2px 0 0 #000000, 0 2px 0 0 #000000' }}>
+        <h3 className="text-lg font-bold text-black mb-4">Phone Call Protection Impact</h3>
         <div className="grid md:grid-cols-2 gap-4">
-          <div className="stat-card p-5" style={{ borderColor: '#10b981' }}>
+          <div className="bg-green-50 rounded-lg p-4">
             <div className="flex items-center gap-3 mb-2">
-              <DollarSign className="h-6 w-6 text-green-400" />
-              <span style={{ color: colors.grayBrushed300 }}>Potential Loss Avoided</span>
+              <DollarSign className="h-6 w-6 text-green-600" />
+              <span className="text-sm text-gray-600">Estimated Potential Loss Avoided</span>
             </div>
-            <p className="text-3xl font-bold text-green-400">${phoneMetrics.estimatedLossAvoided.toLocaleString()}</p>
-            <p className="text-xs mt-1" style={{ color: colors.grayBrushed500 }}>Based on $1,200/blocked scam call</p>
+            <p className="text-3xl font-bold text-green-700">${phoneMetrics.estimatedLossAvoided.toLocaleString()}</p>
+            <p className="text-xs text-gray-500 mt-1">Based on $1,200 USD estimated potential loss per blocked scam call</p>
           </div>
-          <div className="stat-card p-5" style={{ borderColor: '#3b82f6' }}>
+          <div className="bg-blue-50 rounded-lg p-4">
             <div className="flex items-center gap-3 mb-2">
-              <Clock className="h-6 w-6 text-blue-400" />
-              <span style={{ color: colors.grayBrushed300 }}>Time Saved</span>
+              <Clock className="h-6 w-6 text-blue-600" />
+              <span className="text-sm text-gray-600">Estimated Time Saved</span>
             </div>
-            <p className="text-3xl font-bold text-blue-400">{phoneMetrics.estimatedHoursSaved.toFixed(1)} hrs</p>
-            <p className="text-xs mt-1" style={{ color: colors.grayBrushed500 }}>Based on 45 min/blocked scam call</p>
+            <p className="text-3xl font-bold text-blue-700">{phoneMetrics.estimatedHoursSaved.toFixed(1)} hours</p>
+            <p className="text-xs text-gray-500 mt-1">Based on 45 minutes (0.75 hours) saved per blocked scam call</p>
           </div>
         </div>
       </div>
 
       {/* Text/Email Impact */}
-      <div className="dashboard-card p-6">
-        <h3 className="text-lg font-bold mb-4" style={{ color: colors.whitePure }}>Text & Email Protection</h3>
+      <div className="bg-white rounded-lg p-6 border border-gray-300" style={{ boxShadow: '-4px 0 0 0 #000000, 0 -2px 0 0 #000000, 0 2px 0 0 #000000' }}>
+        <h3 className="text-lg font-bold text-black mb-4">Text & Email Protection Impact</h3>
         <div className="grid md:grid-cols-2 gap-4">
-          <div className="stat-card p-5" style={{ borderColor: '#10b981' }}>
+          <div className="bg-green-50 rounded-lg p-4">
             <div className="flex items-center gap-3 mb-2">
-              <DollarSign className="h-6 w-6 text-green-400" />
-              <span style={{ color: colors.grayBrushed300 }}>Potential Loss Avoided</span>
+              <DollarSign className="h-6 w-6 text-green-600" />
+              <span className="text-sm text-gray-600">Estimated Potential Loss Avoided</span>
             </div>
-            <p className="text-3xl font-bold text-green-400">${textEmailMetrics.estimatedLossAvoided.toLocaleString()}</p>
-            <p className="text-xs mt-1" style={{ color: colors.grayBrushed500 }}>Based on $1,500/blocked scam</p>
+            <p className="text-3xl font-bold text-green-700">${textEmailMetrics.estimatedLossAvoided.toLocaleString()}</p>
+            <p className="text-xs text-gray-500 mt-1">Based on $1,500 USD estimated potential loss per blocked scam text/email</p>
           </div>
-          <div className="stat-card p-5" style={{ borderColor: '#3b82f6' }}>
+          <div className="bg-blue-50 rounded-lg p-4">
             <div className="flex items-center gap-3 mb-2">
-              <Clock className="h-6 w-6 text-blue-400" />
-              <span style={{ color: colors.grayBrushed300 }}>Time Saved</span>
+              <Clock className="h-6 w-6 text-blue-600" />
+              <span className="text-sm text-gray-600">Estimated Time Saved</span>
             </div>
-            <p className="text-3xl font-bold text-blue-400">{textEmailMetrics.estimatedHoursSaved} hrs</p>
-            <p className="text-xs mt-1" style={{ color: colors.grayBrushed500 }}>Based on 1 hr/blocked scam</p>
+            <p className="text-3xl font-bold text-blue-700">{textEmailMetrics.estimatedHoursSaved} hours</p>
+            <p className="text-xs text-gray-500 mt-1">Based on 1 hour saved per blocked scam text/email</p>
           </div>
         </div>
       </div>
 
       {/* Combined Totals */}
-      <div 
-        className="rounded-xl p-6"
-        style={{ 
-          background: `linear-gradient(135deg, ${colors.navy800} 0%, ${colors.navy900} 100%)`,
-          border: `2px solid ${colors.yellow500}`,
-          boxShadow: '0 8px 30px rgba(234, 179, 8, 0.2)'
-        }}
-      >
-        <h3 className="text-lg font-bold mb-6 text-center" style={{ color: colors.yellow500 }}>
-          Your Total Estimated Impact
-        </h3>
+      <div className="bg-black rounded-lg p-6 text-white">
+        <h3 className="text-lg font-bold mb-4">Your Total Estimated Impact</h3>
         <div className="grid md:grid-cols-2 gap-6">
           <div className="text-center">
-            <DollarSign className="h-12 w-12 mx-auto mb-3 text-green-400" />
+            <DollarSign className="h-10 w-10 text-green-400 mx-auto mb-2" />
             <p className="text-4xl font-bold text-green-400">${totalEstimatedLossAvoided.toLocaleString()}</p>
-            <p style={{ color: colors.grayBrushed300 }}>Total Potential Loss Avoided</p>
+            <p className="text-sm text-gray-300 mt-1">Total Estimated Potential Loss Avoided</p>
           </div>
           <div className="text-center">
-            <Clock className="h-12 w-12 mx-auto mb-3 text-blue-400" />
+            <Clock className="h-10 w-10 text-blue-400 mx-auto mb-2" />
             <p className="text-4xl font-bold text-blue-400">{totalEstimatedHoursSaved.toFixed(1)} hours</p>
-            <p style={{ color: colors.grayBrushed300 }}>Total Time Saved</p>
+            <p className="text-sm text-gray-300 mt-1">Total Estimated Time Saved</p>
           </div>
         </div>
+        <p className="text-xs text-gray-400 text-center mt-4">
+          These are estimates of potential loss avoided, not actual recovered money.
+        </p>
       </div>
     </div>
   );
@@ -580,30 +572,21 @@ export const SubscriberDashboard = () => {
   const brand = useBrand();
 
   return (
-    <div 
-      className="min-h-screen" 
-      style={{ backgroundColor: colors.navy900 }}
-      data-testid="subscriber-dashboard"
-    >
+    <div className="min-h-screen bg-slate-100" data-testid="subscriber-dashboard">
       {/* Header */}
-      <header style={{ backgroundColor: colors.navy800, borderBottom: `1px solid ${colors.navy700}` }}>
+      <header className="bg-white border-b border-gray-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div 
-                className="w-10 h-10 rounded-xl flex items-center justify-center"
-                style={{ backgroundColor: colors.yellow500 }}
-              >
-                <ShieldLogo className="h-6 w-6" color={colors.navy900} />
-              </div>
+            <div className="flex items-center gap-2">
+              <ShieldLogo className="h-8 w-8" />
               <div>
-                <h1 className="text-xl font-bold" style={{ color: colors.whitePure }}>{brand.appName}</h1>
-                <p style={{ color: colors.grayBrushed500 }}>Subscriber Dashboard</p>
+                <h1 className="text-xl font-bold text-black">{brand.appName}</h1>
+                <p className="text-sm text-gray-600">Subscriber Dashboard</p>
               </div>
             </div>
             <a
               href="/"
-              className="btn-secondary-3d px-5 py-2.5 rounded-xl text-sm font-semibold"
+              className="text-black border border-black px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors text-sm font-medium"
             >
               Back to Home
             </a>
@@ -613,35 +596,27 @@ export const SubscriberDashboard = () => {
 
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <Tabs defaultValue="submit-review" className="w-full">
-          <TabsList 
-            className="w-full grid grid-cols-3 h-auto p-1.5 rounded-xl mb-6"
-            style={{ backgroundColor: colors.navy800, border: `1px solid ${colors.navy700}` }}
-          >
+        <Tabs defaultValue="check-call" className="w-full">
+          <TabsList className="w-full grid grid-cols-3 bg-white border border-gray-300 h-auto p-1">
             <TabsTrigger
-              value="submit-review"
-              className="py-3 px-4 font-semibold rounded-lg transition-all data-[state=active]:shadow-lg"
-              style={{ 
-                color: colors.grayBrushed300,
-              }}
-              data-testid="tab-submit-review"
+              value="check-call"
+              className="data-[state=active]:bg-black data-[state=active]:text-white py-3 px-4 font-medium"
+              data-testid="tab-check-call"
             >
-              <HelpCircle className="h-4 w-4 mr-2" />
-              Submit for Review
+              <Search className="h-4 w-4 mr-2" />
+              Check a Call
             </TabsTrigger>
             <TabsTrigger
               value="report-number"
-              className="py-3 px-4 font-semibold rounded-lg transition-all data-[state=active]:shadow-lg"
-              style={{ color: colors.grayBrushed300 }}
+              className="data-[state=active]:bg-black data-[state=active]:text-white py-3 px-4 font-medium"
               data-testid="tab-report-number"
             >
               <Send className="h-4 w-4 mr-2" />
-              Report Number
+              Report a Number
             </TabsTrigger>
             <TabsTrigger
               value="your-impact"
-              className="py-3 px-4 font-semibold rounded-lg transition-all data-[state=active]:shadow-lg"
-              style={{ color: colors.grayBrushed300 }}
+              className="data-[state=active]:bg-black data-[state=active]:text-white py-3 px-4 font-medium"
               data-testid="tab-your-impact"
             >
               <Shield className="h-4 w-4 mr-2" />
@@ -649,8 +624,8 @@ export const SubscriberDashboard = () => {
             </TabsTrigger>
           </TabsList>
 
-          <TabsContent value="submit-review" className="mt-6">
-            <SubmitForReviewSection />
+          <TabsContent value="check-call" className="mt-6">
+            <CheckCallSection />
           </TabsContent>
 
           <TabsContent value="report-number" className="mt-6">

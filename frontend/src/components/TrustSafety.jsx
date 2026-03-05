@@ -36,9 +36,8 @@ export const TrustSafety = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Your Safety is Our Priority
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            NoMoreScamCalls is dedicated to protecting families and individuals<br />
-            from phone, text, email and web scams using advanced AI technology.
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Trusted protection you can count on
           </p>
         </div>
 

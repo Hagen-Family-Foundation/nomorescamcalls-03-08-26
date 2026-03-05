@@ -15,7 +15,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer style={{ backgroundColor: brand.colors.primary }} className="text-gray-200" data-testid="footer">
+    <footer className="bg-gray-900 text-gray-300" data-testid="footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
@@ -33,7 +33,7 @@ export const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:opacity-80 transition-opacity" 
-                style={{ color: brand.colors.secondary }}
+                style={{ color: brand.colors.primary }}
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
@@ -43,7 +43,7 @@ export const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:opacity-80 transition-opacity" 
-                style={{ color: brand.colors.secondary }}
+                style={{ color: brand.colors.primary }}
                 aria-label="X (Twitter)"
               >
                 <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
@@ -53,7 +53,7 @@ export const Footer = () => {
               <a 
                 href="#" 
                 className="hover:opacity-80 transition-opacity" 
-                style={{ color: brand.colors.secondary }}
+                style={{ color: brand.colors.primary }}
                 aria-label="Reddit"
               >
                 <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
@@ -65,7 +65,7 @@ export const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:opacity-80 transition-opacity" 
-                style={{ color: brand.colors.secondary }}
+                style={{ color: brand.colors.primary }}
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
@@ -73,7 +73,7 @@ export const Footer = () => {
               <a 
                 href="#" 
                 className="hover:opacity-80 transition-opacity" 
-                style={{ color: brand.colors.secondary }}
+                style={{ color: brand.colors.primary }}
                 aria-label="TikTok"
               >
                 <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
@@ -85,7 +85,7 @@ export const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:opacity-80 transition-opacity" 
-                style={{ color: brand.colors.secondary }}
+                style={{ color: brand.colors.primary }}
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
@@ -102,7 +102,7 @@ export const Footer = () => {
                   onClick={() => scrollToSection('how-it-works')} 
                   className="hover:opacity-80 transition-opacity"
                   style={{ color: 'inherit' }}
-                  onMouseEnter={(e) => e.target.style.color = brand.colors.secondary}
+                  onMouseEnter={(e) => e.target.style.color = brand.colors.primary}
                   onMouseLeave={(e) => e.target.style.color = 'inherit'}
                 >
                   How It Works
@@ -113,7 +113,7 @@ export const Footer = () => {
                   onClick={() => scrollToSection('pricing')} 
                   className="hover:opacity-80 transition-opacity"
                   style={{ color: 'inherit' }}
-                  onMouseEnter={(e) => e.target.style.color = brand.colors.secondary}
+                  onMouseEnter={(e) => e.target.style.color = brand.colors.primary}
                   onMouseLeave={(e) => e.target.style.color = 'inherit'}
                 >
                   Pricing
@@ -124,7 +124,7 @@ export const Footer = () => {
                   onClick={() => scrollToSection('benefits')} 
                   className="hover:opacity-80 transition-opacity"
                   style={{ color: 'inherit' }}
-                  onMouseEnter={(e) => e.target.style.color = brand.colors.secondary}
+                  onMouseEnter={(e) => e.target.style.color = brand.colors.primary}
                   onMouseLeave={(e) => e.target.style.color = 'inherit'}
                 >
                   Benefits
@@ -135,7 +135,7 @@ export const Footer = () => {
                   onClick={() => scrollToSection('faq')} 
                   className="hover:opacity-80 transition-opacity"
                   style={{ color: 'inherit' }}
-                  onMouseEnter={(e) => e.target.style.color = brand.colors.secondary}
+                  onMouseEnter={(e) => e.target.style.color = brand.colors.primary}
                   onMouseLeave={(e) => e.target.style.color = 'inherit'}
                 >
                   FAQ
@@ -153,7 +153,7 @@ export const Footer = () => {
                   href="#" 
                   className="hover:opacity-80 transition-opacity"
                   style={{ color: 'inherit' }}
-                  onMouseEnter={(e) => e.target.style.color = brand.colors.secondary}
+                  onMouseEnter={(e) => e.target.style.color = brand.colors.primary}
                   onMouseLeave={(e) => e.target.style.color = 'inherit'}
                 >
                   About Us
@@ -164,7 +164,7 @@ export const Footer = () => {
                   href="#" 
                   className="hover:opacity-80 transition-opacity"
                   style={{ color: 'inherit' }}
-                  onMouseEnter={(e) => e.target.style.color = brand.colors.secondary}
+                  onMouseEnter={(e) => e.target.style.color = brand.colors.primary}
                   onMouseLeave={(e) => e.target.style.color = 'inherit'}
                 >
                   Careers
@@ -175,7 +175,7 @@ export const Footer = () => {
                   href="#" 
                   className="hover:opacity-80 transition-opacity"
                   style={{ color: 'inherit' }}
-                  onMouseEnter={(e) => e.target.style.color = brand.colors.secondary}
+                  onMouseEnter={(e) => e.target.style.color = brand.colors.primary}
                   onMouseLeave={(e) => e.target.style.color = 'inherit'}
                 >
                   Press
@@ -186,7 +186,7 @@ export const Footer = () => {
                   href="#" 
                   className="hover:opacity-80 transition-opacity"
                   style={{ color: 'inherit' }}
-                  onMouseEnter={(e) => e.target.style.color = brand.colors.secondary}
+                  onMouseEnter={(e) => e.target.style.color = brand.colors.primary}
                   onMouseLeave={(e) => e.target.style.color = 'inherit'}
                 >
                   Partners
@@ -205,7 +205,7 @@ export const Footer = () => {
                   href={`mailto:${brand.supportEmail}`} 
                   className="hover:opacity-80 transition-opacity"
                   style={{ color: 'inherit' }}
-                  onMouseEnter={(e) => e.target.style.color = brand.colors.secondary}
+                  onMouseEnter={(e) => e.target.style.color = brand.colors.primary}
                   onMouseLeave={(e) => e.target.style.color = 'inherit'}
                 >
                   {brand.supportEmail}
@@ -217,7 +217,7 @@ export const Footer = () => {
                   href={`tel:${brand.phone}`} 
                   className="hover:opacity-80 transition-opacity"
                   style={{ color: 'inherit' }}
-                  onMouseEnter={(e) => e.target.style.color = brand.colors.secondary}
+                  onMouseEnter={(e) => e.target.style.color = brand.colors.primary}
                   onMouseLeave={(e) => e.target.style.color = 'inherit'}
                 >
                   {brand.phone}
@@ -232,7 +232,7 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
           <p>© {new Date().getFullYear()} {brand.appName}. All rights reserved.</p>
           <div className="flex gap-6">
             <Link 
