@@ -217,10 +217,10 @@ export const PricingChart = ({ highlightedBundle }) => {
                 </tr>
 
                 {/* Per Line / Per Protection Row - NEW Affordability Row */}
-                <tr className="border-b border-gray-200" style={{ backgroundColor: '#fef9c3' }}>
+                <tr className="border-b border-gray-200" style={{ backgroundColor: '#eab308' }}>
                   <td className="py-4 px-6 text-left">
-                    <span className="font-bold text-sm" style={{ color: '#854d0e' }}>Per Line / Per Protection</span>
-                    <span className="block text-xs text-gray-500 mt-1">* Approx: bundle total ÷ # lines ÷ 4 protections</span>
+                    <span className="font-bold text-sm" style={{ color: '#0a1428' }}>Per Line / Per Protection</span>
+                    <span className="block text-xs mt-1" style={{ color: '#0a1428' }}>* Approx: bundle total ÷ # lines ÷ 4 protections</span>
                   </td>
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
@@ -228,8 +228,8 @@ export const PricingChart = ({ highlightedBundle }) => {
                     return (
                       <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
                         isHighlighted ? 'bundle-highlight-column' : ''
-                      }`} style={{ backgroundColor: plan.popular ? '#fef08a' : '' }}>
-                        <span className="text-xl font-bold" style={{ color: '#854d0e' }}>
+                      }`} style={{ backgroundColor: '#eab308' }}>
+                        <span className="text-xl font-bold" style={{ color: '#0a1428' }}>
                           {perLinePrice}/mo
                         </span>
                       </td>
@@ -237,19 +237,19 @@ export const PricingChart = ({ highlightedBundle }) => {
                   })}
                 </tr>
 
-                {/* À la carte total Row - Warning/Red tone */}
-                <tr className="border-b border-gray-200 bg-red-50">
-                  <td className="py-5 px-6 text-left font-bold text-red-800">
+                {/* À la carte total Row - White with navy text */}
+                <tr className="border-b border-gray-200 bg-white">
+                  <td className="py-5 px-6 text-left font-bold" style={{ color: '#0a1428' }}>
                     ❌ À la carte total
-                    <span className="block text-xs font-normal text-red-600">(phone + all 3 add-ons)</span>
+                    <span className="block text-xs font-normal text-gray-500">(phone + all 3 add-ons)</span>
                   </td>
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
                     return (
-                      <td key={plan.id} className={`py-5 px-6 text-center transition-all duration-300 ${
-                        plan.popular ? 'bg-red-100/50' : ''
-                      } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
-                        <span className="text-2xl font-bold text-red-700 line-through decoration-2">
+                      <td key={plan.id} className={`py-5 px-6 text-center transition-all duration-300 bg-white ${
+                        isHighlighted ? 'bundle-highlight-column' : ''
+                      }`}>
+                        <span className="text-2xl font-bold line-through decoration-2" style={{ color: '#6b7280' }}>
                           ${plan.aLaCarteTotal.toFixed(2)}/mo
                         </span>
                       </td>
@@ -257,19 +257,19 @@ export const PricingChart = ({ highlightedBundle }) => {
                   })}
                 </tr>
 
-                {/* Bundle total Row - Green/Positive tone */}
-                <tr className="border-b border-gray-200 bg-green-50">
-                  <td className="py-5 px-6 text-left font-bold text-green-800">
+                {/* Bundle total Row - Navy with white text */}
+                <tr className="border-b border-gray-200" style={{ backgroundColor: '#0a1428' }}>
+                  <td className="py-5 px-6 text-left font-bold text-white">
                     ✅ Bundle total
-                    <span className="block text-xs font-normal text-green-600">(all 4 protections included)</span>
+                    <span className="block text-xs font-normal text-gray-300">(all 4 protections included)</span>
                   </td>
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
                     return (
                       <td key={plan.id} className={`py-5 px-6 text-center transition-all duration-300 ${
-                        plan.popular ? 'bg-green-100/50' : ''
-                      } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
-                        <span className="text-2xl font-bold text-green-700">
+                        isHighlighted ? 'bundle-highlight-column' : ''
+                      }`} style={{ backgroundColor: '#0a1428' }}>
+                        <span className="text-2xl font-bold" style={{ color: '#eab308' }}>
                           ${plan.bundlePrice.toFixed(2)}/mo
                         </span>
                       </td>
@@ -277,18 +277,18 @@ export const PricingChart = ({ highlightedBundle }) => {
                   })}
                 </tr>
 
-                {/* Savings Row - Strong Green */}
-                <tr className="border-b border-gray-200 bg-emerald-100">
-                  <td className="py-5 px-6 text-left font-bold text-emerald-800">
+                {/* Savings Row - Yellow with navy text */}
+                <tr className="border-b border-gray-200" style={{ backgroundColor: '#eab308' }}>
+                  <td className="py-5 px-6 text-left font-bold" style={{ color: '#0a1428' }}>
                     💰 You save vs à la carte
                   </td>
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
                     return (
                       <td key={plan.id} className={`py-5 px-6 text-center transition-all duration-300 ${
-                        plan.popular ? 'bg-emerald-200/50' : ''
-                      } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
-                        <span className="text-2xl font-bold text-emerald-700">
+                        isHighlighted ? 'bundle-highlight-column' : ''
+                      }`} style={{ backgroundColor: '#eab308' }}>
+                        <span className="text-2xl font-bold" style={{ color: '#0a1428' }}>
                           {plan.savings}% savings
                         </span>
                       </td>
@@ -395,39 +395,39 @@ export const PricingChart = ({ highlightedBundle }) => {
                 </div>
 
                 {/* Per Line / Per Protection - NEW Affordability Row */}
-                <div className="rounded-lg p-4 mt-4" style={{ backgroundColor: '#fef9c3' }}>
+                <div className="rounded-lg p-4 mt-4" style={{ backgroundColor: '#eab308' }}>
                   <div className="flex justify-between items-center">
                     <div>
-                      <span className="font-bold text-sm" style={{ color: '#854d0e' }}>Per Line / Per Protection</span>
-                      <span className="block text-xs text-gray-500 mt-1">* Approx: bundle ÷ lines ÷ 4</span>
+                      <span className="font-bold text-sm" style={{ color: '#0a1428' }}>Per Line / Per Protection</span>
+                      <span className="block text-xs mt-1" style={{ color: '#0a1428' }}>* Approx: bundle ÷ lines ÷ 4</span>
                     </div>
-                    <span className="text-xl font-bold" style={{ color: '#854d0e' }}>
+                    <span className="text-xl font-bold" style={{ color: '#0a1428' }}>
                       {plan.id === 'basic' ? '$9' : plan.id === 'mid' ? '$7' : '$6'}/mo
                     </span>
                   </div>
                 </div>
 
-                {/* À la carte Total */}
-                <div className="bg-red-50 rounded-lg p-4 mt-4">
+                {/* À la carte Total - White */}
+                <div className="rounded-lg p-4 mt-4 bg-white border border-gray-200">
                   <div className="flex justify-between items-center">
-                    <span className="text-red-800 font-medium">❌ À la carte total</span>
-                    <span className="text-xl font-bold text-red-700 line-through">${plan.aLaCarteTotal.toFixed(2)}/mo</span>
+                    <span className="font-medium" style={{ color: '#0a1428' }}>❌ À la carte total</span>
+                    <span className="text-xl font-bold line-through" style={{ color: '#6b7280' }}>${plan.aLaCarteTotal.toFixed(2)}/mo</span>
                   </div>
                 </div>
 
-                {/* Bundle Total */}
-                <div className="bg-green-50 rounded-lg p-4">
+                {/* Bundle Total - Navy */}
+                <div className="rounded-lg p-4" style={{ backgroundColor: '#0a1428' }}>
                   <div className="flex justify-between items-center">
-                    <span className="text-green-800 font-medium">✅ Bundle total</span>
-                    <span className="text-xl font-bold text-green-700">${plan.bundlePrice.toFixed(2)}/mo</span>
+                    <span className="font-medium text-white">✅ Bundle total</span>
+                    <span className="text-xl font-bold" style={{ color: '#eab308' }}>${plan.bundlePrice.toFixed(2)}/mo</span>
                   </div>
                 </div>
 
-                {/* Savings */}
-                <div className="bg-emerald-100 rounded-lg p-4">
+                {/* Savings - Yellow */}
+                <div className="rounded-lg p-4" style={{ backgroundColor: '#eab308' }}>
                   <div className="flex justify-between items-center">
-                    <span className="text-emerald-800 font-medium">💰 You save</span>
-                    <span className="text-xl font-bold text-emerald-700">{plan.savings}% savings</span>
+                    <span className="font-medium" style={{ color: '#0a1428' }}>💰 You save</span>
+                    <span className="text-xl font-bold" style={{ color: '#0a1428' }}>{plan.savings}% savings</span>
                   </div>
                 </div>
 
