@@ -60,18 +60,20 @@ export const brands = {
     phone: getEnvVar('VITE_PHONE', '1-913-585-8300'),
     address: getEnvVar('VITE_ADDRESS', '8712 Mackey Street, Overland Park, KS 66212'),
 
-    // ========== COLORS ==========
+    // ========== COLORS (Bright Navy Blue #1974D2 & Vivid Yellow #FACC15) ==========
     colors: {
-      primary: getEnvVar('VITE_COLOR_PRIMARY', '#EA580C'),
-      primaryDark: getEnvVar('VITE_COLOR_PRIMARY_DARK', '#D64A08'),
-      secondary: getEnvVar('VITE_COLOR_SECONDARY', '#1F2937'),
-      accent: getEnvVar('VITE_COLOR_ACCENT', '#3B82F6'),
+      primary: getEnvVar('VITE_COLOR_PRIMARY', '#1974D2'),        // Bright Navy Blue
+      primaryDark: getEnvVar('VITE_COLOR_PRIMARY_DARK', '#0F172A'), // Dark bg only
+      primaryLight: getEnvVar('VITE_COLOR_PRIMARY_LIGHT', '#3B8DE0'), // Lighter Navy
+      secondary: getEnvVar('VITE_COLOR_SECONDARY', '#FACC15'),    // Vivid Bright Yellow
+      secondaryDark: getEnvVar('VITE_COLOR_SECONDARY_DARK', '#EAB308'), // Slightly darker yellow
+      accent: getEnvVar('VITE_COLOR_ACCENT', '#FDE047'),          // Light Yellow
       success: getEnvVar('VITE_COLOR_SUCCESS', '#10B981'),
       warning: getEnvVar('VITE_COLOR_WARNING', '#F59E0B'),
       error: getEnvVar('VITE_COLOR_ERROR', '#EF4444'),
       background: getEnvVar('VITE_COLOR_BACKGROUND', '#FFFFFF'),
-      text: getEnvVar('VITE_COLOR_TEXT', '#1F2937'),
-      textLight: getEnvVar('VITE_COLOR_TEXT_LIGHT', '#6B7280'),
+      text: getEnvVar('VITE_COLOR_TEXT', '#1974D2'),              // Navy for text
+      textLight: getEnvVar('VITE_COLOR_TEXT_LIGHT', '#4b5563'),
     },
 
     // ========== SOCIAL MEDIA LINKS ==========
@@ -88,12 +90,12 @@ export const brands = {
       tiers: [
         {
           name: 'Basic',
-          monthlyPrice: '12.99',
-          annualPrice: '129.99',
+          monthlyPrice: '15.99',
+          annualPrice: '159.99',
+          linesIncluded: 1,
           stripeMonthlyId: getEnvVar('VITE_STRIPE_BASIC_MONTHLY', 'price_basic_monthly'),
           stripeAnnualId: getEnvVar('VITE_STRIPE_BASIC_ANNUAL', 'price_basic_annual'),
           features: [
-            '1 Line',
             'Core protection features',
             'Call screening',
             'Basic reporting',
@@ -102,12 +104,12 @@ export const brands = {
         },
         {
           name: 'Mid',
-          monthlyPrice: '21.99',
-          annualPrice: '219.99',
+          monthlyPrice: '28.99',
+          annualPrice: '289.99',
+          linesIncluded: 3,
           stripeMonthlyId: getEnvVar('VITE_STRIPE_MID_MONTHLY', 'price_mid_monthly'),
           stripeAnnualId: getEnvVar('VITE_STRIPE_MID_ANNUAL', 'price_mid_annual'),
           features: [
-            '3 Lines',
             'All Basic features',
             'Advanced filtering',
             'Priority support',
@@ -117,12 +119,12 @@ export const brands = {
         },
         {
           name: 'Family',
-          monthlyPrice: '28.99',
-          annualPrice: '289.99',
+          monthlyPrice: '47.99',
+          annualPrice: '479.99',
+          linesIncluded: 5,
           stripeMonthlyId: getEnvVar('VITE_STRIPE_FAMILY_MONTHLY', 'price_family_monthly'),
           stripeAnnualId: getEnvVar('VITE_STRIPE_FAMILY_ANNUAL', 'price_family_annual'),
           features: [
-            '5 Lines',
             'All Mid features',
             'Multiple family members',
             'Advanced AI detection',

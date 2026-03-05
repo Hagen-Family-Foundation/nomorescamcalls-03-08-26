@@ -44,7 +44,6 @@ export const ComparisonTable = () => {
     { feature: 'Family Protection (Multiple Lines)', traditional: 'Limited', noMoreScamCalls: 'Unlimited' },
     { feature: 'Custom Whitelist/Blacklist', traditional: 'Basic', noMoreScamCalls: 'Advanced' },
     { feature: 'Scam Attempt Reports', traditional: false, noMoreScamCalls: true },
-    { feature: 'Money-Back Guarantee', traditional: false, noMoreScamCalls: '30 Days', highlight: true },
     { feature: 'Setup Time', traditional: '30+ mins', noMoreScamCalls: '2 minutes' },
   ];
 

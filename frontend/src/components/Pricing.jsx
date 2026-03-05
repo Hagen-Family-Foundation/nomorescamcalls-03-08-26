@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button } from './ui/button';
-import { Check, Star } from 'lucide-react';
+import { Check, Star, ArrowDown } from 'lucide-react';
 import { mockData } from '../mock';
 import { useBrand } from '../context/BrandContext';
 
-export const Pricing = () => {
+export const Pricing = ({ onScrollToBundle }) => {
   const brand = useBrand();
 
   // Use brand pricing if available, fallback to mock data
@@ -17,10 +17,25 @@ export const Pricing = () => {
   const sectionNote = brand.pricing?.sectionNote || 'All plans include a 7-day free trial. Cancellations take effect at end of billing cycle.';
 
   return (
-    <section id="pricing" className="py-20 bg-white" data-testid="pricing-section">
+    <section id="pricing" className="pt-12 pb-20 bg-white" data-testid="pricing-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        {/* 4 Pillars Hero Image */}
+        <div className="text-center mb-3">
+          <div className="relative max-w-3xl mx-auto mb-2 overflow-hidden rounded-2xl shadow-lg">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_scam-stopper-app/artifacts/c6wvxyfr_image.png"
+              alt="Four Pillars of Protection - Classical columns representing Phone, Text, Email, and Web protection"
+              className="w-full h-64 object-cover"
+              style={{ objectPosition: 'center 75%' }}
+            />
+          </div>
+          <p className="text-lg md:text-xl font-semibold text-gray-700">
+            Phone + Text + Email + Web – <span style={{ color: brand.colors.primary }}>All Lines & Devices Protected</span>
+          </p>
+        </div>
+
+        <div className="text-center mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
             {sectionTitle}
           </h2>
           {sectionSubheading && (
@@ -50,6 +65,15 @@ export const Pricing = () => {
             const positioningLabel = plan.positioningLabel || null;
             const detailedDescription = plan.detailedDescription || null;
             const priceLabel = plan.priceLabel || '/month';
+
+            // Map plan names to bundle types for scroll behavior
+            const bundleTypeMap = {
+              'Basic': 'basic',
+              'Mid': 'mid',
+              'Family': 'family'
+            };
+            const bundleType = bundleTypeMap[planName];
+            const shouldShowBundleButton = bundleType && onScrollToBundle && !isAddon;
 
             return (
               <div
@@ -84,19 +108,22 @@ export const Pricing = () => {
                     {planName}
                   </h3>
                   
-                  {/* Lines included badge */}
-                  {plan.linesIncluded && (
-                    <p className="text-sm font-medium mb-3" style={{ color: brand.colors.primary }}>
-                      {plan.linesIncluded} lines included
-                    </p>
-                  )}
-                  
                   <div className="flex items-baseline justify-center gap-1">
                     <span className="text-5xl font-bold text-gray-900">
                       ${String(planPrice || '0').replace('.00', '')}
                     </span>
                     <span className="text-gray-600">{priceLabel}</span>
                   </div>
+                  
+                  {/* Line count emphasis - shown for Basic/Mid/Family plans */}
+                  {bundleType && plan.linesIncluded && (
+                    <p className="text-xl mt-2 text-gray-700">
+                      <span className="mx-1">—</span>
+                      <span className="text-xl font-bold" style={{ color: brand.colors.primary }}>
+                        📱 {plan.linesIncluded} {plan.linesIncluded === 1 ? 'Line' : 'Lines'}
+                      </span>
+                    </p>
+                  )}
                   
                   {isAddon && !plan.linesIncluded && (
                     <p className="text-sm text-gray-500 mt-2">per line</p>
@@ -111,19 +138,36 @@ export const Pricing = () => {
                 )}
 
                 <Button
-                  className={`w-full mb-6 ${
+                  className={`w-full mb-6 font-bold ${
                     isPopular
-                      ? 'text-white'
-                      : 'bg-white border-2'
+                      ? ''
+                      : 'bg-white'
                   }`}
                   style={
                     isPopular 
-                      ? { backgroundColor: brand.colors.primary } 
-                      : { borderColor: brand.colors.primary, color: brand.colors.primary }
+                      ? { 
+                          backgroundColor: brand.colors.secondary, 
+                          color: brand.colors.primary,
+                          border: `3px solid ${brand.colors.secondary}`
+                        } 
+                      : { 
+                          borderColor: brand.colors.primary, 
+                          borderWidth: '3px',
+                          color: brand.colors.primary,
+                          backgroundColor: 'white'
+                        }
                   }
+                  onClick={shouldShowBundleButton ? () => onScrollToBundle(bundleType) : undefined}
                   data-testid={`pricing-cta-${plan.id || index}`}
                 >
-                  Get Started
+                  {shouldShowBundleButton ? (
+                    <>
+                      See Bundle Options
+                      <ArrowDown className="ml-2 h-4 w-4 inline" />
+                    </>
+                  ) : (
+                    'Get Started'
+                  )}
                 </Button>
 
                 <ul className="space-y-3">

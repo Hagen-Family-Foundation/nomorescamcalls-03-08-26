@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -6,11 +6,11 @@ import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
 import { TrustBadges } from './components/TrustBadges';
 import { HowItWorks } from './components/HowItWorks';
+import { ServicesSection } from './components/ServicesSection';
 import { Benefits } from './components/Benefits';
 import { WhoItsFor } from './components/WhoItsFor';
 import { TrustSafety } from './components/TrustSafety';
 import { Testimonials } from './components/Testimonials';
-import { PressSection } from './components/PressSection';
 import { Pricing } from './components/Pricing';
 import { FAQ } from './components/FAQ';
 import { CTASection } from './components/CTASection';
@@ -29,10 +29,29 @@ import { ExitIntentPopup } from './components/ExitIntentPopup';
 import { ThreatsSection } from './components/ThreatsSection';
 import { FinalCTA } from './components/FinalCTA';
 import { AboutSection } from './components/AboutSection';
+import { PricingChart } from './components/PricingChart';
+import { PricingPage } from './components/PricingPage';
 import { useBrand } from './context/BrandContext';
 
 const HomePage = () => {
   const brand = useBrand();
+  const [highlightedBundle, setHighlightedBundle] = useState(null);
+
+  const handleScrollToBundle = useCallback((bundleType) => {
+    // Scroll to bundles section
+    const bundlesSection = document.getElementById('bundles-section');
+    if (bundlesSection) {
+      bundlesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    
+    // Set highlighted bundle
+    setHighlightedBundle(bundleType);
+    
+    // Clear highlight after 6 seconds
+    setTimeout(() => {
+      setHighlightedBundle(null);
+    }, 6000);
+  }, []);
   
   return (
   <>
@@ -46,15 +65,16 @@ const HomePage = () => {
     <HeroSection />
     <TrustBadges />
     <HowItWorks />
+    <ServicesSection />
     <Benefits />
     <ComparisonTable />
     <WhoItsFor />
-    <Testimonials />
-    <PressSection />
-    <TrustSafety />
-    <Pricing />
+    <Pricing onScrollToBundle={handleScrollToBundle} />
+    <PricingChart highlightedBundle={highlightedBundle} />
     <FAQ />
     <FinalCTA />
+    <Testimonials />
+    <TrustSafety />
     <AboutSection />
     <Footer />
     <ScrollToTop />
@@ -77,6 +97,7 @@ function App() {
             <Route path="/cookies" element={<CookiePolicy />} />
             <Route path="/dashboard" element={<SubscriberDashboard />} />
             <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/pricing" element={<PricingPage />} />
           </Routes>
         </BrowserRouter>
       </div>
