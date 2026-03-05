@@ -216,6 +216,27 @@ export const PricingChart = ({ highlightedBundle }) => {
                   })}
                 </tr>
 
+                {/* Per Line / Per Protection Row - NEW Affordability Row */}
+                <tr className="border-b border-gray-200" style={{ backgroundColor: '#fef9c3' }}>
+                  <td className="py-4 px-6 text-left">
+                    <span className="font-bold text-sm" style={{ color: '#854d0e' }}>Per Line / Per Protection</span>
+                    <span className="block text-xs text-gray-500 mt-1">* Approx: bundle total ÷ # lines ÷ 4 protections</span>
+                  </td>
+                  {plans.map((plan) => {
+                    const isHighlighted = highlightedBundle === plan.id;
+                    const perLinePrice = plan.id === 'basic' ? '$9' : plan.id === 'mid' ? '$7' : '$6';
+                    return (
+                      <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
+                        isHighlighted ? 'bundle-highlight-column' : ''
+                      }`} style={{ backgroundColor: plan.popular ? '#fef08a' : '' }}>
+                        <span className="text-xl font-bold" style={{ color: '#854d0e' }}>
+                          {perLinePrice}/mo
+                        </span>
+                      </td>
+                    );
+                  })}
+                </tr>
+
                 {/* À la carte total Row - Warning/Red tone */}
                 <tr className="border-b border-gray-200 bg-red-50">
                   <td className="py-5 px-6 text-left font-bold text-red-800">
@@ -371,6 +392,19 @@ export const PricingChart = ({ highlightedBundle }) => {
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-gray-700">🌐 + Webinaters</span>
                   <span className="text-red-600 font-semibold">$12.99/line <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
+                </div>
+
+                {/* Per Line / Per Protection - NEW Affordability Row */}
+                <div className="rounded-lg p-4 mt-4" style={{ backgroundColor: '#fef9c3' }}>
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <span className="font-bold text-sm" style={{ color: '#854d0e' }}>Per Line / Per Protection</span>
+                      <span className="block text-xs text-gray-500 mt-1">* Approx: bundle ÷ lines ÷ 4</span>
+                    </div>
+                    <span className="text-xl font-bold" style={{ color: '#854d0e' }}>
+                      {plan.id === 'basic' ? '$9' : plan.id === 'mid' ? '$7' : '$6'}/mo
+                    </span>
+                  </div>
                 </div>
 
                 {/* À la carte Total */}
