@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageSquare, Mail, Globe } from 'lucide-react';
+import { MessageSquare, Mail, Globe, ArrowDown } from 'lucide-react';
 import { Button } from './ui/button';
 
 // Color constants
@@ -52,16 +52,11 @@ const services = [
 ];
 
 // Smooth scroll function
-const scrollToBundles = () => {
-  const bundleSection = document.getElementById('bundle-comparison');
+const scrollToBundles = (e) => {
+  e.preventDefault();
+  const bundleSection = document.getElementById('bundles');
   if (bundleSection) {
     bundleSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  } else {
-    // Fallback to pricing section
-    const pricingSection = document.getElementById('pricing');
-    if (pricingSection) {
-      pricingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
   }
 };
 
@@ -102,13 +97,15 @@ const ServiceCard = ({ emoji, name, subtitle, description, features, price }) =>
     </ul>
 
     {/* CTA Button */}
-    <Button
-      onClick={scrollToBundles}
-      className="w-full btn-secondary-3d py-3 text-base font-bold text-center justify-center hover:scale-105 transition-transform"
-      data-testid={`service-cta-${name.toLowerCase()}`}
-    >
-      See Bundle Savings ↓
-    </Button>
+    <a href="#bundles" onClick={scrollToBundles}>
+      <Button
+        className="w-full btn-secondary-3d py-3 text-base font-bold text-center justify-center hover:scale-105 transition-transform flex items-center gap-2"
+        data-testid={`service-cta-${name.toLowerCase()}`}
+      >
+        See Bundle Savings
+        <ArrowDown className="h-4 w-4" />
+      </Button>
+    </a>
   </div>
 );
 
