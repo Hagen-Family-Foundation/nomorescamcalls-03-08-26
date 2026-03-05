@@ -269,6 +269,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                         <span className="text-2xl font-bold" style={{ color: '#eab308' }}>
                           ${plan.bundlePrice.toFixed(2)}/mo
                         </span>
+                        <span className="block text-xs font-normal text-gray-300 mt-1">(all 4 protections included)</span>
                       </td>
                     );
                   })}
@@ -416,7 +417,10 @@ export const PricingChart = ({ highlightedBundle }) => {
                 <div className="rounded-lg p-4" style={{ backgroundColor: '#0a1428' }}>
                   <div className="flex justify-between items-center">
                     <span className="font-medium text-white">✅ Bundle total</span>
-                    <span className="text-xl font-bold" style={{ color: '#eab308' }}>${plan.bundlePrice.toFixed(2)}/mo</span>
+                    <div className="text-right">
+                      <span className="text-xl font-bold" style={{ color: '#eab308' }}>${plan.bundlePrice.toFixed(2)}/mo</span>
+                      <span className="block text-xs text-gray-300">(all 4 protections included)</span>
+                    </div>
                   </div>
                 </div>
 
