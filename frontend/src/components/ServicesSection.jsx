@@ -24,7 +24,7 @@ const services = [
       'Red warning dot on fraud – 99%+ coverage across all devices.',
     ],
     price: '$12.99/line/mo',
-    cta: 'Get Textinaters',
+    cta: 'Save With Bundling',
   },
   {
     icon: Mail,
@@ -37,7 +37,7 @@ const services = [
       'Red warning dot on fraud – 99%+ coverage across all devices.',
     ],
     price: '$12.99/line/mo',
-    cta: 'Get Emailinaters',
+    cta: 'Save With Bundling',
   },
   {
     icon: Globe,
@@ -50,7 +50,7 @@ const services = [
       'Red warning dot on fraud – 99%+ coverage across all devices.',
     ],
     price: '$12.99/line/mo',
-    cta: 'Get Webinaters',
+    cta: 'Save With Bundling',
   },
 ];
 
@@ -92,10 +92,10 @@ const ServiceCard = ({ emoji, name, subtitle, description, features, price, cta 
 
     {/* CTA Button */}
     <Button
-      className="w-full btn-secondary-3d py-3 text-base font-bold"
+      className="w-full btn-secondary-3d py-3 text-base font-bold text-center justify-center"
       data-testid={`service-cta-${name.toLowerCase()}`}
     >
-      {cta} {price}
+      {cta}
     </Button>
   </div>
 );
