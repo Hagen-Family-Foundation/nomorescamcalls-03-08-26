@@ -142,7 +142,7 @@ export const Header = () => {
                   fontWeight: 700
                 }}
                 className="transition-all duration-300 hover:opacity-90 hover:scale-105"
-                onClick={() => scrollToSection('pricing')}
+                onClick={() => scrollToSection('bundles')}
                 data-testid="header-cta"
               >
                 {isScrolled ? 'Start Free Trial' : 'Get Protected'}
@@ -211,7 +211,7 @@ export const Header = () => {
                     fontWeight: 700
                   }}
                   className="w-full hover:opacity-90"
-                  onClick={() => scrollToSection('pricing')}
+                  onClick={() => scrollToSection('bundles')}
                 >
                   Start Free Trial
                 </Button>

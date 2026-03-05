@@ -3,6 +3,14 @@ import { Button } from './ui/button';
 import { ArrowRight } from 'lucide-react';
 import { useBrand } from '../context/BrandContext';
 
+// Smooth scroll helper
+const scrollToSection = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
+
 export const CTASection = () => {
   const brand = useBrand();
   const ctaText = brand.messaging?.ctaText || "Take back control of your phone today.";
@@ -21,7 +29,7 @@ export const CTASection = () => {
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-          Ready to Stop Scam Calls Forever?
+          Ready to Stop Scam Calls?
         </h2>
         <p className="text-xl md:text-2xl mb-8 opacity-95 leading-relaxed">
           {ctaText}
@@ -32,9 +40,10 @@ export const CTASection = () => {
             size="lg"
             className="px-8 py-6 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all hover:opacity-90"
             style={{ backgroundColor: 'white', color: brand.colors.primary }}
+            onClick={() => scrollToSection('bundles')}
             data-testid="cta-primary-btn"
           >
-            Get Protected Now
+            Get Protected
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
           <span className="text-white/90">7-day free trial • Credit Card Required</span>

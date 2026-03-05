@@ -52,7 +52,21 @@ export const HowItWorks = () => {
                   ></div>
                 )}
 
-                <div className="relative z-10 text-center">
+                {/* Step Card with hover glow effect */}
+                <div 
+                  className="relative z-10 text-center rounded-2xl p-6"
+                  style={{
+                    transition: 'all 0.25s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-3px)';
+                    e.currentTarget.style.boxShadow = '0 0 20px rgba(250, 204, 21, 0.35)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                >
                   <div 
                     className="inline-flex items-center justify-center w-24 h-24 rounded-full mb-6 transition-transform hover:scale-110"
                     style={{ backgroundColor: brand.colors.secondary }}
@@ -64,7 +78,7 @@ export const HowItWorks = () => {
                     )}
                   </div>
                   <div 
-                    className="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm"
+                    className="absolute top-8 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm"
                     style={{ backgroundColor: brand.colors.primaryDark, color: brand.colors.secondary }}
                   >
                     {index + 1}
