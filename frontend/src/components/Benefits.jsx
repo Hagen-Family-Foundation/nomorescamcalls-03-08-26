@@ -41,7 +41,7 @@ export const Benefits = () => {
   const benefits = brand.benefits || defaultBenefits;
 
   return (
-    <section id="why-nmsc" className="py-20 bg-white" data-testid="benefits-section">
+    <section id="pillars" className="py-20 bg-white" data-testid="benefits-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#0a1428' }}>
