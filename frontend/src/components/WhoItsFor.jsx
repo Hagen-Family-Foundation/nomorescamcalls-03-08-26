@@ -49,10 +49,10 @@ export const WhoItsFor = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#0a1428' }}>
-            Who is the "4 Pillars of Protection" for?
+            Who needs the 4 Pillars of Protection?
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Protection for everyone, from families to professionals
+            Protection for family, friends and neighbors.
           </p>
         </div>
 
