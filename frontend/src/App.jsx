@@ -13,7 +13,6 @@ import { TrustSafety } from './components/TrustSafety';
 import { Testimonials } from './components/Testimonials';
 import { Pricing } from './components/Pricing';
 import { FAQ } from './components/FAQ';
-import { CTASection } from './components/CTASection';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
 import { AIChat } from './components/AIChat';
