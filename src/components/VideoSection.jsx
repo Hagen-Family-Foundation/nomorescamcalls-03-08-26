@@ -1,21 +1,17 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 
 /**
  * VideoSection - Explanatory video for scam call protection
  * Placed BELOW Hero, ABOVE Features for optimal conversion
  * 
  * Video: "Protect Your Peace: Stop Scam Calls with Grace"
- * Source: Hypernatural AI
+ * Native MP4 player (hosted on Cloudflare)
  */
 export const VideoSection = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef(null);
 
-  const videoUrl = 'https://app.hypernatural.ai/v/rd6QAE_VSB0/';
+  const videoUrl = '/videos/protect-your-peace.mp4';
   const thumbnailUrl = 'https://d19fa2ka4qs0b8.cloudfront.net/clips/rd6QAE_VSB0/20260201_022505-protect-your-peace-stop-scam-calls-with-grace-thumbnail.jpg';
-
-  const handlePlayClick = () => {
-    setIsPlaying(true);
-  };
 
   return (
     <section className="relative py-16 md:py-24 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
@@ -36,51 +32,18 @@ export const VideoSection = () => {
         {/* Video Container */}
         <div className="max-w-4xl mx-auto">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-blue-500/20 border border-slate-700/50">
-            {!isPlaying ? (
-              /* Thumbnail with Play Button */
-              <div 
-                className="relative cursor-pointer group"
-                onClick={handlePlayClick}
-              >
-                <img 
-                  src={thumbnailUrl}
-                  alt="Protect Your Peace: Stop Scam Calls with Grace"
-                  className="w-full aspect-video object-cover"
-                />
-                {/* Dark overlay */}
-                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-all duration-300"></div>
-                
-                {/* Play Button */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 md:w-24 md:h-24 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg shadow-yellow-400/30 group-hover:scale-110 transition-transform duration-300">
-                    <svg 
-                      className="w-8 h-8 md:w-10 md:h-10 text-slate-900 ml-1" 
-                      fill="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M8 5v14l11-7z"/>
-                    </svg>
-                  </div>
-                </div>
-
-                {/* Duration badge */}
-                <div className="absolute bottom-4 right-4 bg-black/70 text-white text-sm px-3 py-1 rounded-lg">
-                  2:30
-                </div>
-              </div>
-            ) : (
-              /* Iframe Video Player */
-              <div className="aspect-video">
-                <iframe
-                  src={videoUrl}
-                  title="Protect Your Peace: Stop Scam Calls with Grace"
-                  className="w-full h-full"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            )}
+            {/* Native Video Player */}
+            <video
+              ref={videoRef}
+              controls
+              poster={thumbnailUrl}
+              className="w-full aspect-video object-cover"
+              preload="metadata"
+              playsInline
+            >
+              <source src={videoUrl} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
 
           {/* Video Caption */}
