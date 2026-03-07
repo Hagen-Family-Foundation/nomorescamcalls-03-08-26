@@ -7,7 +7,7 @@ export const Dashboard = () => {
   const brand = useBrand();
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white" style={{ fontFamily: 'Inter, system-ui, -apple-system, sans-serif' }}>
       {/* Header */}
       <header className="bg-blue-900 border-b border-blue-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -22,7 +22,7 @@ export const Dashboard = () => {
             </div>
             <a
               href="/"
-              className="bg-white text-blue-900 px-6 py-3 rounded-xl text-lg font-bold hover:bg-gray-100 transition-colors"
+              className="bg-white text-blue-900 px-6 py-3 rounded-lg text-lg font-bold hover:bg-gray-100 transition-colors border border-blue-200"
             >
               Back to Home
             </a>

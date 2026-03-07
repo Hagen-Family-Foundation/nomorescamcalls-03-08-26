@@ -3,28 +3,28 @@ import { AnimatedCounter } from '../AnimatedCounter';
 
 const mockData = [
   {
-    protection: 'Phone Protection',
-    blocked: 234,
-    moneySaved: 208800,
-    timeSaved: 175.5
+    protection: '📞 PHONE PROTECTION (BLOCKED)',
+    total: 1247,
+    potentialLoss: 3741,
+    timeSaved: 42
   },
   {
-    protection: 'Text Protection',
-    blocked: 893,
-    moneySaved: 1071600,
-    timeSaved: 669.75
+    protection: '📱 TEXT PROTECTION (NOTED)',
+    total: 893,
+    potentialLoss: 1892,
+    timeSaved: 28
   },
   {
-    protection: 'Email Protection',
-    blocked: 2104,
-    moneySaved: 2524800,
-    timeSaved: 1578
+    protection: '📧 EMAIL PROTECTION (NOTED)',
+    total: 2104,
+    potentialLoss: 5621,
+    timeSaved: 61
   },
   {
-    protection: 'Web Protection',
-    blocked: 671,
-    moneySaved: 805200,
-    timeSaved: 503.25
+    protection: '🌐 WEB PROTECTION (NOTED)',
+    total: 671,
+    potentialLoss: 2103,
+    timeSaved: 19
   }
 ];
 
@@ -38,57 +38,57 @@ export const PhoneTextEmailWebGrid = () => {
   }, []);
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg p-6 md:p-10 overflow-x-auto">
+    <div className="bg-white rounded-lg p-8 md:p-10 overflow-x-auto" style={{ fontFamily: 'Inter, system-ui, -apple-system, sans-serif' }}>
       <div className="min-w-[800px]">
         {/* Grid Layout */}
         <div className="grid grid-cols-4 gap-6">
           {/* Top-left corner cell (empty) */}
           <div></div>
           
-          {/* Column Headers */}
-          <div className="text-center">
-            <h3 className="text-blue-900 font-bold text-2xl md:text-3xl">
-              Total Blocked
+          {/* Column Headers - 20px Navy Bold */}
+          <div className="text-center pb-4 border-b border-gray-200">
+            <h3 className="text-[20px] font-bold text-[#1e3a8a] leading-tight">
+              TOTAL<br/>NOTED/BLOCKED
             </h3>
           </div>
-          <div className="text-center">
-            <h3 className="text-blue-900 font-bold text-2xl md:text-3xl">
-              Potential $$ Saved
+          <div className="text-center pb-4 border-b border-gray-200">
+            <h3 className="text-[20px] font-bold text-[#1e3a8a] leading-tight">
+              POTENTIAL $$<br/>LOSS AVOIDED
             </h3>
           </div>
-          <div className="text-center">
-            <h3 className="text-blue-900 font-bold text-2xl md:text-3xl">
-              Potential Time Saved
+          <div className="text-center pb-4 border-b border-gray-200">
+            <h3 className="text-[20px] font-bold text-[#1e3a8a] leading-tight">
+              TIME SAVED<br/>(hours)
             </h3>
           </div>
 
           {/* Data Rows */}
           {mockData.map((row, index) => (
             <React.Fragment key={index}>
-              {/* Protection Name (Left Column) */}
-              <div className="flex items-center">
-                <h4 className="text-blue-900 font-bold text-2xl md:text-3xl">
+              {/* Protection Name (Left Column) - 24px Navy */}
+              <div className="flex items-center py-6 border-b border-gray-100">
+                <h4 className="text-[24px] font-normal text-[#1e3a8a] leading-tight">
                   {row.protection}
                 </h4>
               </div>
               
-              {/* Total Blocked */}
-              <div className="flex items-center justify-center bg-blue-50 rounded-xl p-6">
-                <p className="text-yellow-400 font-bold text-4xl md:text-5xl">
+              {/* Total Noted/Blocked Cell */}
+              <div className="flex flex-col items-center justify-center py-6 border-b border-gray-100 border-l border-gray-100">
+                <p className="text-[18px] font-bold text-yellow-400 mb-1">
                   {animate ? (
-                    <AnimatedCounter value={row.blocked} duration={2000} />
+                    <AnimatedCounter value={row.total} duration={2000} />
                   ) : (
                     '0'
                   )}
                 </p>
               </div>
               
-              {/* Money Saved */}
-              <div className="flex items-center justify-center bg-blue-50 rounded-xl p-6">
-                <p className="text-yellow-400 font-bold text-4xl md:text-5xl">
+              {/* Potential Loss Cell */}
+              <div className="flex flex-col items-center justify-center py-6 border-b border-gray-100 border-l border-gray-100">
+                <p className="text-[18px] font-bold text-yellow-400 mb-1">
                   {animate ? (
                     <>
-                      $<AnimatedCounter value={row.moneySaved} duration={2000} />
+                      $<AnimatedCounter value={row.potentialLoss} duration={2000} />
                     </>
                   ) : (
                     '$0'
@@ -96,15 +96,15 @@ export const PhoneTextEmailWebGrid = () => {
                 </p>
               </div>
               
-              {/* Time Saved */}
-              <div className="flex items-center justify-center bg-blue-50 rounded-xl p-6">
-                <p className="text-yellow-400 font-bold text-4xl md:text-5xl">
+              {/* Time Saved Cell */}
+              <div className="flex flex-col items-center justify-center py-6 border-b border-gray-100 border-l border-gray-100">
+                <p className="text-[18px] font-bold text-yellow-400 mb-1">
                   {animate ? (
                     <>
-                      <AnimatedCounter value={row.timeSaved} duration={2000} decimals={row.timeSaved % 1 !== 0 ? 2 : 0} /> hrs
+                      <AnimatedCounter value={row.timeSaved} duration={2000} />h
                     </>
                   ) : (
-                    '0 hrs'
+                    '0h'
                   )}
                 </p>
               </div>
@@ -113,8 +113,8 @@ export const PhoneTextEmailWebGrid = () => {
         </div>
       </div>
       
-      {/* Mobile Notice */}
-      <div className="md:hidden mt-6 text-center text-blue-900 text-sm">
+      {/* Mobile Notice - 14px gray */}
+      <div className="md:hidden mt-6 text-center text-gray-500 text-[14px]">
         <p>Scroll horizontally to view all metrics →</p>
       </div>
     </div>
