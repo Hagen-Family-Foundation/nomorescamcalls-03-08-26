@@ -24,6 +24,7 @@ import { CookiePolicy } from './components/CookiePolicy';
 import { SEO } from './components/SEO';
 import { SubscriberDashboard } from './components/SubscriberDashboard';
 import { AdminDashboard } from './components/AdminDashboard';
+import { Dashboard } from './components/Dashboard';
 import { ComparisonTable } from './components/ComparisonTable';
 import { ExitIntentPopup } from './components/ExitIntentPopup';
 import { ThreatsSection } from './components/ThreatsSection';
@@ -97,7 +98,8 @@ function App() {
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/disclaimer" element={<AIDisclaimer />} />
             <Route path="/cookies" element={<CookiePolicy />} />
-            <Route path="/dashboard" element={<SubscriberDashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/subscriber" element={<SubscriberDashboard />} />
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/pricing" element={<PricingPage />} />
           </Routes>
