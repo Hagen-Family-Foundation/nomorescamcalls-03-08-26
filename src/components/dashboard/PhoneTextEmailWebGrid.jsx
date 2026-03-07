@@ -81,21 +81,21 @@ export const PhoneTextEmailWebGrid = () => {
                 </div>
               </MetricBox>
               
-              {/* Total Box - 32px Yellow, BOLD */}
+              {/* Total Box - 36px BRIGHT YELLOW BOLD */}
               <MetricBox variant="yellow" className="flex flex-col items-center justify-center">
-                <div className="text-[32px] font-bold leading-none mb-1">
+                <div className="text-[36px] font-black leading-none mb-1 text-[#FFEB3B]">
                   {animate ? (
                     <AnimatedCounter value={row.total} duration={2000} />
                   ) : (
                     '0'
                   )}
                 </div>
-                <div className="text-[14px] text-[#1E3A8A] font-bold">{row.totalLabel}</div>
+                <div className="text-[16px] text-[#1E3A8A] font-bold">{row.totalLabel}</div>
               </MetricBox>
               
-              {/* Potential Loss Box - 32px Yellow, BOLD */}
+              {/* Potential Loss Box - 36px BRIGHT YELLOW BOLD */}
               <MetricBox variant="yellow" className="flex flex-col items-center justify-center">
-                <div className="text-[32px] font-bold leading-none mb-1">
+                <div className="text-[36px] font-black leading-none mb-1 text-[#FFEB3B]">
                   {animate ? (
                     <>
                       $<AnimatedCounter value={row.potentialLoss} duration={2000} />
@@ -104,12 +104,12 @@ export const PhoneTextEmailWebGrid = () => {
                     '$0'
                   )}
                 </div>
-                <div className="text-[14px] text-[#1E3A8A] font-bold">AVOIDED</div>
+                <div className="text-[16px] text-[#1E3A8A] font-bold">AVOIDED</div>
               </MetricBox>
               
-              {/* Time Saved Box - 32px Yellow, BOLD */}
+              {/* Time Saved Box - 36px BRIGHT YELLOW BOLD */}
               <MetricBox variant="yellow" className="flex flex-col items-center justify-center">
-                <div className="text-[32px] font-bold leading-none mb-1">
+                <div className="text-[36px] font-black leading-none mb-1 text-[#FFEB3B]">
                   {animate ? (
                     <>
                       <AnimatedCounter value={row.timeSaved} duration={2000} />h
@@ -118,7 +118,7 @@ export const PhoneTextEmailWebGrid = () => {
                     '0h'
                   )}
                 </div>
-                <div className="text-[14px] text-[#1E3A8A] font-bold">HOURS</div>
+                <div className="text-[16px] text-[#1E3A8A] font-bold">HOURS</div>
               </MetricBox>
             </div>
           ))}

@@ -93,12 +93,11 @@ export const SubmitForm = () => {
           </div>
         </div>
 
-        {/* Submit Button */}
+        {/* Submit Button - PURE BRIGHT YELLOW */}
         <button
           type="submit"
           disabled={!phoneNumber.trim() || loading || submitted}
-          className="w-full h-16 text-xl font-bold rounded-lg text-[#1E3A8A] disabled:opacity-50"
-          style={{ backgroundColor: '#FFEB3B' }}
+          className="w-full h-16 text-xl font-bold rounded-lg bg-[#FFEB3B] text-[#1E3A8A] hover:bg-[#FDD835] disabled:opacity-50 border-2 border-[#1E3A8A]"
         >
           {submitted ? (
             <span className="flex items-center justify-center gap-3">
