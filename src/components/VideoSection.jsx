@@ -10,8 +10,8 @@ import React, { useRef } from 'react';
 export const VideoSection = () => {
   const videoRef = useRef(null);
 
-  // R2 Bucket: grace-long-video (Cloudflare CDN)
-  const videoUrl = 'https://pub-20136b34b6434cedadad5f163860e29c.r2.dev/protect-your-peace.mp4';
+  // Video hosted on Emergent CDN
+  const videoUrl = 'https://customer-assets.emergentagent.com/job_git-save-verify/artifacts/2fxpg53p_protect-your-peace-stop-scam-calls-with-grace-widescreen%20%281%29.mp4';
   const thumbnailUrl = 'https://d19fa2ka4qs0b8.cloudfront.net/clips/rd6QAE_VSB0/20260201_022505-protect-your-peace-stop-scam-calls-with-grace-thumbnail.jpg';
 
   return (
