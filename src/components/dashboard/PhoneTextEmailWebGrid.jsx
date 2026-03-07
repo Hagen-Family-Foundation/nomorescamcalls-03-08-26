@@ -81,9 +81,14 @@ export const PhoneTextEmailWebGrid = () => {
                 </div>
               </MetricBox>
               
-              {/* Total Box - 36px BRIGHT YELLOW BOLD */}
+              {/* Total Box - 36px BRIGHT YELLOW BOLD with outline */}
               <MetricBox variant="yellow" className="flex flex-col items-center justify-center">
-                <div className="text-[36px] font-black leading-none mb-1 text-[#FFEB3B]">
+                <div 
+                  className="text-[36px] font-black leading-none mb-1 text-[#FFEB3B]"
+                  style={{ 
+                    textShadow: '1px 1px 0 #1E3A8A, -1px -1px 0 #1E3A8A, 1px -1px 0 #1E3A8A, -1px 1px 0 #1E3A8A'
+                  }}
+                >
                   {animate ? (
                     <AnimatedCounter value={row.total} duration={2000} />
                   ) : (
@@ -93,9 +98,14 @@ export const PhoneTextEmailWebGrid = () => {
                 <div className="text-[16px] text-[#1E3A8A] font-bold">{row.totalLabel}</div>
               </MetricBox>
               
-              {/* Potential Loss Box - 36px BRIGHT YELLOW BOLD */}
+              {/* Potential Loss Box - 36px BRIGHT YELLOW BOLD with outline */}
               <MetricBox variant="yellow" className="flex flex-col items-center justify-center">
-                <div className="text-[36px] font-black leading-none mb-1 text-[#FFEB3B]">
+                <div 
+                  className="text-[36px] font-black leading-none mb-1 text-[#FFEB3B]"
+                  style={{ 
+                    textShadow: '1px 1px 0 #1E3A8A, -1px -1px 0 #1E3A8A, 1px -1px 0 #1E3A8A, -1px 1px 0 #1E3A8A'
+                  }}
+                >
                   {animate ? (
                     <>
                       $<AnimatedCounter value={row.potentialLoss} duration={2000} />
@@ -107,9 +117,14 @@ export const PhoneTextEmailWebGrid = () => {
                 <div className="text-[16px] text-[#1E3A8A] font-bold">AVOIDED</div>
               </MetricBox>
               
-              {/* Time Saved Box - 36px BRIGHT YELLOW BOLD */}
+              {/* Time Saved Box - 36px BRIGHT YELLOW BOLD with outline */}
               <MetricBox variant="yellow" className="flex flex-col items-center justify-center">
-                <div className="text-[36px] font-black leading-none mb-1 text-[#FFEB3B]">
+                <div 
+                  className="text-[36px] font-black leading-none mb-1 text-[#FFEB3B]"
+                  style={{ 
+                    textShadow: '1px 1px 0 #1E3A8A, -1px -1px 0 #1E3A8A, 1px -1px 0 #1E3A8A, -1px 1px 0 #1E3A8A'
+                  }}
+                >
                   {animate ? (
                     <>
                       <AnimatedCounter value={row.timeSaved} duration={2000} />h
