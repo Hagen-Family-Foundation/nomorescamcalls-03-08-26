@@ -33,7 +33,7 @@ export const SubmitForm = () => {
       {/* Complete 4 Pillars Protection Banner - 36px */}
       <div className="bg-[#1E3A8A] text-white rounded-lg p-8 mb-8 text-center border border-[#1E3A8A]">
         <div className="flex items-center justify-center gap-4">
-          <div className="w-12 h-12 bg-[#FFEA00] rounded-full flex items-center justify-center">
+          <div className="w-12 h-12 bg-[#FFD700] rounded-full flex items-center justify-center">
             <CheckCircle className="h-7 w-7 text-[#1E3A8A]" />
           </div>
           <h2 className="text-[36px] font-bold tracking-tight">COMPLETE 4 PILLARS PROTECTION</h2>
@@ -71,7 +71,7 @@ export const SubmitForm = () => {
                 disabled={loading || submitted}
                 className={`rounded-lg font-bold text-lg transition-all border ${
                   reportType === 'good'
-                    ? 'bg-[#FFEA00] border-[#1E3A8A] text-[#1E3A8A]'
+                    ? 'bg-[#FFD700] border-[#1E3A8A] text-[#1E3A8A]'
                     : 'bg-white border-[#1E3A8A] text-[#1E3A8A]'
                 }`}
               >
@@ -83,7 +83,7 @@ export const SubmitForm = () => {
                 disabled={loading || submitted}
                 className={`rounded-lg font-bold text-lg transition-all border ${
                   reportType === 'bad'
-                    ? 'bg-[#FFEA00] border-[#1E3A8A] text-[#1E3A8A]'
+                    ? 'bg-[#FFD700] border-[#1E3A8A] text-[#1E3A8A]'
                     : 'bg-white border-[#1E3A8A] text-[#1E3A8A]'
                 }`}
               >
@@ -99,8 +99,8 @@ export const SubmitForm = () => {
           disabled={!phoneNumber.trim() || loading || submitted}
           className={`w-full h-16 text-xl font-bold rounded-lg transition-all ${
             submitted
-              ? 'bg-[#FFEA00] hover:bg-[#FFEA00] text-[#1E3A8A]'
-              : 'bg-[#FFEA00] hover:bg-[#FFF59D] text-[#1E3A8A]'
+              ? 'bg-[#FFD700] hover:bg-[#FFD700] text-[#1E3A8A]'
+              : 'bg-[#FFD700] hover:bg-[#FFC107] text-[#1E3A8A]'
           }`}
         >
           {submitted ? (
