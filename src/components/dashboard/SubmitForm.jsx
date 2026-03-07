@@ -97,7 +97,12 @@ export const SubmitForm = () => {
         <button
           type="submit"
           disabled={!phoneNumber.trim() || loading || submitted}
-          className="w-full h-16 text-xl font-bold rounded-lg bg-[#FFEB3B] text-[#1E3A8A] hover:bg-[#FDD835] disabled:opacity-50 border-2 border-[#1E3A8A]"
+          style={{ 
+            backgroundColor: '#FFEB3B',
+            color: '#1E3A8A',
+            border: '2px solid #1E3A8A'
+          }}
+          className="w-full h-16 text-xl font-bold rounded-lg"
         >
           {submitted ? (
             <span className="flex items-center justify-center gap-3">
