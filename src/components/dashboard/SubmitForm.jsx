@@ -94,14 +94,11 @@ export const SubmitForm = () => {
         </div>
 
         {/* Submit Button */}
-        <Button
+        <button
           type="submit"
           disabled={!phoneNumber.trim() || loading || submitted}
-          className={`w-full h-16 text-xl font-bold rounded-lg transition-all ${
-            submitted
-              ? 'bg-[#FFEB3B] hover:bg-[#FFEB3B] text-[#1E3A8A]'
-              : 'bg-[#FFEB3B] hover:bg-[#FDD835] text-[#1E3A8A]'
-          }`}
+          className="w-full h-16 text-xl font-bold rounded-lg text-[#1E3A8A] disabled:opacity-50"
+          style={{ backgroundColor: '#FFEB3B' }}
         >
           {submitted ? (
             <span className="flex items-center justify-center gap-3">
@@ -113,7 +110,7 @@ export const SubmitForm = () => {
           ) : (
             'Submit'
           )}
-        </Button>
+        </button>
       </form>
     </div>
   );
