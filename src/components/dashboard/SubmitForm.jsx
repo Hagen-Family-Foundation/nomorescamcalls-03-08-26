@@ -33,7 +33,7 @@ export const SubmitForm = () => {
       {/* Complete 4 Pillars Protection Banner - 36px */}
       <div className="bg-[#1E3A8A] text-white rounded-lg p-8 mb-8 text-center border border-[#1E3A8A]">
         <div className="flex items-center justify-center gap-4">
-          <div className="w-12 h-12 bg-[#FCD34D] rounded-full flex items-center justify-center">
+          <div className="w-12 h-12 bg-[#FFEA00] rounded-full flex items-center justify-center">
             <CheckCircle className="h-7 w-7 text-[#1E3A8A]" />
           </div>
           <h2 className="text-[36px] font-bold tracking-tight">COMPLETE 4 PILLARS PROTECTION</h2>
@@ -99,8 +99,8 @@ export const SubmitForm = () => {
           disabled={!phoneNumber.trim() || loading || submitted}
           className={`w-full h-16 text-xl font-bold rounded-lg transition-all ${
             submitted
-              ? 'bg-[#FCD34D] hover:bg-[#FCD34D] text-[#1E3A8A]'
-              : 'bg-[#FCD34D] hover:bg-[#FDE68A] text-[#1E3A8A]'
+              ? 'bg-[#FFEA00] hover:bg-[#FFEA00] text-[#1E3A8A]'
+              : 'bg-[#FFEA00] hover:bg-[#FFF59D] text-[#1E3A8A]'
           }`}
         >
           {submitted ? (

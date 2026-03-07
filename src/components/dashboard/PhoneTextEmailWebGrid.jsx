@@ -15,7 +15,7 @@ const mockData = [
     icon: '📱',
     protection: 'TEXT PROTECTION',
     total: 893,
-    totalLabel: 'NOTED',
+    totalLabel: 'TOXIC',
     potentialLoss: 1892,
     timeSaved: 28
   },
@@ -23,7 +23,7 @@ const mockData = [
     icon: '📧',
     protection: 'EMAIL PROTECTION',
     total: 2104,
-    totalLabel: 'NOTED',
+    totalLabel: 'TOXIC',
     potentialLoss: 5621,
     timeSaved: 61
   },
@@ -31,7 +31,7 @@ const mockData = [
     icon: '🌐',
     protection: 'WEB PROTECTION',
     total: 671,
-    totalLabel: 'NOTED',
+    totalLabel: 'TOXIC',
     potentialLoss: 2103,
     timeSaved: 19
   }
@@ -50,21 +50,21 @@ export const PhoneTextEmailWebGrid = () => {
     <div className="bg-white p-6 md:p-10" style={{ fontFamily: 'Inter, system-ui, -apple-system, sans-serif' }}>
       <div className="overflow-x-auto">
         <div className="min-w-[900px]">
-          {/* Column Headers - 24px Navy */}
+          {/* Column Headers - 22px Navy */}
           <div className="grid grid-cols-4 gap-4 mb-6">
             <div></div>
             <div className="text-center">
-              <h3 className="text-[24px] font-bold text-[#1E3A8A]">
+              <h3 className="text-[22px] font-bold text-[#1E3A8A]">
                 TOTAL<br/>NOTED/BLOCKED
               </h3>
             </div>
             <div className="text-center">
-              <h3 className="text-[24px] font-bold text-[#1E3A8A]">
+              <h3 className="text-[22px] font-bold text-[#1E3A8A]">
                 POTENTIAL $$<br/>LOSS AVOIDED
               </h3>
             </div>
             <div className="text-center">
-              <h3 className="text-[24px] font-bold text-[#1E3A8A]">
+              <h3 className="text-[22px] font-bold text-[#1E3A8A]">
                 TIME SAVED<br/>(hours)
               </h3>
             </div>
@@ -73,17 +73,17 @@ export const PhoneTextEmailWebGrid = () => {
           {/* Data Rows with Boxes */}
           {mockData.map((row, index) => (
             <div key={index} className="grid grid-cols-4 gap-4 mb-4">
-              {/* Protection Name Box - 32px Navy */}
+              {/* Protection Name Box - 28px Navy */}
               <MetricBox variant="navy" className="flex items-center justify-center text-center">
                 <div>
                   <div className="text-4xl mb-2">{row.icon}</div>
-                  <div className="text-[32px] leading-tight">{row.protection}</div>
+                  <div className="text-[28px] leading-tight">{row.protection}</div>
                 </div>
               </MetricBox>
               
-              {/* Total Box - 28px Yellow */}
+              {/* Total Box - 26px Yellow, semi-bold */}
               <MetricBox variant="yellow" className="flex flex-col items-center justify-center">
-                <div className="text-[28px] leading-none mb-1">
+                <div className="text-[26px] font-semibold leading-none mb-1">
                   {animate ? (
                     <AnimatedCounter value={row.total} duration={2000} />
                   ) : (
@@ -93,9 +93,9 @@ export const PhoneTextEmailWebGrid = () => {
                 <div className="text-[14px] text-[#1E3A8A] font-normal">{row.totalLabel}</div>
               </MetricBox>
               
-              {/* Potential Loss Box - 28px Yellow */}
+              {/* Potential Loss Box - 26px Yellow, semi-bold */}
               <MetricBox variant="yellow" className="flex flex-col items-center justify-center">
-                <div className="text-[28px] leading-none mb-1">
+                <div className="text-[26px] font-semibold leading-none mb-1">
                   {animate ? (
                     <>
                       $<AnimatedCounter value={row.potentialLoss} duration={2000} />
@@ -107,15 +107,15 @@ export const PhoneTextEmailWebGrid = () => {
                 <div className="text-[14px] text-[#1E3A8A] font-normal">AVOIDED</div>
               </MetricBox>
               
-              {/* Time Saved Box - 28px Yellow */}
+              {/* Time Saved Box - 26px Yellow, semi-bold */}
               <MetricBox variant="yellow" className="flex flex-col items-center justify-center">
-                <div className="text-[28px] leading-none mb-1">
+                <div className="text-[26px] font-semibold leading-none mb-1">
                   {animate ? (
                     <>
-                      <AnimatedCounter value={row.timeSaved} duration={2000} />
+                      <AnimatedCounter value={row.timeSaved} duration={2000} />h
                     </>
                   ) : (
-                    '0'
+                    '0h'
                   )}
                 </div>
                 <div className="text-[14px] text-[#1E3A8A] font-normal">HOURS</div>
