@@ -71,8 +71,8 @@ export const SubmitForm = () => {
                 disabled={loading || submitted}
                 className={`rounded-lg font-bold text-lg transition-all border ${
                   reportType === 'good'
-                    ? 'bg-green-50 border-green-500 text-green-700'
-                    : 'bg-gray-50 border-gray-300 text-gray-600 hover:border-green-400'
+                    ? 'bg-[#FFEA00] border-[#1E3A8A] text-[#1E3A8A]'
+                    : 'bg-white border-[#1E3A8A] text-[#1E3A8A]'
                 }`}
               >
                 Good
@@ -83,8 +83,8 @@ export const SubmitForm = () => {
                 disabled={loading || submitted}
                 className={`rounded-lg font-bold text-lg transition-all border ${
                   reportType === 'bad'
-                    ? 'bg-red-50 border-red-500 text-red-700'
-                    : 'bg-gray-50 border-gray-300 text-gray-600 hover:border-red-400'
+                    ? 'bg-[#FFEA00] border-[#1E3A8A] text-[#1E3A8A]'
+                    : 'bg-white border-[#1E3A8A] text-[#1E3A8A]'
                 }`}
               >
                 Bad
