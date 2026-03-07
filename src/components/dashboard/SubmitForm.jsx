@@ -30,13 +30,13 @@ export const SubmitForm = () => {
 
   return (
     <div className="bg-white rounded-lg border border-gray-200 p-8 mb-8">
-      {/* Complete 4 Pillars Protection Banner */}
-      <div className="bg-blue-900 text-white rounded-lg p-6 mb-8 text-center border border-blue-800">
-        <div className="flex items-center justify-center gap-3">
-          <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center">
-            <CheckCircle className="h-6 w-6 text-blue-900" />
+      {/* Complete 4 Pillars Protection Banner - 36px */}
+      <div className="bg-[#1E3A8A] text-white rounded-lg p-8 mb-8 text-center border border-[#1E3A8A]">
+        <div className="flex items-center justify-center gap-4">
+          <div className="w-12 h-12 bg-[#FCD34D] rounded-full flex items-center justify-center">
+            <CheckCircle className="h-7 w-7 text-[#1E3A8A]" />
           </div>
-          <h2 className="text-[28px] font-bold tracking-tight">COMPLETE 4 PILLARS PROTECTION</h2>
+          <h2 className="text-[36px] font-bold tracking-tight">COMPLETE 4 PILLARS PROTECTION</h2>
         </div>
       </div>
 
@@ -45,7 +45,7 @@ export const SubmitForm = () => {
         <div className="grid md:grid-cols-2 gap-6 items-end">
           {/* Phone Number Input */}
           <div>
-            <label htmlFor="phone-number" className="block text-blue-900 font-bold text-xl mb-3">
+            <label htmlFor="phone-number" className="block text-[#1E3A8A] font-bold text-2xl mb-3">
               Phone Number
             </label>
             <Input
@@ -61,7 +61,7 @@ export const SubmitForm = () => {
 
           {/* Good/Bad Toggle */}
           <div>
-            <label className="block text-blue-900 font-bold text-xl mb-3">
+            <label className="block text-[#1E3A8A] font-bold text-2xl mb-3">
               Report Type
             </label>
             <div className="grid grid-cols-2 gap-4 h-16">
@@ -99,14 +99,14 @@ export const SubmitForm = () => {
           disabled={!phoneNumber.trim() || loading || submitted}
           className={`w-full h-16 text-xl font-bold rounded-lg transition-all ${
             submitted
-              ? 'bg-green-500 hover:bg-green-500'
-              : 'bg-blue-900 hover:bg-blue-800'
+              ? 'bg-[#FCD34D] hover:bg-[#FCD34D] text-[#1E3A8A]'
+              : 'bg-[#FCD34D] hover:bg-[#FDE68A] text-[#1E3A8A]'
           }`}
         >
           {submitted ? (
             <span className="flex items-center justify-center gap-3">
               <CheckCircle className="h-6 w-6" />
-              Data Processed ✓
+              ✓ PROCESSED
             </span>
           ) : loading ? (
             'Submitting...'
