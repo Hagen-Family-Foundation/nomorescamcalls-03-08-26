@@ -6,34 +6,38 @@ const mockData = [
   {
     icon: '📞',
     protection: 'PHONE PROTECTION',
-    total: 1247,
-    totalLabel: 'BLOCKED',
+    blocked: 1247,
+    blockedLabel: 'BLOCKED',
     potentialLoss: 3741,
-    timeSaved: 42
+    timeSaved: 42,
+    totalInteractions: 4892  // ALL phone interactions (legit + blocked)
   },
   {
     icon: '📱',
     protection: 'TEXT PROTECTION',
-    total: 893,
-    totalLabel: 'TOXIC',
+    blocked: 893,
+    blockedLabel: 'TOXIC',
     potentialLoss: 1892,
-    timeSaved: 28
+    timeSaved: 28,
+    totalInteractions: 2104  // ALL text interactions (legit + toxic)
   },
   {
     icon: '📧',
     protection: 'EMAIL PROTECTION',
-    total: 2104,
-    totalLabel: 'TOXIC',
+    blocked: 2104,
+    blockedLabel: 'TOXIC',
     potentialLoss: 5621,
-    timeSaved: 61
+    timeSaved: 61,
+    totalInteractions: 7825  // ALL email interactions (legit + toxic)
   },
   {
     icon: '🌐',
     protection: 'WEB PROTECTION',
-    total: 671,
-    totalLabel: 'TOXIC',
+    blocked: 671,
+    blockedLabel: 'TOXIC',
     potentialLoss: 2103,
-    timeSaved: 19
+    timeSaved: 19,
+    totalInteractions: 3774  // ALL web interactions (legit + toxic)
   }
 ];
 
@@ -55,17 +59,17 @@ export const PhoneTextEmailWebGrid = () => {
             <div></div>
             <div className="text-center">
               <h3 className="text-[22px] font-bold text-[#1E3A8A]">
-                TOTAL
-              </h3>
-            </div>
-            <div className="text-center">
-              <h3 className="text-[22px] font-bold text-[#1E3A8A]">
-                TOTAL<br/>NOTED/BLOCKED
+                BLOCKED/<br/>TOXIC
               </h3>
             </div>
             <div className="text-center">
               <h3 className="text-[22px] font-bold text-[#1E3A8A]">
                 POTENTIAL $$<br/>LOSS AVOIDED
+              </h3>
+            </div>
+            <div className="text-center">
+              <h3 className="text-[22px] font-bold text-[#1E3A8A]">
+                TOTAL<br/>INTERACTIONS
               </h3>
             </div>
             <div className="text-center">
@@ -95,12 +99,12 @@ export const PhoneTextEmailWebGrid = () => {
                   }}
                 >
                   {animate ? (
-                    <AnimatedCounter value={row.total} duration={2000} />
+                    <AnimatedCounter value={row.blocked} duration={2000} />
                   ) : (
                     '0'
                   )}
                 </div>
-                <div className="text-[14px] text-white font-bold">TOTAL</div>
+                <div className="text-[14px] text-white font-bold">{row.blockedLabel}</div>
               </MetricBox>
               
               {/* Total Box - 36px BRIGHT YELLOW BOLD with outline */}
@@ -137,6 +141,23 @@ export const PhoneTextEmailWebGrid = () => {
                   )}
                 </div>
                 <div className="text-[16px] text-[#1E3A8A] font-bold">AVOIDED</div>
+              </MetricBox>
+              
+              {/* TOTAL INTERACTIONS Box - ALL interactions (legit + scam) */}
+              <MetricBox variant="yellow" className="flex flex-col items-center justify-center">
+                <div 
+                  className="text-[36px] font-black leading-none mb-1 text-[#FFEB3B]"
+                  style={{ 
+                    textShadow: '1px 1px 0 #1E3A8A, -1px -1px 0 #1E3A8A, 1px -1px 0 #1E3A8A, -1px 1px 0 #1E3A8A'
+                  }}
+                >
+                  {animate ? (
+                    <AnimatedCounter value={row.totalInteractions} duration={2000} />
+                  ) : (
+                    '0'
+                  )}
+                </div>
+                <div className="text-[16px] text-[#1E3A8A] font-bold">TOTAL</div>
               </MetricBox>
               
               {/* Time Saved Box - 36px BRIGHT YELLOW BOLD with outline */}
