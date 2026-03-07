@@ -49,10 +49,15 @@ export const PhoneTextEmailWebGrid = () => {
   return (
     <div className="bg-white p-6 md:p-10" style={{ fontFamily: 'Inter, system-ui, -apple-system, sans-serif' }}>
       <div className="overflow-x-auto">
-        <div className="min-w-[900px]">
+        <div className="min-w-[1100px]">
           {/* Column Headers - 22px Navy */}
-          <div className="grid grid-cols-4 gap-4 mb-6">
+          <div className="grid grid-cols-5 gap-4 mb-6">
             <div></div>
+            <div className="text-center">
+              <h3 className="text-[22px] font-bold text-[#1E3A8A]">
+                TOTAL
+              </h3>
+            </div>
             <div className="text-center">
               <h3 className="text-[22px] font-bold text-[#1E3A8A]">
                 TOTAL<br/>NOTED/BLOCKED
@@ -72,13 +77,30 @@ export const PhoneTextEmailWebGrid = () => {
 
           {/* Data Rows with Boxes */}
           {mockData.map((row, index) => (
-            <div key={index} className="grid grid-cols-4 gap-4 mb-4">
+            <div key={index} className="grid grid-cols-5 gap-4 mb-4">
               {/* Protection Name Box - 28px Navy */}
               <MetricBox variant="navy" className="flex items-center justify-center text-center">
                 <div>
                   <div className="text-4xl mb-2">{row.icon}</div>
                   <div className="text-[28px] leading-tight">{row.protection}</div>
                 </div>
+              </MetricBox>
+              
+              {/* NEW COLUMN: Total Inbound for this protection type */}
+              <MetricBox variant="navy" className="flex flex-col items-center justify-center bg-[#1E3A8A]">
+                <div 
+                  className="text-[36px] font-black leading-none mb-1 text-[#FFEB3B]"
+                  style={{ 
+                    textShadow: '1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000'
+                  }}
+                >
+                  {animate ? (
+                    <AnimatedCounter value={row.total} duration={2000} />
+                  ) : (
+                    '0'
+                  )}
+                </div>
+                <div className="text-[14px] text-white font-bold">TOTAL</div>
               </MetricBox>
               
               {/* Total Box - 36px BRIGHT YELLOW BOLD with outline */}
