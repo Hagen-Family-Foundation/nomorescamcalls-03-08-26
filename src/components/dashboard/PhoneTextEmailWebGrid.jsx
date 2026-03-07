@@ -59,22 +59,22 @@ export const PhoneTextEmailWebGrid = () => {
             <div></div>
             <div className="text-center">
               <h3 className="text-[22px] font-bold text-[#1E3A8A]">
-                BLOCKED/<br/>TOXIC
+                TOTAL
               </h3>
             </div>
             <div className="text-center">
               <h3 className="text-[22px] font-bold text-[#1E3A8A]">
-                POTENTIAL $$<br/>LOSS AVOIDED
+                BLOCKED/<br/>TOXIC/AVOIDED
               </h3>
             </div>
             <div className="text-center">
               <h3 className="text-[22px] font-bold text-[#1E3A8A]">
-                TOTAL<br/>INTERACTIONS
+                POTENTIAL $$<br/>LOST
               </h3>
             </div>
             <div className="text-center">
               <h3 className="text-[22px] font-bold text-[#1E3A8A]">
-                TIME SAVED<br/>(hours)
+                POTENTIAL TIME<br/>LOST (hours)
               </h3>
             </div>
           </div>
@@ -90,7 +90,24 @@ export const PhoneTextEmailWebGrid = () => {
                 </div>
               </MetricBox>
               
-              {/* NEW COLUMN: Total Inbound for this protection type */}
+              {/* COLUMN 2: TOTAL INTERACTIONS - ALL calls/texts/emails/websites */}
+              <MetricBox variant="yellow" className="flex flex-col items-center justify-center">
+                <div 
+                  className="text-[36px] font-black leading-none mb-1 text-[#FFEB3B]"
+                  style={{ 
+                    textShadow: '1px 1px 0 #1E3A8A, -1px -1px 0 #1E3A8A, 1px -1px 0 #1E3A8A, -1px 1px 0 #1E3A8A'
+                  }}
+                >
+                  {animate ? (
+                    <AnimatedCounter value={row.totalInteractions} duration={2000} />
+                  ) : (
+                    '0'
+                  )}
+                </div>
+                <div className="text-[16px] text-[#1E3A8A] font-bold">TOTAL</div>
+              </MetricBox>
+              
+              {/* COLUMN 3: BLOCKED/TOXIC - scam attempts only */}
               <MetricBox variant="navy" className="flex flex-col items-center justify-center bg-[#1E3A8A]">
                 <div 
                   className="text-[36px] font-black leading-none mb-1 text-[#FFEB3B]"
@@ -107,7 +124,7 @@ export const PhoneTextEmailWebGrid = () => {
                 <div className="text-[14px] text-white font-bold">{row.blockedLabel}</div>
               </MetricBox>
               
-              {/* Blocked/Toxic Box - 36px BRIGHT YELLOW BOLD with outline */}
+              {/* COLUMN 4: $ LOST - financial loss prevented */}
               <MetricBox variant="yellow" className="flex flex-col items-center justify-center">
                 <div 
                   className="text-[36px] font-black leading-none mb-1 text-[#FFEB3B]"
@@ -160,7 +177,7 @@ export const PhoneTextEmailWebGrid = () => {
                 <div className="text-[16px] text-[#1E3A8A] font-bold">TOTAL</div>
               </MetricBox>
               
-              {/* Time Saved Box - 36px BRIGHT YELLOW BOLD with outline */}
+              {/* COLUMN 5: TIME LOST - hours prevented */}
               <MetricBox variant="yellow" className="flex flex-col items-center justify-center">
                 <div 
                   className="text-[36px] font-black leading-none mb-1 text-[#FFEB3B]"
@@ -176,7 +193,7 @@ export const PhoneTextEmailWebGrid = () => {
                     '0h'
                   )}
                 </div>
-                <div className="text-[16px] text-[#1E3A8A] font-bold">HOURS</div>
+                <div className="text-[16px] text-[#1E3A8A] font-bold">LOST</div>
               </MetricBox>
             </div>
           ))}
