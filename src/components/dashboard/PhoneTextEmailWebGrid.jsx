@@ -107,7 +107,7 @@ export const PhoneTextEmailWebGrid = () => {
                 <div className="text-[14px] text-white font-bold">{row.blockedLabel}</div>
               </MetricBox>
               
-              {/* Total Box - 36px BRIGHT YELLOW BOLD with outline */}
+              {/* Blocked/Toxic Box - 36px BRIGHT YELLOW BOLD with outline */}
               <MetricBox variant="yellow" className="flex flex-col items-center justify-center">
                 <div 
                   className="text-[36px] font-black leading-none mb-1 text-[#FFEB3B]"
@@ -116,12 +116,12 @@ export const PhoneTextEmailWebGrid = () => {
                   }}
                 >
                   {animate ? (
-                    <AnimatedCounter value={row.total} duration={2000} />
+                    <AnimatedCounter value={row.blocked} duration={2000} />
                   ) : (
                     '0'
                   )}
                 </div>
-                <div className="text-[16px] text-[#1E3A8A] font-bold">{row.totalLabel}</div>
+                <div className="text-[16px] text-[#1E3A8A] font-bold">{row.blockedLabel}</div>
               </MetricBox>
               
               {/* Potential Loss Box - 36px BRIGHT YELLOW BOLD with outline */}
