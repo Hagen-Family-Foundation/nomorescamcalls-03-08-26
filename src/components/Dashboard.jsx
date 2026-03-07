@@ -2,6 +2,7 @@ import React from 'react';
 import { useBrand } from '../context/BrandContext';
 import { SubmitForm } from './dashboard/SubmitForm';
 import { PhoneTextEmailWebGrid } from './dashboard/PhoneTextEmailWebGrid';
+import { ShieldLogo } from './ShieldLogo';
 
 export const Dashboard = () => {
   const brand = useBrand();
@@ -12,13 +13,18 @@ export const Dashboard = () => {
       <header className="bg-blue-900 border-b border-blue-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-white">
-                {brand.appName}
-              </h1>
-              <p className="text-yellow-400 text-lg md:text-xl mt-1 font-semibold">
-                Subscriber Dashboard
-              </p>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-[#FFCC00] rounded-full flex items-center justify-center">
+                <ShieldLogo className="h-6 w-6" color="#1E3A8A" />
+              </div>
+              <div>
+                <h1 className="text-3xl md:text-4xl font-bold text-white">
+                  {brand.appName}
+                </h1>
+                <p className="text-[#FFCC00] text-lg md:text-xl mt-1 font-bold">
+                  Subscriber Dashboard
+                </p>
+              </div>
             </div>
             <a
               href="/"

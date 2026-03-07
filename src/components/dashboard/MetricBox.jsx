@@ -5,7 +5,7 @@ export const MetricBox = ({ children, variant = 'navy', className = '' }) => {
   
   const variantStyles = {
     navy: 'text-[#1E3A8A]',
-    yellow: 'text-[#FFD700]'
+    yellow: 'text-[#FFCC00]'
   };
   
   return (
