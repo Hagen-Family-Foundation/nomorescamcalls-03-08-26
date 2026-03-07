@@ -14,14 +14,14 @@ export const Dashboard = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-[#FFCC00] rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-[#FFEB3B] rounded-full flex items-center justify-center">
                 <ShieldLogo className="h-6 w-6" color="#1E3A8A" />
               </div>
               <div>
                 <h1 className="text-3xl md:text-4xl font-bold text-white">
                   {brand.appName}
                 </h1>
-                <p className="text-[#FFCC00] text-lg md:text-xl mt-1 font-bold">
+                <p className="text-[#FFEB3B] text-lg md:text-xl mt-1 font-bold">
                   Subscriber Dashboard
                 </p>
               </div>

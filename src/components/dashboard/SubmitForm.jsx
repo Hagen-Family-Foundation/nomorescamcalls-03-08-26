@@ -33,7 +33,7 @@ export const SubmitForm = () => {
       {/* 4 Pillars Protection Banner - 36px */}
       <div className="bg-[#1E3A8A] text-white rounded-lg p-8 mb-8 text-center border border-[#1E3A8A]">
         <div className="flex items-center justify-center gap-4">
-          <div className="w-12 h-12 bg-[#FFCC00] rounded-full flex items-center justify-center">
+          <div className="w-12 h-12 bg-[#FFEB3B] rounded-full flex items-center justify-center">
             <CheckCircle className="h-7 w-7 text-[#1E3A8A]" />
           </div>
           <h2 className="text-[36px] font-bold tracking-tight">4 PILLARS PROTECTION</h2>
@@ -71,7 +71,7 @@ export const SubmitForm = () => {
                 disabled={loading || submitted}
                 className={`rounded-lg font-bold text-lg transition-all border ${
                   reportType === 'good'
-                    ? 'bg-[#FFCC00] border-[#1E3A8A] text-[#1E3A8A]'
+                    ? 'bg-[#FFEB3B] border-[#1E3A8A] text-[#1E3A8A]'
                     : 'bg-white border-[#1E3A8A] text-[#1E3A8A]'
                 }`}
               >
@@ -83,7 +83,7 @@ export const SubmitForm = () => {
                 disabled={loading || submitted}
                 className={`rounded-lg font-bold text-lg transition-all border ${
                   reportType === 'bad'
-                    ? 'bg-[#FFCC00] border-[#1E3A8A] text-[#1E3A8A]'
+                    ? 'bg-[#FFEB3B] border-[#1E3A8A] text-[#1E3A8A]'
                     : 'bg-white border-[#1E3A8A] text-[#1E3A8A]'
                 }`}
               >
@@ -99,8 +99,8 @@ export const SubmitForm = () => {
           disabled={!phoneNumber.trim() || loading || submitted}
           className={`w-full h-16 text-xl font-bold rounded-lg transition-all ${
             submitted
-              ? 'bg-[#FFCC00] hover:bg-[#FFCC00] text-[#1E3A8A]'
-              : 'bg-[#FFCC00] hover:bg-[#FFB700] text-[#1E3A8A]'
+              ? 'bg-[#FFEB3B] hover:bg-[#FFEB3B] text-[#1E3A8A]'
+              : 'bg-[#FFEB3B] hover:bg-[#FDD835] text-[#1E3A8A]'
           }`}
         >
           {submitted ? (
