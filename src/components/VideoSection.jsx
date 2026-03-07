@@ -10,7 +10,8 @@ import React, { useRef } from 'react';
 export const VideoSection = () => {
   const videoRef = useRef(null);
 
-  const videoUrl = '/videos/protect-your-peace.mp4';
+  // R2 Bucket: grace-long-video (Cloudflare CDN)
+  const videoUrl = 'https://pub-33bf792b20a56af149559388ff1d600d.r2.dev/protect-your-peace.mp4';
   const thumbnailUrl = 'https://d19fa2ka4qs0b8.cloudfront.net/clips/rd6QAE_VSB0/20260201_022505-protect-your-peace-stop-scam-calls-with-grace-thumbnail.jpg';
 
   return (
