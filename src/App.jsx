@@ -31,6 +31,7 @@ import { FinalCTA } from './components/FinalCTA';
 import { AboutSection } from './components/AboutSection';
 import { PricingChart } from './components/PricingChart';
 import { PricingPage } from './components/PricingPage';
+import { VideoSection } from './components/VideoSection';
 import { useBrand } from './context/BrandContext';
 
 const HomePage = () => {
@@ -63,6 +64,7 @@ const HomePage = () => {
     />
     <Header />
     <HeroSection />
+    <VideoSection />
     <TrustBadges />
     <HowItWorks />
     <ServicesSection />
