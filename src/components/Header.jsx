@@ -83,6 +83,15 @@ export const Header = () => {
                 Pricing
               </button>
               <button 
+                onClick={() => scrollToSection('bundles')} 
+                className="font-medium transition-colors"
+                style={{ color: '#0a1428' }}
+                onMouseEnter={(e) => e.target.style.color = '#eab308'}
+                onMouseLeave={(e) => e.target.style.color = '#0a1428'}
+              >
+                Bundle
+              </button>
+              <button 
                 onClick={() => scrollToSection('faq')} 
                 className="font-medium transition-colors"
                 style={{ color: '#0a1428' }}
@@ -152,6 +161,14 @@ export const Header = () => {
                   onMouseLeave={(e) => e.target.style.color = '#4b5563'}
                 >
                   Pricing
+                </button>
+                <button 
+                  onClick={() => scrollToSection('bundles')} 
+                  className="text-left text-gray-600 transition-colors"
+                  onMouseEnter={(e) => e.target.style.color = brand.colors.primary}
+                  onMouseLeave={(e) => e.target.style.color = '#4b5563'}
+                >
+                  Bundle
                 </button>
                 <button 
                   onClick={() => scrollToSection('faq')} 
