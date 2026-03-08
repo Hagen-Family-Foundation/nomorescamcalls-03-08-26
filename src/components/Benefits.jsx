@@ -41,63 +41,17 @@ export const Benefits = () => {
   const benefits = brand.benefits || defaultBenefits;
 
   return (
-    <section id="benefits" className="py-16 bg-white" data-testid="benefits-section">
+    <section id="benefits" className="py-20 bg-white" data-testid="benefits-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* 4 Pillars Typography Section - COMPACT */}
-        <div className="max-w-3xl mx-auto py-4 px-6 text-center mb-12">
-          
-          {/* Hook: Problem Statement */}
-          <div className="text-lg md:text-xl font-bold mb-3 leading-tight" style={{ color: '#0A0F2A' }}>
-            NoMoreScamCalls covers <span style={{ 
-              color: '#FFD700', 
-              textShadow: '-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000, 2px 0 0 #000'
-            }}>PHONE</span> only.
-          </div>
-          
-          {/* The Gap: 3 Missing Pillars */}
-          <div className="grid grid-cols-3 gap-2 mb-4 max-w-md mx-auto">
-            <div className="text-sm font-semibold py-1.5 px-3 rounded-lg shadow" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '2px solid #0A0F2A' }}>
-              💬 TEXT
-            </div>
-            <div className="text-sm font-semibold py-1.5 px-3 rounded-lg shadow" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '2px solid #0A0F2A' }}>
-              📧 EMAIL
-            </div>
-            <div className="text-sm font-semibold py-1.5 px-3 rounded-lg shadow" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '2px solid #0A0F2A' }}>
-              🌐 WEB
-            </div>
-          </div>
-
-          {/* Solution: 4 Pillars */}
-          <h2 className="text-2xl md:text-3xl font-black mb-3 tracking-tight" style={{ color: '#1974D2' }}>
-            4 PILLARS OF PROTECTION
-          </h2>
-
-          {/* Value Prop */}
-          <div className="text-base md:text-lg font-semibold mb-4 leading-relaxed max-w-2xl mx-auto" style={{ color: '#0A0F2A' }}>
-            Complete scammer protection from <span className="font-black" style={{ 
-              color: '#FFD700',
-              textShadow: '-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000, 2px 0 0 #000'
-            }}>ALL 4 SIDES</span>
-          </div>
-
-          {/* Benefits Stack */}
-          <div className="grid grid-cols-2 gap-3 mb-4 max-w-lg mx-auto">
-            <div className="text-sm font-semibold bg-white rounded-lg p-3 shadow-lg" style={{ color: '#0A0F2A', border: '2px solid #FFD700' }}>
-              ✅ <span className="font-black" style={{ color: '#1974D2' }}>Widest Coverage</span>
-            </div>
-            <div className="text-sm font-semibold bg-white rounded-lg p-3 shadow-lg" style={{ color: '#0A0F2A', border: '2px solid #FFD700' }}>
-              💰 <span className="font-black" style={{ color: '#1974D2' }}>Best Value Bundle</span>
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div className="text-xs uppercase tracking-widest font-bold inline-block pb-1" style={{ color: '#1A1F4A', borderBottom: '2px solid #FFD700' }}>
-            See comparison chart below →
-          </div>
+        {/* 4 Pillars Typography Section - VERY COMPACT */}
+        <div className="text-center mb-8">
+          <p className="text-sm text-gray-600 mb-1">NoMoreScamCalls covers <span className="font-bold" style={{ color: '#FFD700', textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>PHONE</span> only. What about 💬TEXT 📧EMAIL 🌐WEB?</p>
+          <h2 className="text-2xl font-black mb-1" style={{ color: '#1974D2' }}>4 PILLARS OF PROTECTION</h2>
+          <p className="text-sm text-gray-600">Complete scammer protection from <span className="font-bold" style={{ color: '#FFD700', textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>ALL 4 SIDES</span> • <span style={{ color: '#1974D2' }}>Widest Coverage</span> • <span style={{ color: '#1974D2' }}>Best Value Bundle</span></p>
         </div>
 
-        {/* 4 BENEFIT COLUMNS - FULL SIZE */}
+        {/* 4 BENEFIT COLUMNS - FULL SIZE RESTORED */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => {
             const Icon = iconMap[benefit.icon] || Heart;
