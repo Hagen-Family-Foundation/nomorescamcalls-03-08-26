@@ -41,13 +41,12 @@ export const HeroSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-5xl mx-auto text-center">
           
-          {/* 4 Pillars Image - Reduced size, centered, sitting on top of header */}
-          <div className="max-w-md mx-auto mb-4">
+          {/* 4 Pillars Image - centered, sitting on top of header */}
+          <div className="max-w-xl mx-auto mb-4">
             <img 
               src={pillarsImage}
               alt="Four Pillars of Protection"
-              className="w-full h-40 object-cover rounded-xl shadow-lg"
-              style={{ objectPosition: 'center 75%' }}
+              className="w-full h-auto rounded-xl shadow-lg"
             />
           </div>
 
