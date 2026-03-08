@@ -161,7 +161,7 @@ export const PricingChart = ({ highlightedBundle }) => {
 
                 {/* Textinaters Row */}
                 <tr className="border-b border-gray-100">
-                  <td className="py-4 px-6 text-left font-medium text-gray-900">
+                  <td className="py-2 px-6 text-left font-medium text-gray-900">
                     <div className="flex items-center gap-4">
                       <span>💬 + Textinaters</span>
                       <PriceCircle amount="$12.99" />
@@ -170,7 +170,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
                     return (
-                      <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
+                      <td key={plan.id} className={`py-2 px-6 text-center transition-all duration-300 ${
                         plan.popular ? '' : ''
                       } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
                         <div className="flex items-center justify-center">
@@ -184,7 +184,7 @@ export const PricingChart = ({ highlightedBundle }) => {
 
                 {/* Emailinaters Row */}
                 <tr className="border-b border-gray-100">
-                  <td className="py-4 px-6 text-left font-medium text-gray-900">
+                  <td className="py-2 px-6 text-left font-medium text-gray-900">
                     <div className="flex items-center gap-4">
                       <span>📧 + Emailinaters</span>
                       <PriceCircle amount="$12.99" />
@@ -193,7 +193,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
                     return (
-                      <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
+                      <td key={plan.id} className={`py-2 px-6 text-center transition-all duration-300 ${
                         plan.popular ? '' : ''
                       } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
                         <div className="flex items-center justify-center">
@@ -207,7 +207,7 @@ export const PricingChart = ({ highlightedBundle }) => {
 
                 {/* Webinaters Row */}
                 <tr className="border-b border-gray-100">
-                  <td className="py-4 px-6 text-left font-medium text-gray-900">
+                  <td className="py-2 px-6 text-left font-medium text-gray-900">
                     <div className="flex items-center gap-4">
                       <span>🌐 + Webinaters</span>
                       <PriceCircle amount="$12.99" />
@@ -216,7 +216,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
                     return (
-                      <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
+                      <td key={plan.id} className={`py-2 px-6 text-center transition-all duration-300 ${
                         plan.popular ? '' : ''
                       } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
                         <div className="flex items-center justify-center">
@@ -230,14 +230,14 @@ export const PricingChart = ({ highlightedBundle }) => {
 
                 {/* À la carte total Row - White with navy text */}
                 <tr className="border-b border-gray-200 bg-white">
-                  <td className="py-5 px-6 text-left font-bold" style={{ color: '#0a1428' }}>
+                  <td className="py-3 px-6 text-left font-bold" style={{ color: '#0a1428' }}>
                     ❌ À la carte total
                     <span className="block text-xs font-normal text-gray-500">(phone + all 3 add-ons)</span>
                   </td>
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
                     return (
-                      <td key={plan.id} className={`py-5 px-6 text-center transition-all duration-300 bg-white ${
+                      <td key={plan.id} className={`py-3 px-6 text-center transition-all duration-300 bg-white ${
                         isHighlighted ? 'bundle-highlight-column' : ''
                       }`}>
                         <span className="text-2xl font-bold line-through decoration-2" style={{ color: '#6b7280' }}>
