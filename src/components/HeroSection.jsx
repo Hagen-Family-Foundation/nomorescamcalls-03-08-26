@@ -46,7 +46,7 @@ export const HeroSection = () => {
             <img 
               src={pillarsImage}
               alt="Four Pillars of Protection"
-              className="w-full h-40 object-cover rounded-xl shadow-lg"
+              className="w-full h-64 object-cover rounded-xl shadow-lg"
               style={{ objectPosition: 'center 75%' }}
             />
           </div>
