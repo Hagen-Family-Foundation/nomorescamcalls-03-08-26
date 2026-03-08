@@ -78,7 +78,6 @@ const HomePage = () => {
     <FinalCTA />
     <Testimonials />
     <TrustSafety />
-    <AboutSection />
     <Footer />
     <ScrollToTop />
     <AIChat />
