@@ -45,7 +45,7 @@ const services = [
     description: 'Alerts on fake or hacked sites instantly.',
     features: [
       'Audio + visual warnings for spoofed URLs, phishing, or compromised pages.',
-      'Red warning dot on fraud – 99%+ coverage across all devices.',
+      'On screen indicator on fraud – 99%+ coverage across all devices.',
     ],
     price: '$12.99/line/mo',
   },

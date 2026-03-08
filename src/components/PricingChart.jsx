@@ -556,7 +556,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                 <div className="space-y-3 mb-6 flex-grow">
                   <p className="text-gray-700 font-medium">Alerts on fake or hacked sites instantly.</p>
                   <p className="text-gray-600 text-sm">Audio + visual warnings for spoofed URLs, phishing, or compromised pages.</p>
-                  <p className="text-gray-600 text-sm">Red warning dot on fraud – 99%+ coverage across all devices.</p>
+                  <p className="text-gray-600 text-sm">On screen indicator on fraud – 99%+ coverage across all devices.</p>
                 </div>
                 <Button
                   asChild
