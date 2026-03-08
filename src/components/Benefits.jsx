@@ -41,14 +41,14 @@ export const Benefits = () => {
   const benefits = brand.benefits || defaultBenefits;
 
   return (
-    <section id="benefits" className="py-20 bg-white" data-testid="benefits-section">
+    <section id="benefits" className="py-12 bg-white" data-testid="benefits-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* 4 Pillars Typography Section */}
-        <div className="max-w-4xl mx-auto py-8 px-6 text-center mb-16">
+        <div className="max-w-4xl mx-auto py-4 px-6 text-center mb-10">
           
           {/* Hook: Problem Statement */}
-          <div className="text-2xl md:text-3xl font-bold mb-6 leading-tight" style={{ color: '#0A0F2A' }}>
+          <div className="text-xl md:text-2xl font-bold mb-4 leading-tight" style={{ color: '#0A0F2A' }}>
             NoMoreScamCalls covers <span style={{ 
               color: '#FFD700', 
               textShadow: '-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000, 2px 0 0 #000'
@@ -56,25 +56,25 @@ export const Benefits = () => {
           </div>
           
           {/* The Gap: 3 Missing Pillars */}
-          <div className="grid grid-cols-3 gap-4 mb-8 max-w-2xl mx-auto">
-            <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
+          <div className="grid grid-cols-3 gap-3 mb-5 max-w-xl mx-auto">
+            <div className="text-lg font-semibold py-2 px-4 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '3px solid #0A0F2A' }}>
               💬 TEXT
             </div>
-            <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
+            <div className="text-lg font-semibold py-2 px-4 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '3px solid #0A0F2A' }}>
               📧 EMAIL
             </div>
-            <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
+            <div className="text-lg font-semibold py-2 px-4 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '3px solid #0A0F2A' }}>
               🌐 WEB
             </div>
           </div>
 
           {/* Solution: 4 Pillars */}
-          <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tight" style={{ color: '#1974D2' }}>
+          <h2 className="text-3xl md:text-4xl font-black mb-5 tracking-tight" style={{ color: '#1974D2' }}>
             4 PILLARS OF PROTECTION
           </h2>
 
           {/* Value Prop */}
-          <div className="text-xl md:text-2xl font-semibold mb-8 leading-relaxed max-w-3xl mx-auto bg-white/80 py-6 rounded-xl" style={{ color: '#0A0F2A' }}>
+          <div className="text-lg md:text-xl font-semibold mb-5 leading-relaxed max-w-3xl mx-auto bg-white/80 py-3 rounded-xl" style={{ color: '#0A0F2A' }}>
             Complete scammer protection from <span className="font-black" style={{ 
               color: '#FFD700',
               textShadow: '-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000, 2px 0 0 #000'
@@ -82,17 +82,17 @@ export const Benefits = () => {
           </div>
 
           {/* Benefits Stack */}
-          <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto">
-            <div className="text-lg font-semibold bg-white rounded-xl p-6 shadow-2xl" style={{ color: '#0A0F2A', border: '4px solid #FFD700' }}>
+          <div className="grid md:grid-cols-2 gap-4 mb-8 max-w-3xl mx-auto">
+            <div className="text-base font-semibold bg-white rounded-xl p-4 shadow-xl" style={{ color: '#0A0F2A', border: '3px solid #FFD700' }}>
               ✅ <span className="font-black" style={{ color: '#1974D2' }}>Widest Coverage</span> on market
             </div>
-            <div className="text-lg font-semibold bg-white rounded-xl p-6 shadow-2xl" style={{ color: '#0A0F2A', border: '4px solid #FFD700' }}>
+            <div className="text-base font-semibold bg-white rounded-xl p-4 shadow-xl" style={{ color: '#0A0F2A', border: '3px solid #FFD700' }}>
               💰 <span className="font-black" style={{ color: '#1974D2' }}>Best Value Bundle</span> pricing
             </div>
           </div>
 
           {/* CTA */}
-          <div className="text-sm uppercase tracking-widest font-bold inline-block pb-2" style={{ color: '#1A1F4A', borderBottom: '2px solid #FFD700' }}>
+          <div className="text-xs uppercase tracking-widest font-bold inline-block pb-1" style={{ color: '#1A1F4A', borderBottom: '2px solid #FFD700' }}>
             See comparison chart below →
           </div>
         </div>
