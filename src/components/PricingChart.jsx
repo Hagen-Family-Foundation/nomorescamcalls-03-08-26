@@ -112,16 +112,23 @@ export const PricingChart = ({ highlightedBundle }) => {
                         className={`py-5 px-6 text-center relative transition-all duration-300 ${
                           isHighlighted ? 'bundle-highlight-column' : ''
                         }`}
-                        style={plan.popular ? { backgroundColor: '#1974D2' } : { backgroundColor: '#f9fafb' }}
+                        style={{ backgroundColor: '#f9fafb' }}
                       >
-                        <span className={`text-lg font-bold ${
-                          plan.popular ? '' : 'text-gray-900'
-                        }`} style={plan.popular ? { color: '#eab308' } : {}}>
-                          {plan.name}
-                        </span>
-                        {plan.popular && (
-                          <span className="block text-sm font-semibold mt-1" style={{ color: '#eab308' }}>
-                            Most Popular
+                        {plan.popular ? (
+                          <div 
+                            className="inline-block px-4 py-2 rounded-lg"
+                            style={{ backgroundColor: '#1974D2' }}
+                          >
+                            <span className="text-lg font-bold" style={{ color: '#eab308' }}>
+                              {plan.name}
+                            </span>
+                            <span className="block text-sm font-semibold mt-1" style={{ color: '#eab308' }}>
+                              Most Popular
+                            </span>
+                          </div>
+                        ) : (
+                          <span className="text-lg font-bold text-gray-900">
+                            {plan.name}
                           </span>
                         )}
                       </th>
