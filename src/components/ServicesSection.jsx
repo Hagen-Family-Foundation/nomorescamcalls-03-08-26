@@ -1,6 +1,7 @@
 import React from 'react';
 import { MessageSquare, Mail, Globe, ArrowDown } from 'lucide-react';
 import { Button } from './ui/button';
+import { PRICING_LINKS } from '../config/pricingLinks';
 
 // Color constants
 const colors = {
@@ -10,6 +11,13 @@ const colors = {
   yellow500: '#eab308',
   white: '#ffffff',
   grayLight: '#f8fafc',
+};
+
+// Map service names to Stripe links
+const serviceLinks = {
+  'Textinaters': PRICING_LINKS.TEXTINATORS,
+  'Emailinaters': PRICING_LINKS.EMAILINATORS,
+  'Webinaters': PRICING_LINKS.WEBINATORS,
 };
 
 const services = [
@@ -96,14 +104,13 @@ const ServiceCard = ({ emoji, name, subtitle, description, features, price }) =>
       ))}
     </ul>
 
-    {/* CTA Button */}
-    <a href="#bundles" onClick={scrollToBundles}>
+    {/* CTA Button - Links to Stripe */}
+    <a href={serviceLinks[name]} target="_blank" rel="noopener noreferrer">
       <Button
         className="w-full btn-secondary-3d py-3 text-base font-bold text-center justify-center hover:scale-105 transition-transform flex items-center gap-2"
         data-testid={`service-cta-${name.toLowerCase()}`}
       >
         $12.99/mo or See Bundle Savings
-        <ArrowDown className="h-4 w-4" />
       </Button>
     </a>
   </div>
