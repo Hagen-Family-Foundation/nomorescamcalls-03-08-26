@@ -101,7 +101,7 @@ export const PricingChart = ({ highlightedBundle }) => {
             <table className="w-full" data-testid="pricing-comparison-table">
               <thead>
                 <tr className="border-b border-gray-200">
-                  <th className="py-5 px-6 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider bg-gray-50 w-1/4">
+                  <th className="py-2 px-6 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider bg-gray-50 w-1/4">
                     &nbsp;
                   </th>
                   {plans.map((plan) => {
@@ -109,25 +109,22 @@ export const PricingChart = ({ highlightedBundle }) => {
                     return (
                       <th 
                         key={plan.id} 
-                        className={`py-5 px-6 text-center relative transition-all duration-300 ${
+                        className={`py-2 px-6 text-center relative transition-all duration-300 ${
                           isHighlighted ? 'bundle-highlight-column' : ''
                         }`}
                         style={{ backgroundColor: '#f9fafb' }}
                       >
                         {plan.popular ? (
                           <div 
-                            className="inline-block px-4 py-2 rounded-lg"
+                            className="inline-block px-3 py-1 rounded-lg"
                             style={{ backgroundColor: '#1974D2' }}
                           >
-                            <span className="text-lg font-bold" style={{ color: '#eab308' }}>
-                              {plan.name}
-                            </span>
-                            <span className="block text-sm font-semibold mt-1" style={{ color: '#eab308' }}>
-                              Most Popular
+                            <span className="text-base font-bold" style={{ color: '#eab308' }}>
+                              {plan.name} <span className="text-sm font-semibold">• Most Popular</span>
                             </span>
                           </div>
                         ) : (
-                          <span className="text-lg font-bold text-gray-900">
+                          <span className="text-base font-bold text-gray-900">
                             {plan.name}
                           </span>
                         )}
