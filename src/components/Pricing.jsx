@@ -3,9 +3,17 @@ import { Button } from './ui/button';
 import { Check, Star, ArrowDown } from 'lucide-react';
 import { mockData } from '../mock';
 import { useBrand } from '../context/BrandContext';
+import { PRICING_LINKS } from '../config/pricingLinks';
 
 export const Pricing = ({ onScrollToBundle }) => {
   const brand = useBrand();
+
+  // Phone Only Stripe links mapping
+  const phoneOnlyLinks = {
+    basic: PRICING_LINKS.PHONE_BASIC,
+    mid: PRICING_LINKS.PHONE_MID,
+    family: PRICING_LINKS.PHONE_FAMILY,
+  };
 
   // Use brand pricing if available, fallback to mock data
   const pricingTiers = brand.pricing?.tiers || mockData.pricing;
@@ -137,7 +145,9 @@ export const Pricing = ({ onScrollToBundle }) => {
                   </p>
                 )}
 
+                {/* Phone Only Purchase Button */}
                 <Button
+                  asChild
                   className={`w-full mb-6 font-bold ${
                     isPopular
                       ? ''
@@ -157,17 +167,27 @@ export const Pricing = ({ onScrollToBundle }) => {
                           backgroundColor: 'white'
                         }
                   }
-                  onClick={shouldShowBundleButton ? () => onScrollToBundle(bundleType) : undefined}
                   data-testid={`pricing-cta-${plan.id || index}`}
                 >
-                  {shouldShowBundleButton ? (
-                    <>
-                      Only Phone Protection
-                      <ArrowDown className="ml-2 h-4 w-4 inline" />
-                    </>
-                  ) : (
-                    'Get Started'
-                  )}
+                  <a href={phoneOnlyLinks[bundleType]} target="_blank" rel="noopener noreferrer">
+                    Only Phone Protection ${bundleType === 'basic' ? '15.99' : bundleType === 'mid' ? '28.99' : '47.99'}
+                  </a>
+                </Button>
+
+                {/* See Bundle Options Button */}
+                <Button
+                  variant="outline"
+                  className="w-full mb-6 font-semibold"
+                  style={{ 
+                    borderColor: brand.colors.primary, 
+                    borderWidth: '2px',
+                    color: brand.colors.primary,
+                    backgroundColor: 'transparent'
+                  }}
+                  onClick={() => onScrollToBundle(bundleType)}
+                >
+                  See Bundle Options
+                  <ArrowDown className="ml-2 h-4 w-4 inline" />
                 </Button>
 
                 <ul className="space-y-3">

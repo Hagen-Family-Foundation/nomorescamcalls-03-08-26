@@ -10,6 +10,11 @@
  */
 
 export const PRICING_LINKS = {
+  // Phone Only Payment Links
+  PHONE_BASIC: 'https://buy.stripe.com/eVq14m5W3bnYaqtbxQ4gg0a',
+  PHONE_MID: 'https://buy.stripe.com/aFa7sKfwDdw6569atM4gg0c',
+  PHONE_FAMILY: 'https://buy.stripe.com/9B6bJ0acj9fQ2Y1atM4gg0f',
+
   // 4-Pillar Bundle Payment Links (includes all protections)
   BUNDLE_BASIC_4_PILLARS: 'https://buy.stripe.com/28E7sK2JRdw60PT45o4gg0b',
   BUNDLE_MID_4_PILLARS: 'https://buy.stripe.com/8x2aEWckr77IcyB9pI4gg0e',
