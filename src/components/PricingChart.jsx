@@ -90,7 +90,7 @@ export const PricingChart = ({ highlightedBundle }) => {
             Bundle & Save Up To 55%
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-1">
-            Get complete protection with our 4-pillar bundles: <strong>Phone + Text + Email + Web</strong>
+            Get this complete protection with our 4 Pillars bundle: <strong>Phone + Text + Email + Web</strong>
           </p>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-4">
             All included at one low monthly price for all your lines and devices.
