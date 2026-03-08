@@ -165,7 +165,10 @@ export const PricingChart = ({ highlightedBundle }) => {
                 {/* Textinaters Row */}
                 <tr className="border-b border-gray-100">
                   <td className="py-4 px-6 text-left font-medium text-gray-900">
-                    💬 + Textinaters
+                    <div className="flex items-center gap-4">
+                      <span>💬 + Textinaters</span>
+                      <PriceCircle amount="$12.99" />
+                    </div>
                   </td>
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
@@ -173,12 +176,9 @@ export const PricingChart = ({ highlightedBundle }) => {
                       <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
                         plan.popular ? 'bg-orange-50/30' : ''
                       } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
-                        <div className="flex flex-col items-center gap-2">
-                          <PriceCircle amount="$12.99" />
-                          <div className="flex items-center">
-                            <span className="text-green-600 font-semibold">Bundled For Savings</span>
-                            <Check className="h-4 w-4 text-green-500 ml-2" />
-                          </div>
+                        <div className="flex items-center justify-center">
+                          <span className="text-green-600 font-semibold">Bundled For Savings</span>
+                          <Check className="h-4 w-4 text-green-500 ml-2" />
                         </div>
                       </td>
                     );
@@ -188,7 +188,10 @@ export const PricingChart = ({ highlightedBundle }) => {
                 {/* Emailinaters Row */}
                 <tr className="border-b border-gray-100">
                   <td className="py-4 px-6 text-left font-medium text-gray-900">
-                    📧 + Emailinaters
+                    <div className="flex items-center gap-4">
+                      <span>📧 + Emailinaters</span>
+                      <PriceCircle amount="$12.99" />
+                    </div>
                   </td>
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
@@ -196,12 +199,9 @@ export const PricingChart = ({ highlightedBundle }) => {
                       <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
                         plan.popular ? 'bg-orange-50/30' : ''
                       } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
-                        <div className="flex flex-col items-center gap-2">
-                          <PriceCircle amount="$12.99" />
-                          <div className="flex items-center">
-                            <span className="text-green-600 font-semibold">Bundled For Savings</span>
-                            <Check className="h-4 w-4 text-green-500 ml-2" />
-                          </div>
+                        <div className="flex items-center justify-center">
+                          <span className="text-green-600 font-semibold">Bundled For Savings</span>
+                          <Check className="h-4 w-4 text-green-500 ml-2" />
                         </div>
                       </td>
                     );
@@ -211,7 +211,10 @@ export const PricingChart = ({ highlightedBundle }) => {
                 {/* Webinaters Row */}
                 <tr className="border-b border-gray-100">
                   <td className="py-4 px-6 text-left font-medium text-gray-900">
-                    🌐 + Webinaters
+                    <div className="flex items-center gap-4">
+                      <span>🌐 + Webinaters</span>
+                      <PriceCircle amount="$12.99" />
+                    </div>
                   </td>
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
@@ -219,12 +222,9 @@ export const PricingChart = ({ highlightedBundle }) => {
                       <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
                         plan.popular ? 'bg-orange-50/30' : ''
                       } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
-                        <div className="flex flex-col items-center gap-2">
-                          <PriceCircle amount="$12.99" />
-                          <div className="flex items-center">
-                            <span className="text-green-600 font-semibold">Bundled For Savings</span>
-                            <Check className="h-4 w-4 text-green-500 ml-2" />
-                          </div>
+                        <div className="flex items-center justify-center">
+                          <span className="text-green-600 font-semibold">Bundled For Savings</span>
+                          <Check className="h-4 w-4 text-green-500 ml-2" />
                         </div>
                       </td>
                     );
@@ -397,26 +397,32 @@ export const PricingChart = ({ highlightedBundle }) => {
                 </div>
 
                 {/* Add-ons */}
-                <div className="flex flex-col items-center py-3 border-b border-gray-100 gap-2">
-                  <span className="text-gray-700 font-medium">💬 + Textinaters</span>
-                  <div className="w-14 h-14 rounded-full bg-red-600 border-4 border-black flex items-center justify-center text-white font-bold text-sm shadow-xl">
-                    $12.99
+                <div className="flex items-center justify-between py-3 border-b border-gray-100">
+                  <div className="flex items-center gap-3">
+                    <span className="text-gray-700 font-medium">💬 + Textinaters</span>
+                    <div className="w-12 h-12 rounded-full bg-red-600 border-3 border-black flex items-center justify-center text-white font-bold text-xs shadow-lg">
+                      $12.99
+                    </div>
                   </div>
-                  <span className="text-green-600 font-semibold">Bundled For Savings <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
+                  <span className="text-green-600 font-semibold text-sm">Bundled <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
                 </div>
-                <div className="flex flex-col items-center py-3 border-b border-gray-100 gap-2">
-                  <span className="text-gray-700 font-medium">📧 + Emailinaters</span>
-                  <div className="w-14 h-14 rounded-full bg-red-600 border-4 border-black flex items-center justify-center text-white font-bold text-sm shadow-xl">
-                    $12.99
+                <div className="flex items-center justify-between py-3 border-b border-gray-100">
+                  <div className="flex items-center gap-3">
+                    <span className="text-gray-700 font-medium">📧 + Emailinaters</span>
+                    <div className="w-12 h-12 rounded-full bg-red-600 border-3 border-black flex items-center justify-center text-white font-bold text-xs shadow-lg">
+                      $12.99
+                    </div>
                   </div>
-                  <span className="text-green-600 font-semibold">Bundled For Savings <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
+                  <span className="text-green-600 font-semibold text-sm">Bundled <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
                 </div>
-                <div className="flex flex-col items-center py-3 border-b border-gray-100 gap-2">
-                  <span className="text-gray-700 font-medium">🌐 + Webinaters</span>
-                  <div className="w-14 h-14 rounded-full bg-red-600 border-4 border-black flex items-center justify-center text-white font-bold text-sm shadow-xl">
-                    $12.99
+                <div className="flex items-center justify-between py-3 border-b border-gray-100">
+                  <div className="flex items-center gap-3">
+                    <span className="text-gray-700 font-medium">🌐 + Webinaters</span>
+                    <div className="w-12 h-12 rounded-full bg-red-600 border-3 border-black flex items-center justify-center text-white font-bold text-xs shadow-lg">
+                      $12.99
+                    </div>
                   </div>
-                  <span className="text-green-600 font-semibold">Bundled For Savings <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
+                  <span className="text-green-600 font-semibold text-sm">Bundled <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
                 </div>
 
                 {/* Per Line / Per Protection - NEW Affordability Row */}
