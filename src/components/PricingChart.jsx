@@ -96,8 +96,8 @@ export const PricingChart = ({ highlightedBundle }) => {
         </div>
 
         {/* Comparison Table - Desktop */}
-        <div className="hidden lg:block bg-white rounded-2xl shadow-xl border border-gray-200 mb-12 mt-8">
-          <div className="overflow-x-auto">
+        <div className="hidden lg:block bg-white rounded-2xl shadow-xl border border-gray-200 mb-12 mt-12 overflow-visible">
+          <div className="overflow-x-auto overflow-y-visible">
             <table className="w-full" data-testid="pricing-comparison-table">
               <thead>
                 <tr className="border-b border-gray-200">
@@ -115,7 +115,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                       >
                         {plan.popular && (
                           <div 
-                            className="absolute -top-4 left-1/2 -translate-x-1/2 text-white px-4 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-lg z-10"
+                            className="absolute -top-8 left-1/2 -translate-x-1/2 text-white px-4 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-lg z-20"
                             style={{ backgroundColor: brand.colors.primary }}
                           >
                             <Star className="h-3 w-3" fill="currentColor" />
