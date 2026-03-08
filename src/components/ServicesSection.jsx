@@ -102,7 +102,7 @@ const ServiceCard = ({ emoji, name, subtitle, description, features, price }) =>
         className="w-full btn-secondary-3d py-3 text-base font-bold text-center justify-center hover:scale-105 transition-transform flex items-center gap-2"
         data-testid={`service-cta-${name.toLowerCase()}`}
       >
-        See Bundle Savings
+        $12.99/mo or See Bundle Savings
         <ArrowDown className="h-4 w-4" />
       </Button>
     </a>
