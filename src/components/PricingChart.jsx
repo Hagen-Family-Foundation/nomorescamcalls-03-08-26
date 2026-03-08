@@ -164,7 +164,13 @@ export const PricingChart = ({ highlightedBundle }) => {
                 {/* Textinaters Row */}
                 <tr className="border-b border-gray-100">
                   <td className="py-4 px-6 text-left font-medium text-gray-900">
-                    💬 + Textinaters
+                    <div className="flex items-center gap-3">
+                      <span>💬 + Textinaters</span>
+                      <span className="relative inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-red-500">
+                        <span className="text-xs font-bold text-red-500">$12.99</span>
+                        <span className="absolute w-14 h-0.5 bg-red-500 rotate-45"></span>
+                      </span>
+                    </div>
                   </td>
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
@@ -182,7 +188,13 @@ export const PricingChart = ({ highlightedBundle }) => {
                 {/* Emailinaters Row */}
                 <tr className="border-b border-gray-100">
                   <td className="py-4 px-6 text-left font-medium text-gray-900">
-                    📧 + Emailinaters
+                    <div className="flex items-center gap-3">
+                      <span>📧 + Emailinaters</span>
+                      <span className="relative inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-red-500">
+                        <span className="text-xs font-bold text-red-500">$12.99</span>
+                        <span className="absolute w-14 h-0.5 bg-red-500 rotate-45"></span>
+                      </span>
+                    </div>
                   </td>
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
@@ -200,7 +212,13 @@ export const PricingChart = ({ highlightedBundle }) => {
                 {/* Webinaters Row */}
                 <tr className="border-b border-gray-100">
                   <td className="py-4 px-6 text-left font-medium text-gray-900">
-                    🌐 + Webinaters
+                    <div className="flex items-center gap-3">
+                      <span>🌐 + Webinaters</span>
+                      <span className="relative inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-red-500">
+                        <span className="text-xs font-bold text-red-500">$12.99</span>
+                        <span className="absolute w-14 h-0.5 bg-red-500 rotate-45"></span>
+                      </span>
+                    </div>
                   </td>
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
@@ -382,15 +400,33 @@ export const PricingChart = ({ highlightedBundle }) => {
 
                 {/* Add-ons */}
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                  <span className="text-gray-700">💬 + Textinaters</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-gray-700">💬 + Textinaters</span>
+                    <span className="relative inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-red-500">
+                      <span className="text-[10px] font-bold text-red-500">$12.99</span>
+                      <span className="absolute w-12 h-0.5 bg-red-500 rotate-45"></span>
+                    </span>
+                  </div>
                   <span className="text-green-600 font-semibold">Bundled For Savings <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                  <span className="text-gray-700">📧 + Emailinaters</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-gray-700">📧 + Emailinaters</span>
+                    <span className="relative inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-red-500">
+                      <span className="text-[10px] font-bold text-red-500">$12.99</span>
+                      <span className="absolute w-12 h-0.5 bg-red-500 rotate-45"></span>
+                    </span>
+                  </div>
                   <span className="text-green-600 font-semibold">Bundled For Savings <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                  <span className="text-gray-700">🌐 + Webinaters</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-gray-700">🌐 + Webinaters</span>
+                    <span className="relative inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-red-500">
+                      <span className="text-[10px] font-bold text-red-500">$12.99</span>
+                      <span className="absolute w-12 h-0.5 bg-red-500 rotate-45"></span>
+                    </span>
+                  </div>
                   <span className="text-green-600 font-semibold">Bundled For Savings <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
                 </div>
 
