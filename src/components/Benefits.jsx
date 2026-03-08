@@ -49,7 +49,10 @@ export const Benefits = () => {
           
           {/* Hook: Problem Statement */}
           <div className="text-2xl md:text-3xl font-bold mb-6 leading-tight" style={{ color: '#0A0F2A' }}>
-            NoMoreScamCalls covers <span style={{ color: '#FFD700' }}>PHONE</span> only.
+            NoMoreScamCalls covers <span style={{ 
+              color: '#FFD700', 
+              textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'
+            }}>PHONE</span> only.
           </div>
           
           {/* The Gap: 3 Missing Pillars */}
