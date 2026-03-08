@@ -110,8 +110,9 @@ export const PricingChart = ({ highlightedBundle }) => {
                       <th 
                         key={plan.id} 
                         className={`py-5 px-6 text-center relative transition-all duration-300 ${
-                          plan.popular ? 'bg-orange-50' : 'bg-gray-50'
-                        } ${isHighlighted ? 'bundle-highlight-column' : ''}`}
+                          isHighlighted ? 'bundle-highlight-column' : ''
+                        }`}
+                        style={plan.popular ? { backgroundColor: '#0a1428' } : { backgroundColor: '#f9fafb' }}
                       >
                         <span className={`text-lg font-bold ${
                           plan.popular ? '' : 'text-gray-900'
@@ -138,7 +139,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                     const isHighlighted = highlightedBundle === plan.id;
                     return (
                       <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
-                        plan.popular ? 'bg-orange-50/30' : ''
+                        plan.popular ? 'bg-blue-900/20' : ''
                       } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
                         <span className="text-gray-700">
                           ${plan.phoneOnly.toFixed(2)}/mo
@@ -163,7 +164,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                     const isHighlighted = highlightedBundle === plan.id;
                     return (
                       <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
-                        plan.popular ? 'bg-orange-50/30' : ''
+                        plan.popular ? 'bg-blue-900/20' : ''
                       } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
                         <div className="flex items-center justify-center">
                           <span className="text-green-600 font-semibold">Bundled For Savings</span>
@@ -186,7 +187,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                     const isHighlighted = highlightedBundle === plan.id;
                     return (
                       <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
-                        plan.popular ? 'bg-orange-50/30' : ''
+                        plan.popular ? 'bg-blue-900/20' : ''
                       } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
                         <div className="flex items-center justify-center">
                           <span className="text-green-600 font-semibold">Bundled For Savings</span>
@@ -209,7 +210,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                     const isHighlighted = highlightedBundle === plan.id;
                     return (
                       <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
-                        plan.popular ? 'bg-orange-50/30' : ''
+                        plan.popular ? 'bg-blue-900/20' : ''
                       } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
                         <div className="flex items-center justify-center">
                           <span className="text-green-600 font-semibold">Bundled For Savings</span>
@@ -310,7 +311,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                     const isHighlighted = highlightedBundle === plan.id;
                     return (
                       <td key={plan.id} className={`py-6 px-6 text-center transition-all duration-300 ${
-                        plan.popular ? 'bg-orange-50/30' : ''
+                        plan.popular ? 'bg-blue-900/20' : ''
                       } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
                         <Button
                           asChild
@@ -360,7 +361,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                 } ${isHighlighted ? 'bundle-highlight' : ''}`}
               >
                 {/* Card Header */}
-                <div className={`p-6 ${plan.popular ? 'bg-orange-50' : 'bg-gray-50'}`}>
+                <div className={`p-6 ${plan.popular ? 'bg-blue-900' : 'bg-gray-50'}`}>
                   {plan.popular && (
                     <div 
                       className="inline-flex items-center gap-1 text-white px-3 py-1 rounded-full text-xs font-bold mb-3"
