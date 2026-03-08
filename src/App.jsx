@@ -74,10 +74,10 @@ const HomePage = () => {
     <Pricing onScrollToBundle={handleScrollToBundle} />
     <ServicesSection />
     <PricingChart highlightedBundle={highlightedBundle} />
+    <TrustSafety />
     <FAQ />
     <FinalCTA />
     <Testimonials />
-    <TrustSafety />
     <Footer />
     <ScrollToTop />
     <AIChat />
