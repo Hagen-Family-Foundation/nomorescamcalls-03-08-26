@@ -162,7 +162,7 @@ export const Pricing = ({ onScrollToBundle }) => {
                 >
                   {shouldShowBundleButton ? (
                     <>
-                      See Bundle Options
+                      Only Phone Protection
                       <ArrowDown className="ml-2 h-4 w-4 inline" />
                     </>
                   ) : (
