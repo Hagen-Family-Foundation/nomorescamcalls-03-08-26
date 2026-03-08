@@ -31,43 +31,9 @@ export const Header = () => {
 
   return (
     <>
-      {/* Promo Bar - Shows on scroll */}
-      {showPromoBar && isScrolled && (
-        <div 
-          style={{ backgroundColor: brand.colors.primary }}
-          className="fixed top-0 left-0 right-0 z-[60] text-white py-2 px-4 transform transition-transform duration-300"
-          data-testid="promo-bar"
-        >
-          <div className="max-w-7xl mx-auto flex items-center justify-center gap-4 text-sm">
-            <Sparkles className="h-4 w-4 hidden sm:block" />
-            <span className="font-medium">
-              <span className="hidden sm:inline">🎉 Limited Time: </span>
-              Start your <strong>{brand.pricing?.promoText || '7-Day FREE Trial'}</strong> today!
-            </span>
-            <Button
-              size="sm"
-              style={{ backgroundColor: brand.colors.secondary, color: brand.colors.primary, fontWeight: 700 }}
-              className="hover:opacity-90 h-7 px-3 text-xs font-semibold"
-              onClick={() => scrollToSection('pricing')}
-              data-testid="promo-bar-cta"
-            >
-              Claim Now
-            </Button>
-            <button
-              onClick={() => setShowPromoBar(false)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white"
-              aria-label="Close promo bar"
-            >
-              <X className="h-4 w-4" />
-            </button>
-          </div>
-        </div>
-      )}
-
       {/* Main Header */}
       <header 
-        className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
-          showPromoBar && isScrolled ? 'top-10' : 'top-0'
+        className={`fixed left-0 right-0 z-50 transition-all duration-300 top-0
         } ${
           isScrolled 
             ? 'bg-white shadow-md' 
