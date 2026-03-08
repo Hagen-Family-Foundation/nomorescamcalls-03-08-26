@@ -398,31 +398,31 @@ export const PricingChart = ({ highlightedBundle }) => {
 
                 {/* Add-ons */}
                 <div className="flex items-center justify-between py-3 border-b border-gray-100">
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2">
                     <span className="text-gray-700 font-medium">💬 + Textinaters</span>
-                    <span className="relative inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-red-500">
-                      <span className="text-xs font-bold text-red-500">$12.99</span>
-                      <span className="absolute w-14 h-0.5 bg-red-500 rotate-45"></span>
+                    <span className="relative inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-red-500">
+                      <span className="text-[10px] font-bold text-red-500">$12.99</span>
+                      <span className="absolute w-12 h-0.5 bg-red-500 rotate-45"></span>
                     </span>
                   </div>
                   <span className="text-green-600 font-semibold text-sm">Bundled <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
                 </div>
                 <div className="flex items-center justify-between py-3 border-b border-gray-100">
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2">
                     <span className="text-gray-700 font-medium">📧 + Emailinaters</span>
-                    <span className="relative inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-red-500">
-                      <span className="text-xs font-bold text-red-500">$12.99</span>
-                      <span className="absolute w-14 h-0.5 bg-red-500 rotate-45"></span>
+                    <span className="relative inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-red-500">
+                      <span className="text-[10px] font-bold text-red-500">$12.99</span>
+                      <span className="absolute w-12 h-0.5 bg-red-500 rotate-45"></span>
                     </span>
                   </div>
                   <span className="text-green-600 font-semibold text-sm">Bundled <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
                 </div>
                 <div className="flex items-center justify-between py-3 border-b border-gray-100">
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2">
                     <span className="text-gray-700 font-medium">🌐 + Webinaters</span>
-                    <span className="relative inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-red-500">
-                      <span className="text-xs font-bold text-red-500">$12.99</span>
-                      <span className="absolute w-14 h-0.5 bg-red-500 rotate-45"></span>
+                    <span className="relative inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-red-500">
+                      <span className="text-[10px] font-bold text-red-500">$12.99</span>
+                      <span className="absolute w-12 h-0.5 bg-red-500 rotate-45"></span>
                     </span>
                   </div>
                   <span className="text-green-600 font-semibold text-sm">Bundled <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
