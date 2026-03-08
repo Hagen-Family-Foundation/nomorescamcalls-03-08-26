@@ -3,6 +3,7 @@ import { Button } from './ui/button';
 import { Check, Shield, Star, ArrowRight, MessageSquare, Mail, Globe } from 'lucide-react';
 import { useBrand } from '../context/BrandContext';
 import { PRICING_LINKS, PRICING_DATA } from '../config/pricingLinks';
+import PriceCircle from './PriceCircle';
 
 /**
  * PricingChart Component
@@ -172,11 +173,8 @@ export const PricingChart = ({ highlightedBundle }) => {
                       <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
                         plan.popular ? 'bg-orange-50/30' : ''
                       } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
-                        <div className="flex items-center justify-center">
-                          <span className="relative inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-red-500 mr-16">
-                            <span className="text-xs font-bold text-red-500">$12.99</span>
-                            <span className="absolute w-14 h-0.5 bg-red-500 rotate-45"></span>
-                          </span>
+                        <div className="flex flex-col items-center gap-2">
+                          <PriceCircle amount="$12.99" />
                           <div className="flex items-center">
                             <span className="text-green-600 font-semibold">Bundled For Savings</span>
                             <Check className="h-4 w-4 text-green-500 ml-2" />
@@ -198,11 +196,8 @@ export const PricingChart = ({ highlightedBundle }) => {
                       <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
                         plan.popular ? 'bg-orange-50/30' : ''
                       } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
-                        <div className="flex items-center justify-center">
-                          <span className="relative inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-red-500 mr-16">
-                            <span className="text-xs font-bold text-red-500">$12.99</span>
-                            <span className="absolute w-14 h-0.5 bg-red-500 rotate-45"></span>
-                          </span>
+                        <div className="flex flex-col items-center gap-2">
+                          <PriceCircle amount="$12.99" />
                           <div className="flex items-center">
                             <span className="text-green-600 font-semibold">Bundled For Savings</span>
                             <Check className="h-4 w-4 text-green-500 ml-2" />
@@ -224,11 +219,8 @@ export const PricingChart = ({ highlightedBundle }) => {
                       <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
                         plan.popular ? 'bg-orange-50/30' : ''
                       } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
-                        <div className="flex items-center justify-center">
-                          <span className="relative inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-red-500 mr-16">
-                            <span className="text-xs font-bold text-red-500">$12.99</span>
-                            <span className="absolute w-14 h-0.5 bg-red-500 rotate-45"></span>
-                          </span>
+                        <div className="flex flex-col items-center gap-2">
+                          <PriceCircle amount="$12.99" />
                           <div className="flex items-center">
                             <span className="text-green-600 font-semibold">Bundled For Savings</span>
                             <Check className="h-4 w-4 text-green-500 ml-2" />
@@ -405,35 +397,26 @@ export const PricingChart = ({ highlightedBundle }) => {
                 </div>
 
                 {/* Add-ons */}
-                <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                  <span className="text-gray-700">💬 + Textinaters</span>
-                  <div className="flex items-center">
-                    <span className="relative inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-red-500 mr-8">
-                      <span className="text-[10px] font-bold text-red-500">$12.99</span>
-                      <span className="absolute w-12 h-0.5 bg-red-500 rotate-45"></span>
-                    </span>
-                    <span className="text-green-600 font-semibold">Bundled <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
+                <div className="flex flex-col items-center py-3 border-b border-gray-100 gap-2">
+                  <span className="text-gray-700 font-medium">💬 + Textinaters</span>
+                  <div className="w-14 h-14 rounded-full bg-red-600 border-4 border-black flex items-center justify-center text-white font-bold text-sm shadow-xl">
+                    $12.99
                   </div>
+                  <span className="text-green-600 font-semibold">Bundled For Savings <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
                 </div>
-                <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                  <span className="text-gray-700">📧 + Emailinaters</span>
-                  <div className="flex items-center">
-                    <span className="relative inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-red-500 mr-8">
-                      <span className="text-[10px] font-bold text-red-500">$12.99</span>
-                      <span className="absolute w-12 h-0.5 bg-red-500 rotate-45"></span>
-                    </span>
-                    <span className="text-green-600 font-semibold">Bundled <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
+                <div className="flex flex-col items-center py-3 border-b border-gray-100 gap-2">
+                  <span className="text-gray-700 font-medium">📧 + Emailinaters</span>
+                  <div className="w-14 h-14 rounded-full bg-red-600 border-4 border-black flex items-center justify-center text-white font-bold text-sm shadow-xl">
+                    $12.99
                   </div>
+                  <span className="text-green-600 font-semibold">Bundled For Savings <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
                 </div>
-                <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                  <span className="text-gray-700">🌐 + Webinaters</span>
-                  <div className="flex items-center">
-                    <span className="relative inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-red-500 mr-8">
-                      <span className="text-[10px] font-bold text-red-500">$12.99</span>
-                      <span className="absolute w-12 h-0.5 bg-red-500 rotate-45"></span>
-                    </span>
-                    <span className="text-green-600 font-semibold">Bundled <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
+                <div className="flex flex-col items-center py-3 border-b border-gray-100 gap-2">
+                  <span className="text-gray-700 font-medium">🌐 + Webinaters</span>
+                  <div className="w-14 h-14 rounded-full bg-red-600 border-4 border-black flex items-center justify-center text-white font-bold text-sm shadow-xl">
+                    $12.99
                   </div>
+                  <span className="text-green-600 font-semibold">Bundled For Savings <Check className="h-4 w-4 text-green-500 inline ml-1" /></span>
                 </div>
 
                 {/* Per Line / Per Protection - NEW Affordability Row */}
