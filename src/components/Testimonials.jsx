@@ -19,7 +19,7 @@ export const Testimonials = () => {
     {
       name: 'Devon S.',
       label: 'Early adopter',
-      quote: "I like having phone, text, email, and web protection laid out in one place instead of five different tools."
+      quote: "I like having phone, text, email, and web protection laid out in one place instead of four different tools."
     }
   ];
 
