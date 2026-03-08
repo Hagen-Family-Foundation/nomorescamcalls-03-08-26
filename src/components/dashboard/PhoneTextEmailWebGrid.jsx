@@ -68,6 +68,18 @@ export const PhoneTextEmailWebGrid = () => {
                 <td className="p-4 border border-[#1E3A8A] bg-white text-center">
                   <div className="text-4xl mb-2">{row.icon}</div>
                   <div className="text-[28px] font-bold text-[#1E3A8A]">{row.protection}</div>
+                  
+                  {/* Red Dot Warning for TEXT and EMAIL only */}
+                  {row.protection === 'TEXT PROTECTION' && (
+                    <div className="mt-4 p-3 border border-[#1E3A8A] bg-white text-[14px] text-[#1E3A8A] text-left">
+                      ⚠️ Red dot = DO NOT OPEN (scam links/viruses detected before you tap)
+                    </div>
+                  )}
+                  {row.protection === 'EMAIL PROTECTION' && (
+                    <div className="mt-4 p-3 border border-[#1E3A8A] bg-white text-[14px] text-[#1E3A8A] text-left">
+                      ⚠️ Red dot = DO NOT OPEN (high-risk phishing/viruses caught instantly)
+                    </div>
+                  )}
                 </td>
                 
                 {/* COLUMN 1: TOTAL */}
