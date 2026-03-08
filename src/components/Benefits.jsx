@@ -44,14 +44,59 @@ export const Benefits = () => {
     <section id="benefits" className="py-20 bg-white" data-testid="benefits-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* 4 Pillars Typography Section - VERY COMPACT */}
-        <div className="text-center mb-8">
-          <p className="text-sm text-gray-600 mb-1">NoMoreScamCalls covers <span className="font-bold" style={{ color: '#FFD700', textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>PHONE</span> only. What about 💬TEXT 📧EMAIL 🌐WEB?</p>
-          <h2 className="text-2xl font-black mb-1" style={{ color: '#1974D2' }}>4 PILLARS OF PROTECTION</h2>
-          <p className="text-sm text-gray-600">Complete scammer protection from <span className="font-bold" style={{ color: '#FFD700', textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000' }}>ALL 4 SIDES</span> • <span style={{ color: '#1974D2' }}>Widest Coverage</span> • <span style={{ color: '#1974D2' }}>Best Value Bundle</span></p>
+        {/* 4 Pillars Typography Section */}
+        <div className="max-w-4xl mx-auto py-8 px-6 text-center mb-16">
+          
+          {/* Hook: Problem Statement */}
+          <div className="text-2xl md:text-3xl font-bold mb-6 leading-tight" style={{ color: '#0A0F2A' }}>
+            NoMoreScamCalls covers <span style={{ 
+              color: '#FFD700', 
+              textShadow: '-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000, 2px 0 0 #000'
+            }}>PHONE</span> only.
+          </div>
+          
+          {/* The Gap: 3 Missing Pillars */}
+          <div className="grid grid-cols-3 gap-4 mb-8 max-w-2xl mx-auto">
+            <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
+              💬 TEXT
+            </div>
+            <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
+              📧 EMAIL
+            </div>
+            <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
+              🌐 WEB
+            </div>
+          </div>
+
+          {/* Solution: 4 Pillars */}
+          <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tight" style={{ color: '#1974D2' }}>
+            4 PILLARS OF PROTECTION
+          </h2>
+
+          {/* Value Prop */}
+          <div className="text-xl md:text-2xl font-semibold mb-8 leading-relaxed max-w-3xl mx-auto bg-white/80 py-6 rounded-xl" style={{ color: '#0A0F2A' }}>
+            Complete scammer protection from <span className="font-black" style={{ 
+              color: '#FFD700',
+              textShadow: '-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000, 2px 0 0 #000'
+            }}>ALL 4 SIDES</span>
+          </div>
+
+          {/* Benefits Stack */}
+          <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto">
+            <div className="text-lg font-semibold bg-white rounded-xl p-6 shadow-2xl" style={{ color: '#0A0F2A', border: '4px solid #FFD700' }}>
+              ✅ <span className="font-black" style={{ color: '#1974D2' }}>Widest Coverage</span> on market
+            </div>
+            <div className="text-lg font-semibold bg-white rounded-xl p-6 shadow-2xl" style={{ color: '#0A0F2A', border: '4px solid #FFD700' }}>
+              💰 <span className="font-black" style={{ color: '#1974D2' }}>Best Value Bundle</span> pricing
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="text-sm uppercase tracking-widest font-bold inline-block pb-2" style={{ color: '#1A1F4A', borderBottom: '2px solid #FFD700' }}>
+            See comparison chart below →
+          </div>
         </div>
 
-        {/* 4 BENEFIT COLUMNS - FULL SIZE RESTORED */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => {
             const Icon = iconMap[benefit.icon] || Heart;

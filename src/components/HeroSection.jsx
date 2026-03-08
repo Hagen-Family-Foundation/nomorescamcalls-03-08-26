@@ -52,9 +52,9 @@ export const HeroSection = () => {
           </div>
 
           {/* Main Header - 4 Pillars of Protection (2 line stack) */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-lg px-6 py-4 shadow-2xl inline-block mb-8">
+          <div className="bg-white/80 backdrop-blur-sm rounded-lg px-6 py-3 shadow-2xl inline-block mb-8">
             <h1 
-              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
               style={{ color: '#0a1428' }}
             >
               4 Pillars of Protection
