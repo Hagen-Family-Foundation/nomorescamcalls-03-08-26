@@ -75,7 +75,10 @@ export const Benefits = () => {
 
           {/* Value Prop */}
           <div className="text-xl md:text-2xl font-semibold mb-8 leading-relaxed max-w-3xl mx-auto bg-white/80 py-6 rounded-xl" style={{ color: '#0A0F2A' }}>
-            Complete scammer protection from <span className="font-black" style={{ color: '#FFD700' }}>ALL 4 SIDES</span>
+            Complete scammer protection from <span className="font-black" style={{ 
+              color: '#FFD700',
+              textShadow: '-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000, 2px 0 0 #000'
+            }}>ALL 4 SIDES</span>
           </div>
 
           {/* Benefits Stack */}
