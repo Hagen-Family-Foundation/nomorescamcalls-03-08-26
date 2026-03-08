@@ -48,45 +48,45 @@ export const Benefits = () => {
         <div className="max-w-4xl mx-auto py-8 px-6 text-center mb-16">
           
           {/* Hook: Problem Statement */}
-          <div className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 leading-tight">
-            NoMoreScamCalls covers <span className="text-red-600">PHONE</span> only.
+          <div className="text-2xl md:text-3xl font-bold mb-6 leading-tight" style={{ color: '#0A0F2A' }}>
+            NoMoreScamCalls covers <span style={{ color: '#FFD700' }}>PHONE</span> only.
           </div>
           
           {/* The Gap: 3 Missing Pillars */}
           <div className="grid grid-cols-3 gap-4 mb-8 max-w-2xl mx-auto">
-            <div className="text-xl font-semibold text-gray-700 py-3 px-6 bg-red-50 border-2 border-red-200 rounded-lg">
+            <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
               💬 TEXT
             </div>
-            <div className="text-xl font-semibold text-gray-700 py-3 px-6 bg-red-50 border-2 border-red-200 rounded-lg">
+            <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
               📧 EMAIL
             </div>
-            <div className="text-xl font-semibold text-gray-700 py-3 px-6 bg-red-50 border-2 border-red-200 rounded-lg">
+            <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
               🌐 WEB
             </div>
           </div>
 
           {/* Solution: 4 Pillars */}
-          <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-yellow-500 to-red-600 bg-clip-text text-transparent mb-8 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 bg-clip-text text-transparent mb-8 tracking-tight">
             4 PILLARS OF PROTECTION
           </h2>
 
           {/* Value Prop */}
-          <div className="text-xl md:text-2xl font-semibold text-gray-800 mb-8 leading-relaxed max-w-3xl mx-auto">
-            Complete scammer protection from <span className="font-bold text-red-600">ALL 4 SIDES</span>
+          <div className="text-xl md:text-2xl font-semibold mb-8 leading-relaxed max-w-3xl mx-auto bg-white/80 py-6 rounded-xl" style={{ color: '#0A0F2A' }}>
+            Complete scammer protection from <span className="font-black" style={{ color: '#FFD700' }}>ALL 4 SIDES</span>
           </div>
 
           {/* Benefits Stack */}
           <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto">
-            <div className="text-lg font-semibold text-gray-700 bg-white border-2 border-gray-200 rounded-xl p-6 shadow-lg">
-              ✅ <span className="font-bold">Widest Coverage</span> on market
+            <div className="text-lg font-semibold bg-white rounded-xl p-6 shadow-2xl" style={{ color: '#0A0F2A', border: '4px solid #FFD700' }}>
+              ✅ <span className="font-black" style={{ color: '#FFD700' }}>Widest Coverage</span> on market
             </div>
-            <div className="text-lg font-semibold text-gray-700 bg-white border-2 border-gray-200 rounded-xl p-6 shadow-lg">
-              💰 <span className="font-bold">Best Value Bundle</span> pricing
+            <div className="text-lg font-semibold bg-white rounded-xl p-6 shadow-2xl" style={{ color: '#0A0F2A', border: '4px solid #FFD700' }}>
+              💰 <span className="font-black" style={{ color: '#FFD700' }}>Best Value Bundle</span> pricing
             </div>
           </div>
 
           {/* CTA */}
-          <div className="text-sm uppercase tracking-widest font-bold text-gray-600">
+          <div className="text-sm uppercase tracking-widest font-bold inline-block pb-2" style={{ color: '#1A1F4A', borderBottom: '2px solid #FFD700' }}>
             See comparison chart below →
           </div>
         </div>
