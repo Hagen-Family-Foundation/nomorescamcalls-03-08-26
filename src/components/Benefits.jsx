@@ -51,7 +51,7 @@ export const Benefits = () => {
           <div className="text-2xl md:text-3xl font-bold mb-6 leading-tight" style={{ color: '#0A0F2A' }}>
             NoMoreScamCalls covers <span style={{ 
               color: '#FFD700', 
-              textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'
+              textShadow: '-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000, 2px 0 0 #000'
             }}>PHONE</span> only.
           </div>
           
