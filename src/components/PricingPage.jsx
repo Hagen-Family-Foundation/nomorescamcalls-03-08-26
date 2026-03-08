@@ -53,7 +53,7 @@ export const PricingPage = () => {
             style={{ backgroundColor: `${brand.colors.primary}30`, color: brand.colors.primary }}
           >
             <Shield className="h-4 w-4" />
-            Complete Protection Suite
+            Combine - TEXT EMAIL WEB for the 4 Pillars of Protection
           </div>
 
           {/* Main Heading */}
