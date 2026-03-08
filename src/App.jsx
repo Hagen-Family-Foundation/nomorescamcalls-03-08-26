@@ -66,7 +66,6 @@ const HomePage = () => {
     <Header />
     <HeroSection />
     <VideoSection />
-    <TrustBadges />
     <HowItWorks />
     <Benefits />
     <ComparisonTable />
@@ -75,6 +74,7 @@ const HomePage = () => {
     <ServicesSection />
     <PricingChart highlightedBundle={highlightedBundle} />
     <TrustSafety />
+    <TrustBadges />
     <FAQ />
     <FinalCTA />
     <Testimonials />
