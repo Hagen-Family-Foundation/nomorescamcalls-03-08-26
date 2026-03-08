@@ -44,11 +44,8 @@ export const Benefits = () => {
     <section id="benefits" className="py-20 bg-white" data-testid="benefits-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#0a1428' }}>
-            Why NoMoreScamCalls?
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {/* Text makeover coming soon */}
+          <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+            NoMoreScamCalls is only for phone coverage, what about Text, Email, Web? That is why the <strong>"4 Pillars of Protection"</strong> was developed. You need protections against scammers from all 4 sides. We've got you! We have bundled all four together for the best value and the widest level of protection on the market today. See the comparison chart below for the best deal.
           </p>
         </div>
 
