@@ -311,8 +311,16 @@ export const PricingChart = ({ highlightedBundle }) => {
 
                 {/* CTA Row */}
                 <tr>
-                  <td className="py-6 px-6 text-left text-gray-600 font-medium">
-                    BUY HERE
+                  <td className="py-6 px-6 text-left">
+                    <span 
+                      className="text-2xl font-black ml-16 animate-pulse"
+                      style={{ 
+                        color: '#FFD700',
+                        textShadow: '0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700'
+                      }}
+                    >
+                      BUY HERE
+                    </span>
                   </td>
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
