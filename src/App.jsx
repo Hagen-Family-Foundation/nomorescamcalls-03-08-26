@@ -68,11 +68,11 @@ const HomePage = () => {
     <VideoSection />
     <TrustBadges />
     <HowItWorks />
-    <ServicesSection />
     <Benefits />
     <ComparisonTable />
     <WhoItsFor />
     <Pricing onScrollToBundle={handleScrollToBundle} />
+    <ServicesSection />
     <PricingChart highlightedBundle={highlightedBundle} />
     <FAQ />
     <FinalCTA />
