@@ -76,27 +76,27 @@ export const PricingChart = ({ highlightedBundle }) => {
   ];
 
   return (
-    <section id="bundles" className="py-20 bg-gradient-to-b from-gray-50 to-white" data-testid="pricing-chart-section">
+    <section id="bundles" className="py-10 bg-gradient-to-b from-gray-50 to-white" data-testid="pricing-chart-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-6">
           <div 
-            className="inline-flex items-center gap-3 px-6 py-3 rounded-full text-2xl font-bold mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xl font-bold mb-3"
             style={{ backgroundColor: `${brand.colors.primary}15`, color: brand.colors.primary }}
           >
-            <Shield className="h-8 w-8" />
+            <Shield className="h-6 w-6" />
             4 Pillars of Protection
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
             Bundle & Save Up To 55%
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-4">
+          <p className="text-base text-gray-600 max-w-3xl mx-auto">
             Get complete protection with our 4 Pillars bundle: <strong>Phone + Text + Email + Web</strong>
           </p>
         </div>
 
         {/* Comparison Table - Desktop */}
-        <div className="hidden lg:block bg-white rounded-2xl shadow-xl border border-gray-200 mb-12 overflow-hidden">
+        <div className="hidden lg:block bg-white rounded-2xl shadow-xl border border-gray-200 mb-6 overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full" data-testid="pricing-comparison-table">
               <thead>
@@ -506,7 +506,7 @@ export const PricingChart = ({ highlightedBundle }) => {
         </div>
 
         {/* Bottom Note */}
-        <p className="text-center text-gray-500 text-sm mt-12">
+        <p className="text-center text-gray-500 text-xs mt-4">
           All bundles include complete Phone, Text, Email, and Web protection for all lines and all devices on your plan. 
           Prices are billed monthly. Cancel anytime.
         </p>
