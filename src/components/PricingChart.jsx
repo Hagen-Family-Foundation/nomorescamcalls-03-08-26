@@ -148,11 +148,11 @@ export const PricingChart = ({ highlightedBundle }) => {
                       <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
                         plan.popular ? '' : ''
                       } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
-                        <span className="text-gray-700">
+                        <span className="text-2xl font-bold text-gray-700">
                           ${plan.phoneOnly.toFixed(2)}/mo
                         </span>
-                        <span className="block text-base mt-1">
-                          — <span className="font-bold text-lg" style={{ color: brand.colors.primary }}>📱 {plan.lines} {plan.lines === 1 ? 'Line' : 'Lines'}</span>
+                        <span className="block text-lg mt-1">
+                          — <span className="font-bold text-xl" style={{ color: brand.colors.primary }}>📱 {plan.lines} {plan.lines === 1 ? 'Line' : 'Lines'}</span>
                         </span>
                       </td>
                     );
@@ -388,8 +388,8 @@ export const PricingChart = ({ highlightedBundle }) => {
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-gray-700">📱 Phone only</span>
                   <div className="text-right">
-                    <span className="font-medium">${plan.phoneOnly.toFixed(2)}/mo</span>
-                    <span className="block text-base font-bold" style={{ color: brand.colors.primary }}>— {plan.lines} {plan.lines === 1 ? 'Line' : 'Lines'}</span>
+                    <span className="text-xl font-bold">${plan.phoneOnly.toFixed(2)}/mo</span>
+                    <span className="block text-lg font-bold" style={{ color: brand.colors.primary }}>— {plan.lines} {plan.lines === 1 ? 'Line' : 'Lines'}</span>
                   </div>
                 </div>
 
