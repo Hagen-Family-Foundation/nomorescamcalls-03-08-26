@@ -112,7 +112,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                         className={`py-5 px-6 text-center relative transition-all duration-300 ${
                           isHighlighted ? 'bundle-highlight-column' : ''
                         }`}
-                        style={plan.popular ? { backgroundColor: '#002B5C' } : { backgroundColor: '#f9fafb' }}
+                        style={plan.popular ? { backgroundColor: '#1974D2' } : { backgroundColor: '#f9fafb' }}
                       >
                         <span className={`text-lg font-bold ${
                           plan.popular ? '' : 'text-gray-900'
