@@ -247,20 +247,19 @@ export const PricingChart = ({ highlightedBundle }) => {
 
                 {/* Bundle Total Row - Navy with white text */}
                 <tr className="border-b border-gray-200" style={{ backgroundColor: '#0a1428' }}>
-                  <td className="py-5 px-6 text-left font-bold text-white">
+                  <td className="py-2 px-6 text-left font-bold text-white">
                     ✅ Bundle Total
-                    <span className="block text-xs font-normal text-gray-300">(all 4 protections included)</span>
+                    <span className="block text-xs font-normal text-gray-300">(all 4 protections)</span>
                   </td>
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
                     return (
-                      <td key={plan.id} className={`py-5 px-6 text-center transition-all duration-300 ${
+                      <td key={plan.id} className={`py-2 px-6 text-center transition-all duration-300 ${
                         isHighlighted ? 'bundle-highlight-column' : ''
                       }`} style={{ backgroundColor: '#0a1428' }}>
-                        <span className="text-2xl font-bold" style={{ color: '#eab308' }}>
+                        <span className="text-lg font-bold" style={{ color: '#eab308' }}>
                           ${plan.bundlePrice.toFixed(2)}/mo
                         </span>
-                        <span className="block text-xs font-normal text-gray-300 mt-1">(all 4 protections included)</span>
                       </td>
                     );
                   })}
