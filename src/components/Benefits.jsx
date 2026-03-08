@@ -84,10 +84,10 @@ export const Benefits = () => {
           {/* Benefits Stack */}
           <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto">
             <div className="text-lg font-semibold bg-white rounded-xl p-6 shadow-2xl" style={{ color: '#0A0F2A', border: '4px solid #FFD700' }}>
-              ✅ <span className="font-black" style={{ color: '#FFD700' }}>Widest Coverage</span> on market
+              ✅ <span className="font-black" style={{ color: '#1974D2' }}>Widest Coverage</span> on market
             </div>
             <div className="text-lg font-semibold bg-white rounded-xl p-6 shadow-2xl" style={{ color: '#0A0F2A', border: '4px solid #FFD700' }}>
-              💰 <span className="font-black" style={{ color: '#FFD700' }}>Best Value Bundle</span> pricing
+              💰 <span className="font-black" style={{ color: '#1974D2' }}>Best Value Bundle</span> pricing
             </div>
           </div>
 
