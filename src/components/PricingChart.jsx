@@ -316,7 +316,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                       className="text-2xl font-black ml-16 animate-pulse"
                       style={{ 
                         color: '#FFD700',
-                        textShadow: '0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700'
+                        textShadow: '-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000, 2px 0 0 #000, 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700'
                       }}
                     >
                       BUY HERE
