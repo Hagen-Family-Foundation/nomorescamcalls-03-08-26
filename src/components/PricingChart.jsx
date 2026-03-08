@@ -316,6 +316,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                   </td>
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
+                    const phonePrice = plan.id === 'basic' ? '$15.99' : plan.id === 'mid' ? '$28.99' : '$47.99';
                     return (
                       <td key={plan.id} className={`py-6 px-6 text-center transition-all duration-300 ${
                         plan.popular ? '' : ''
@@ -343,7 +344,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                           }
                         >
                           <a href={plan.link} target="_blank" rel="noopener noreferrer">
-                            Get {plan.name}
+                            Get {plan.name} {phonePrice}
                             <ArrowRight className="ml-2 h-4 w-4 inline" />
                           </a>
                         </Button>
@@ -487,7 +488,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                   }
                 >
                   <a href={plan.link} target="_blank" rel="noopener noreferrer">
-                    Get {plan.name}
+                    Get {plan.name} {plan.id === 'basic' ? '$15.99' : plan.id === 'mid' ? '$28.99' : '$47.99'}
                     <ArrowRight className="ml-2 h-4 w-4 inline" />
                   </a>
                 </Button>
