@@ -2,9 +2,10 @@ import React from 'react';
 
 const PriceCircle = ({ amount = "$12.99" }) => {
   return (
-    <div className="w-20 h-20 rounded-full bg-red-600 border-4 border-black flex items-center justify-center text-white font-bold text-lg shadow-2xl mx-4">
-      {amount}
-    </div>
+    <span className="relative inline-flex items-center justify-center w-14 h-14 rounded-full border-3 border-red-500">
+      <span className="text-sm font-bold text-red-500">{amount}</span>
+      <span className="absolute w-16 h-0.5 bg-red-500 rotate-45"></span>
+    </span>
   );
 };
 
