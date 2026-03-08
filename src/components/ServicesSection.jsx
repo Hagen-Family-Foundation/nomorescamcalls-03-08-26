@@ -121,7 +121,7 @@ export const ServicesSection = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: colors.white }}>
-            Combine - TEXT EMAIL WEB for the 4 Pillars of Protection
+            Combine - TEXT-EMAIL-WEB for the 4 Pillars of Protection
           </h2>
           <p style={{ color: colors.grayLight }}>
             Choose the protection you need – or bundle for maximum savings
