@@ -114,12 +114,12 @@ export const PricingChart = ({ highlightedBundle }) => {
                         } ${isHighlighted ? 'bundle-highlight-column' : ''}`}
                       >
                         <span className={`text-lg font-bold ${
-                          plan.popular ? 'text-orange-700' : 'text-gray-900'
-                        }`}>
+                          plan.popular ? '' : 'text-gray-900'
+                        }`} style={plan.popular ? { color: '#eab308' } : {}}>
                           {plan.name}
                         </span>
                         {plan.popular && (
-                          <span className="block text-sm font-semibold mt-1" style={{ color: brand.colors.primary }}>
+                          <span className="block text-sm font-semibold mt-1" style={{ color: '#eab308' }}>
                             Most Popular
                           </span>
                         )}
