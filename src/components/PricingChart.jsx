@@ -172,13 +172,15 @@ export const PricingChart = ({ highlightedBundle }) => {
                       <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
                         plan.popular ? 'bg-orange-50/30' : ''
                       } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
-                        <div className="flex items-center justify-center gap-3">
+                        <div className="flex items-center justify-center gap-6">
                           <span className="relative inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-red-500">
                             <span className="text-xs font-bold text-red-500">$12.99</span>
                             <span className="absolute w-14 h-0.5 bg-red-500 rotate-45"></span>
                           </span>
-                          <span className="text-green-600 font-semibold">Bundled For Savings</span>
-                          <Check className="h-4 w-4 text-green-500" />
+                          <div className="flex items-center">
+                            <span className="text-green-600 font-semibold">Bundled For Savings</span>
+                            <Check className="h-4 w-4 text-green-500 ml-2" />
+                          </div>
                         </div>
                       </td>
                     );
@@ -196,13 +198,15 @@ export const PricingChart = ({ highlightedBundle }) => {
                       <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
                         plan.popular ? 'bg-orange-50/30' : ''
                       } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
-                        <div className="flex items-center justify-center gap-3">
+                        <div className="flex items-center justify-center gap-6">
                           <span className="relative inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-red-500">
                             <span className="text-xs font-bold text-red-500">$12.99</span>
                             <span className="absolute w-14 h-0.5 bg-red-500 rotate-45"></span>
                           </span>
-                          <span className="text-green-600 font-semibold">Bundled For Savings</span>
-                          <Check className="h-4 w-4 text-green-500" />
+                          <div className="flex items-center">
+                            <span className="text-green-600 font-semibold">Bundled For Savings</span>
+                            <Check className="h-4 w-4 text-green-500 ml-2" />
+                          </div>
                         </div>
                       </td>
                     );
@@ -220,13 +224,15 @@ export const PricingChart = ({ highlightedBundle }) => {
                       <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
                         plan.popular ? 'bg-orange-50/30' : ''
                       } ${isHighlighted ? 'bundle-highlight-column' : ''}`}>
-                        <div className="flex items-center justify-center gap-3">
+                        <div className="flex items-center justify-center gap-6">
                           <span className="relative inline-flex items-center justify-center w-12 h-12 rounded-full border-2 border-red-500">
                             <span className="text-xs font-bold text-red-500">$12.99</span>
                             <span className="absolute w-14 h-0.5 bg-red-500 rotate-45"></span>
                           </span>
-                          <span className="text-green-600 font-semibold">Bundled For Savings</span>
-                          <Check className="h-4 w-4 text-green-500" />
+                          <div className="flex items-center">
+                            <span className="text-green-600 font-semibold">Bundled For Savings</span>
+                            <Check className="h-4 w-4 text-green-500 ml-2" />
+                          </div>
                         </div>
                       </td>
                     );
@@ -401,7 +407,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                 {/* Add-ons */}
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-gray-700">💬 + Textinaters</span>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-4">
                     <span className="relative inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-red-500">
                       <span className="text-[10px] font-bold text-red-500">$12.99</span>
                       <span className="absolute w-12 h-0.5 bg-red-500 rotate-45"></span>
@@ -411,7 +417,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-gray-700">📧 + Emailinaters</span>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-4">
                     <span className="relative inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-red-500">
                       <span className="text-[10px] font-bold text-red-500">$12.99</span>
                       <span className="absolute w-12 h-0.5 bg-red-500 rotate-45"></span>
@@ -421,7 +427,7 @@ export const PricingChart = ({ highlightedBundle }) => {
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="text-gray-700">🌐 + Webinaters</span>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-4">
                     <span className="relative inline-flex items-center justify-center w-10 h-10 rounded-full border-2 border-red-500">
                       <span className="text-[10px] font-bold text-red-500">$12.99</span>
                       <span className="absolute w-12 h-0.5 bg-red-500 rotate-45"></span>
