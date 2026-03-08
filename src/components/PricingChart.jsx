@@ -271,18 +271,18 @@ export const PricingChart = ({ highlightedBundle }) => {
 
                 {/* Per Line / Per Protection Row */}
                 <tr className="border-b border-gray-200" style={{ backgroundColor: '#eab308' }}>
-                  <td className="py-4 px-6 text-left">
+                  <td className="py-2 px-6 text-left">
                     <span className="font-bold text-sm" style={{ color: '#0a1428' }}>Per Line / Per Protection</span>
-                    <span className="block text-xs mt-1" style={{ color: '#0a1428' }}>* Approx: bundle Total ÷ # lines ÷ 4 protections</span>
+                    <span className="block text-xs" style={{ color: '#0a1428' }}>* Approx: bundle Total ÷ # lines ÷ 4 protections</span>
                   </td>
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
                     const perLinePrice = plan.id === 'basic' ? '$9' : plan.id === 'mid' ? '$7' : '$6';
                     return (
-                      <td key={plan.id} className={`py-4 px-6 text-center transition-all duration-300 ${
+                      <td key={plan.id} className={`py-2 px-6 text-center transition-all duration-300 ${
                         isHighlighted ? 'bundle-highlight-column' : ''
                       }`} style={{ backgroundColor: '#eab308' }}>
-                        <span className="text-xl font-bold" style={{ color: '#0a1428' }}>
+                        <span className="text-lg font-bold" style={{ color: '#0a1428' }}>
                           {perLinePrice}/mo
                         </span>
                       </td>
@@ -292,16 +292,16 @@ export const PricingChart = ({ highlightedBundle }) => {
 
                 {/* Savings Row - Yellow with navy text */}
                 <tr className="border-b border-gray-200" style={{ backgroundColor: '#eab308' }}>
-                  <td className="py-5 px-6 text-left font-bold" style={{ color: '#0a1428' }}>
+                  <td className="py-2 px-6 text-left font-bold" style={{ color: '#0a1428' }}>
                     💰 You save vs à la carte
                   </td>
                   {plans.map((plan) => {
                     const isHighlighted = highlightedBundle === plan.id;
                     return (
-                      <td key={plan.id} className={`py-5 px-6 text-center transition-all duration-300 ${
+                      <td key={plan.id} className={`py-2 px-6 text-center transition-all duration-300 ${
                         isHighlighted ? 'bundle-highlight-column' : ''
                       }`} style={{ backgroundColor: '#eab308' }}>
-                        <span className="text-2xl font-bold" style={{ color: '#0a1428' }}>
+                        <span className="text-lg font-bold" style={{ color: '#0a1428' }}>
                           {plan.savings}% savings
                         </span>
                       </td>
