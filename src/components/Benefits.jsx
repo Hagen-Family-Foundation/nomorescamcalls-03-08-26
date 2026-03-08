@@ -69,7 +69,7 @@ export const Benefits = () => {
           </div>
 
           {/* Solution: 4 Pillars */}
-          <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 bg-clip-text text-transparent mb-8 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tight" style={{ color: '#1974D2' }}>
             4 PILLARS OF PROTECTION
           </h2>
 
