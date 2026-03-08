@@ -32,7 +32,7 @@ export const HowItWorks = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            How It Works
+            How NoMoreScamCalls Works
           </h2>
           <p className="text-xl max-w-2xl mx-auto" style={{ color: brand.colors.secondary }}>
             Three simple steps to a scam-free phone
