@@ -44,153 +44,52 @@ export const Benefits = () => {
     <section id="benefits" className="py-20 bg-white" data-testid="benefits-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* 4 Pillars Typography Section - CONVERSION MOCKUP */}
+        {/* 4 Pillars Typography Section */}
         <div className="max-w-4xl mx-auto py-8 px-6 text-center mb-16">
           
-          {/* FEAR HEADLINE - Agitate the Problem */}
-          <div className="mb-8">
-            <h2 className="text-3xl md:text-4xl font-black mb-3 leading-tight" style={{ 
-              color: '#FFD700',
-              textShadow: '-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000, 2px 0 0 #000'
-            }}>
-              Scammers Attack From 4 Directions.
-            </h2>
-            <p className="text-2xl md:text-3xl font-bold" style={{ color: '#DC2626' }}>
-              You're Only Protected From 1.
-            </p>
-          </div>
-
-          {/* THREAT VISUALIZATION - Show the Gaps */}
-          <div className="grid grid-cols-4 gap-3 mb-8 max-w-3xl mx-auto">
-            {/* Protected - Phone */}
+          {/* 3 Pillar Buttons with Domain Names */}
+          <div className="grid grid-cols-3 gap-4 mb-10 max-w-2xl mx-auto">
             <div className="flex flex-col items-center">
-              <div className="relative">
-                <div className="text-lg font-semibold py-3 px-4 rounded-lg shadow-lg" style={{ color: '#FFFFFF', backgroundColor: '#16A34A', border: '3px solid #15803D' }}>
-                  📞 PHONE
-                </div>
-                <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">✓</span>
+              <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
+                💬 TEXT
               </div>
-              <span className="text-sm font-bold mt-2" style={{ color: '#16A34A' }}>PROTECTED</span>
+              <span className="text-base md:text-lg font-semibold mt-2" style={{ color: '#0A0F2A' }}>Textinaters.com</span>
             </div>
-            {/* Exposed - Text */}
             <div className="flex flex-col items-center">
-              <div className="relative">
-                <div className="text-lg font-semibold py-3 px-4 rounded-lg shadow-lg opacity-90" style={{ color: '#0A0F2A', backgroundColor: '#FEE2E2', border: '3px solid #DC2626' }}>
-                  💬 TEXT
-                </div>
-                <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">✗</span>
+              <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
+                📧 EMAIL
               </div>
-              <span className="text-sm font-bold mt-2" style={{ color: '#DC2626' }}>EXPOSED</span>
+              <span className="text-base md:text-lg font-semibold mt-2" style={{ color: '#0A0F2A' }}>Emailinaters.com</span>
             </div>
-            {/* Exposed - Email */}
             <div className="flex flex-col items-center">
-              <div className="relative">
-                <div className="text-lg font-semibold py-3 px-4 rounded-lg shadow-lg opacity-90" style={{ color: '#0A0F2A', backgroundColor: '#FEE2E2', border: '3px solid #DC2626' }}>
-                  📧 EMAIL
-                </div>
-                <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">✗</span>
+              <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
+                🌐 WEB
               </div>
-              <span className="text-sm font-bold mt-2" style={{ color: '#DC2626' }}>EXPOSED</span>
-            </div>
-            {/* Exposed - Web */}
-            <div className="flex flex-col items-center">
-              <div className="relative">
-                <div className="text-lg font-semibold py-3 px-4 rounded-lg shadow-lg opacity-90" style={{ color: '#0A0F2A', backgroundColor: '#FEE2E2', border: '3px solid #DC2626' }}>
-                  🌐 WEB
-                </div>
-                <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">✗</span>
-              </div>
-              <span className="text-sm font-bold mt-2" style={{ color: '#DC2626' }}>EXPOSED</span>
+              <span className="text-base md:text-lg font-semibold mt-2" style={{ color: '#0A0F2A' }}>Webinaters.com</span>
             </div>
           </div>
 
-          {/* SOCIAL PROOF - Statistics */}
-          <div className="bg-navy-800 rounded-2xl p-6 mb-8 max-w-3xl mx-auto" style={{ backgroundColor: '#1a2338' }}>
-            <div className="grid grid-cols-3 gap-4 text-center">
-              <div>
-                <p className="text-2xl md:text-3xl font-black" style={{ color: '#FFD700' }}>$10B+</p>
-                <p className="text-sm text-gray-300">Lost to scams in 2024</p>
-              </div>
-              <div>
-                <p className="text-2xl md:text-3xl font-black" style={{ color: '#FFD700' }}>73%</p>
-                <p className="text-sm text-gray-300">Attacks via TEXT & EMAIL</p>
-              </div>
-              <div>
-                <p className="text-2xl md:text-3xl font-black" style={{ color: '#FFD700' }}>$1,200</p>
-                <p className="text-sm text-gray-300">Avg. victim loss</p>
-              </div>
-            </div>
-          </div>
-
-          {/* SOLUTION - The 4 Pillars United */}
-          <div className="mb-8">
-            <h3 className="text-2xl md:text-3xl font-black mb-4" style={{ color: '#1974D2' }}>
-              Close ALL 4 Doors With One Bundle
-            </h3>
-            <div className="grid grid-cols-4 gap-3 max-w-3xl mx-auto mb-6">
-              <div className="flex flex-col items-center">
-                <div className="text-lg font-semibold py-3 px-4 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '3px solid #0A0F2A' }}>
-                  📞 PHONE
-                </div>
-                <span className="text-xs font-semibold mt-1" style={{ color: '#0A0F2A' }}>NoMoreScamCalls</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="text-lg font-semibold py-3 px-4 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '3px solid #0A0F2A' }}>
-                  💬 TEXT
-                </div>
-                <span className="text-xs font-semibold mt-1" style={{ color: '#0A0F2A' }}>Textinaters.com</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="text-lg font-semibold py-3 px-4 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '3px solid #0A0F2A' }}>
-                  📧 EMAIL
-                </div>
-                <span className="text-xs font-semibold mt-1" style={{ color: '#0A0F2A' }}>Emailinaters.com</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="text-lg font-semibold py-3 px-4 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '3px solid #0A0F2A' }}>
-                  🌐 WEB
-                </div>
-                <span className="text-xs font-semibold mt-1" style={{ color: '#0A0F2A' }}>Webinaters.com</span>
-              </div>
-            </div>
-            <p className="text-xl md:text-2xl font-black" style={{ 
-              color: '#FFD700',
-              textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'
-            }}>
-              The 4 Pillars of Protection
-            </p>
-          </div>
-
-          {/* VALUE PROPS */}
-          <div className="grid md:grid-cols-2 gap-4 mb-8 max-w-2xl mx-auto">
-            <div className="text-base font-semibold bg-white rounded-xl p-4 shadow-lg" style={{ color: '#0A0F2A', border: '3px solid #FFD700' }}>
-              ✅ <span className="font-black" style={{ color: '#1974D2' }}>Widest Coverage</span> on market
-            </div>
-            <div className="text-base font-semibold bg-white rounded-xl p-4 shadow-lg" style={{ color: '#0A0F2A', border: '3px solid #FFD700' }}>
-              💰 <span className="font-black" style={{ color: '#1974D2' }}>Bundle & Save 40%</span> vs separate
-            </div>
-          </div>
-
-          {/* PRIMARY CTA */}
-          <div className="mb-6">
-            <a href="#pricing" className="inline-block text-xl md:text-2xl font-black py-4 px-10 rounded-xl shadow-2xl transform hover:scale-105 transition-all cursor-pointer" style={{ 
-              color: '#0A0F2A', 
-              backgroundColor: '#FFD700',
-              border: '4px solid #0A0F2A',
-              boxShadow: '0 6px 0 #0A0F2A'
-            }}>
-              🛡️ Get Complete Protection Now
-            </a>
-          </div>
-
-          {/* URGENCY */}
-          <p className="text-sm font-semibold" style={{ color: '#DC2626' }}>
-            ⏰ Limited Time: Lock in bundle pricing before rates increase
+          {/* Introduction */}
+          <p className="text-lg md:text-xl font-semibold mb-8 leading-relaxed max-w-3xl mx-auto" style={{ color: '#1974D2' }}>
+            Combining NoMoreScamCalls with Textinaters, Emailinaters and Webinaters forms the highest level of scam protection available in one place on the internet today.
           </p>
 
-          {/* Secondary CTA */}
-          <div className="mt-6 text-sm uppercase tracking-widest font-bold inline-block pb-2" style={{ color: '#1A1F4A', borderBottom: '2px solid #FFD700' }}>
-            Or compare all options below →
+          {/* Header */}
+          <h2 className="text-3xl md:text-4xl font-black mb-6 tracking-tight" style={{ color: '#1974D2' }}>
+            The 4 Pillars of Protection
+          </h2>
+
+          {/* Tagline - Yellow with black outline */}
+          <div className="text-xl md:text-2xl font-black mb-8 leading-relaxed max-w-3xl mx-auto py-4" style={{ 
+            color: '#FFD700',
+            textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000, 1px 0 0 #000'
+          }}>
+            Complete scam protection from ALL 4 SIDES
+          </div>
+
+          {/* CTA */}
+          <div className="text-sm uppercase tracking-widest font-bold inline-block pb-2" style={{ color: '#1A1F4A', borderBottom: '2px solid #FFD700' }}>
+            See comparison chart below →
           </div>
         </div>
 
