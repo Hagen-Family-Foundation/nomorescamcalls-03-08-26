@@ -57,14 +57,23 @@ export const Benefits = () => {
           
           {/* The Gap: 3 Missing Pillars */}
           <div className="grid grid-cols-3 gap-4 mb-8 max-w-2xl mx-auto">
-            <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
-              💬 TEXT
+            <div className="flex flex-col items-center">
+              <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
+                💬 TEXT
+              </div>
+              <span className="text-sm font-semibold mt-2" style={{ color: '#0A0F2A' }}>Textinaters.com</span>
             </div>
-            <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
-              📧 EMAIL
+            <div className="flex flex-col items-center">
+              <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
+                📧 EMAIL
+              </div>
+              <span className="text-sm font-semibold mt-2" style={{ color: '#0A0F2A' }}>Emailinaters.com</span>
             </div>
-            <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
-              🌐 WEB
+            <div className="flex flex-col items-center">
+              <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
+                🌐 WEB
+              </div>
+              <span className="text-sm font-semibold mt-2" style={{ color: '#0A0F2A' }}>Webinaters.com</span>
             </div>
           </div>
 
