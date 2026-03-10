@@ -77,17 +77,22 @@ export const Benefits = () => {
             </div>
           </div>
 
+          {/* Introduction */}
+          <p className="text-lg md:text-xl font-semibold mb-6 leading-relaxed max-w-3xl mx-auto" style={{ color: '#1974D2' }}>
+            Combining NoMoreScamCalls with Textinaters, Emailinaters and Webinaters forms the highest level of scam protection available in one place on the internet today.
+          </p>
+
           {/* Solution: 4 Pillars */}
-          <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tight" style={{ color: '#1974D2' }}>
-            4 PILLARS OF PROTECTION
+          <h2 className="text-3xl md:text-4xl font-black mb-6 tracking-tight" style={{ color: '#1974D2' }}>
+            The 4 Pillars of Protection
           </h2>
 
           {/* Value Prop */}
-          <div className="text-xl md:text-2xl font-semibold mb-8 leading-relaxed max-w-3xl mx-auto bg-white/80 py-6 rounded-xl" style={{ color: '#0A0F2A' }}>
-            Complete scam protection from <span className="font-black" style={{ 
-              color: '#FFD700',
-              textShadow: '-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000, 2px 0 0 #000'
-            }}>ALL 4 SIDES</span>
+          <div className="text-xl md:text-2xl font-black mb-8 leading-relaxed max-w-3xl mx-auto py-4" style={{ 
+            color: '#FFD700',
+            textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000, 1px 0 0 #000'
+          }}>
+            Complete scam protection from ALL 4 SIDES
           </div>
 
           {/* Benefits Stack */}
