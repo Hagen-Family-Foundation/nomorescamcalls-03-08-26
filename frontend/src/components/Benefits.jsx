@@ -47,22 +47,28 @@ export const Benefits = () => {
         {/* 4 Pillars Typography Section */}
         <div className="max-w-4xl mx-auto py-8 px-6 text-center mb-16">
           
-          {/* 3 Pillar Buttons with Domain Names */}
-          <div className="grid grid-cols-3 gap-4 mb-10 max-w-2xl mx-auto">
+          {/* 4 Pillar Buttons with Domain Names */}
+          <div className="grid grid-cols-4 gap-4 mb-10 max-w-3xl mx-auto">
             <div className="flex flex-col items-center">
-              <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
+              <div className="text-xl font-semibold py-3 px-5 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
+                📞 PHONE
+              </div>
+              <span className="text-base md:text-lg font-semibold mt-2" style={{ color: '#0A0F2A' }}>NoMoreScamCalls</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="text-xl font-semibold py-3 px-5 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
                 💬 TEXT
               </div>
               <span className="text-base md:text-lg font-semibold mt-2" style={{ color: '#0A0F2A' }}>Textinaters.com</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
+              <div className="text-xl font-semibold py-3 px-5 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
                 📧 EMAIL
               </div>
               <span className="text-base md:text-lg font-semibold mt-2" style={{ color: '#0A0F2A' }}>Emailinaters.com</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
+              <div className="text-xl font-semibold py-3 px-5 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
                 🌐 WEB
               </div>
               <span className="text-base md:text-lg font-semibold mt-2" style={{ color: '#0A0F2A' }}>Webinaters.com</span>
