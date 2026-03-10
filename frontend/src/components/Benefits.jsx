@@ -61,19 +61,19 @@ export const Benefits = () => {
               <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
                 💬 TEXT
               </div>
-              <span className="text-sm font-semibold mt-2" style={{ color: '#0A0F2A' }}>Textinaters.com</span>
+              <span className="text-base md:text-lg font-semibold mt-2" style={{ color: '#0A0F2A' }}>Textinaters.com</span>
             </div>
             <div className="flex flex-col items-center">
               <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
                 📧 EMAIL
               </div>
-              <span className="text-sm font-semibold mt-2" style={{ color: '#0A0F2A' }}>Emailinaters.com</span>
+              <span className="text-base md:text-lg font-semibold mt-2" style={{ color: '#0A0F2A' }}>Emailinaters.com</span>
             </div>
             <div className="flex flex-col items-center">
               <div className="text-xl font-semibold py-3 px-6 rounded-lg shadow-lg" style={{ color: '#0A0F2A', backgroundColor: '#FFD700', border: '4px solid #0A0F2A' }}>
                 🌐 WEB
               </div>
-              <span className="text-sm font-semibold mt-2" style={{ color: '#0A0F2A' }}>Webinaters.com</span>
+              <span className="text-base md:text-lg font-semibold mt-2" style={{ color: '#0A0F2A' }}>Webinaters.com</span>
             </div>
           </div>
 
@@ -84,7 +84,7 @@ export const Benefits = () => {
 
           {/* Value Prop */}
           <div className="text-xl md:text-2xl font-semibold mb-8 leading-relaxed max-w-3xl mx-auto bg-white/80 py-6 rounded-xl" style={{ color: '#0A0F2A' }}>
-            Complete scammer protection from <span className="font-black" style={{ 
+            Complete scam protection from <span className="font-black" style={{ 
               color: '#FFD700',
               textShadow: '-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000, 2px 0 0 #000'
             }}>ALL 4 SIDES</span>
