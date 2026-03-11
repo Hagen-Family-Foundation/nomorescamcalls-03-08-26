@@ -163,7 +163,7 @@ export const brands = {
         'VITE_SEO_OG_DESCRIPTION',
         'Protect your family from scam calls, robocalls, and phone fraud. AI-powered call screening that delivers truth and justice made simple.'
       ),
-      ogImage: getEnvVar('VITE_SEO_OG_IMAGE', 'https://customer-assets.emergentagent.com/job_callshield-build/artifacts/bbooxg4d_image.png'),
+      ogImage: getEnvVar('VITE_SEO_OG_IMAGE', 'https://nomorescamcalls.com/og-image.png'),
     },
 
     // ========== LEGAL PAGE URLS ==========
