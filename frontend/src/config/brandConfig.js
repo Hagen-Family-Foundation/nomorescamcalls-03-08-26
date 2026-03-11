@@ -51,7 +51,7 @@ export const brands = {
     domain: getEnvVar('VITE_DOMAIN', 'nomorescamcalls.com'),
     frontendUrl: getEnvVar('VITE_FRONTEND_URL', 'http://localhost:3000'),
     apiUrl: getEnvVar('VITE_API_URL', 'http://localhost:5000'),
-    tagline: getEnvVar('VITE_TAGLINE', 'Stop scammers before they reach your phone'),
+    tagline: getEnvVar('VITE_TAGLINE', 'The 4 Pillars of Protection'),
 
     // ========== CONTACT INFO ==========
     contactEmail: getEnvVar('VITE_CONTACT_EMAIL', 'support@nomorescamcalls.com'),
@@ -152,16 +152,16 @@ export const brands = {
     seo: {
       description: getEnvVar(
         'VITE_SEO_DESCRIPTION',
-        'Protect yourself from scam calls with advanced AI detection and real-time call screening.'
+        'NoMoreScamCalls protects working families from scam calls, robocalls, and phone fraud with AI-powered call screening. Truth and justice made simple.'
       ),
       keywords: getEnvVar(
         'VITE_SEO_KEYWORDS',
-        'scam calls, call blocking, phone protection, spam detection'
+        'scam call protection, robocall blocker, phone fraud protection, call screening, spam call blocker, family phone protection'
       ),
-      ogTitle: getEnvVar('VITE_SEO_OG_TITLE', 'NoMoreScamCalls - AI-Powered Scam Call Protection'),
+      ogTitle: getEnvVar('VITE_SEO_OG_TITLE', 'NoMoreScamCalls – The 4 Pillars of Protection'),
       ogDescription: getEnvVar(
         'VITE_SEO_OG_DESCRIPTION',
-        'Stop scammers before they reach your phone. AI-powered call screening protects you 24/7.'
+        'Protect your family from scam calls, robocalls, and phone fraud. AI-powered call screening that delivers truth and justice made simple.'
       ),
       ogImage: getEnvVar('VITE_SEO_OG_IMAGE', 'https://nomorescamcalls.com/og-image.jpg'),
     },
